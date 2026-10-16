@@ -1,15 +1,8 @@
 \begin{document}
 \title{\bi{Uniform Laughlin gaps on large flat tori\\from finite Fock-space certificates}{由有限Fock空间证书推出\\大周期平坦环面上的Laughlin一致谱隙}}
-\author{\normalsize prepared by Xiang-Jian Hou with advice from Ying-Hai Wu}
-\date{\bi{Candidate proof for independent review\\Revised 16 October 2026; mathematical draft of 12 October 2026}{供独立复核的候选证明\\2026年10月16日修订；数学原稿日期为2026年10月12日}}
+\author{}
+\date{\bi{Candidate proof for review, 16 October 2026}{供复核的候选稿，2026年10月16日}}
 \maketitle
-\begingroup\small
-\noindent\bi{\textbf{Status.} This is an AI-developed candidate proof for independent review. AI agents made substantive contributions to the torus derivations, certificate calculations, verification programs, and manuscript. The preparation and advice credited above do not assert line-by-line human verification or endorsement of every claim.}
-{\textbf{状态说明。} 本文是主要由AI发展、供独立复核的候选证明。AI代理实质参与了环面推导、证书计算、验证程序及文稿写作。上方列明的整理和建议不表示人类已逐行核验或背书每项结论。}
-\par\smallskip
-\noindent\bi{Two selected Lean endpoints have recorded kernel acceptance: a particle-number-uniform fermionic sector inequality and a bosonic full-Fock $1/3$ inequality with a bounded two-sided resolvent in $(0,1/3)$. The zero-mode counts, dedicated thermodynamic corollaries, explicit fermionic full-Fock spectral wrapper, and stronger bosonic constants are not covered by that selected acceptance. The mathematical arguments remain in the text; Appendix~\ref{app:reproducibility} states the verification scope and remaining review obligations. No completed whole-paper formalization or human peer review is claimed.}
-{已有两条选定的Lean终点命题取得内核验收记录：对粒子数一致的费米扇区不等式，以及玻色全Fock空间的$1/3$不等式和$(0,1/3)$内有界双侧预解算子。零模计数、专门热力学推论、显式费米全Fock谱包装及更强玻色常数不在此次选定验收覆盖内。正文保留这些数学论证；附录~\ref{app:reproducibility}列明验证范围和待复核事项。本文不声称整篇形式化或人工同行评议已经完成。}
-\par\endgroup
 \input{abstract}
 \ifChinese\tableofcontents\else{\small\tableofcontents}\fi
 \clearpage
@@ -21,6 +14,9 @@
 \input{sections/05-bosonic}
 \input{sections/06-groundspaces}
 \input{sections/07-discussion}
+\section*{\bi{Contributions and acknowledgments}{贡献与致谢}}
+\addcontentsline{toc}{section}{\bi{Contributions and acknowledgments}{贡献与致谢}}
+\noindent prepared by Xiang-Jian Hou with advice from Ying-Hai Wu
 \appendix
 \input{appendices/fermionic-certificate}
 \input{appendices/bosonic-certificate}

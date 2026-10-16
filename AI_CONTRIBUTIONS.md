@@ -10,4 +10,6 @@ The workflow used OpenAI Codex and GPT-6-family assistants. The provided accepta
 
 The disclosure approach draws on [Xin Shen's contribution statement](https://github.com/Shencongli/bosonic-laughlin-spectral-gap/blob/main/AI_CONTRIBUTIONS.md). Its description of its own checks is not evidence for this project's checks. [VERIFICATION.md](VERIFICATION.md) states the narrower acceptance record for this manuscript.
 
-This revision preserves the candidate mathematical arguments and explicitly separates them from machine acceptance. It adds method citations at the steps that borrow them, corrects the empty human credit in the older draft, organizes a minimal manuscript/data package, and compiles and visually checks the two language editions. No human peer review or completed whole-paper formalization is claimed.
+The human role statement appears verbatim in the README and the manuscript's Contributions and acknowledgments section: prepared by Xiang-Jian Hou with advice from Ying-Hai Wu. It credits preparation and advice without declaring joint authorship or full human verification. It is not placed in the paper author field or PDF author metadata. The paper retains a short candidate-proof designation and points to the repository for detailed contributions and verification scope.
+
+The revision preserves the candidate mathematical arguments and the method citations, organizes a minimal manuscript/data package, and compiles and visually checks the two language editions. No human peer review or completed whole-paper formalization is claimed.
