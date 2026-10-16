@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\ifChinese
+ \IfFontExistsTF{Noto Serif CJK SC}{\setmainfont{Noto Serif CJK SC}[ItalicFont={Noto Serif CJK SC},BoldFont={Noto Serif CJK SC}]}{\setmainfont{SimSun}[ItalicFont={SimSun},BoldFont={SimHei}]}
+ \IfFontExistsTF{Noto Sans CJK SC}{\setsansfont{Noto Sans CJK SC}}{\setsansfont{Microsoft YaHei}}
+ \IfFontExistsTF{Noto Sans Mono CJK SC}{\setmonofont{Noto Sans Mono CJK SC}}{\setmonofont{SimSun}[BoldFont={SimHei}]}
+ \XeTeXlinebreaklocale "zh"
+ \XeTeXlinebreakskip=0pt plus 1pt
+ \newcommand{\bi}[2]{#2}
+\else
+ \IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
+ \IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{Arial}}
+ \IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=0.9]}{\setmonofont{Consolas}[Scale=0.9]}
+ \newcommand{\bi}[2]{#1}
+\fi
+\setmathfont{Latin Modern Math}[BoldFont={Latin Modern Math}]
+\usepackage{booktabs,longtable,array}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{\usepackage{url}}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\newtheorem{theorem}{\bi{Theorem}{定理}}[section]
+\newtheorem{lemma}[theorem]{\bi{Lemma}{引理}}
+\newtheorem{proposition}[theorem]{\bi{Proposition}{命题}}
+\newtheorem{corollary}[theorem]{\bi{Corollary}{推论}}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{\bi{Definition}{定义}}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{\bi{Remark}{注}}
+\renewcommand{\proofname}{\bi{Proof}{证明}}
+\renewcommand{\abstractname}{\bi{Abstract}{摘要}}
+\renewcommand{\contentsname}{\bi{Contents}{目录}}
+\renewcommand{\refname}{\bi{References}{参考文献}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\CM}{\mathrm{COM}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\inner}[2]{\langle#1,#2\rangle}
+\allowdisplaybreaks[2]
+\emergencystretch=2em
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\parindent}{1.2em}
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{2}
+\hypersetup{pdftitle={Uniform Laughlin gaps on large flat tori from finite Fock-space certificates},pdfauthor={prepared by Xiang-Jian Hou with advice from Ying-Hai Wu},pdfsubject={Candidate proof for independent review: bosonic V0 and fermionic V1 on a magnetic torus}}

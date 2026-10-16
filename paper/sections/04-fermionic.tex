@@ -1,0 +1,372 @@
+\section{\bi{The fermionic comparison and its uniform error budget}{费米比较不等式及其一致误差预算}}
+\label{sec:F-proof}\label{sec:F-fermionic}
+
+\bi{We now complete the proof of Theorem~\ref{thm:fermion}. Throughout this section, $H=H_{\mathrm F}$ is the full $V_1$ Hamiltonian with the normalization fixed in the model definition. We abbreviate $B_p=B_p^F$, $D_z=D_z^F$, $C_3=S_3^F$, $S_4=S_4^F$, $h_T=h_F$, and $\varepsilon_2^{\mathrm F}=\epsilon_2^{(1)}$. We use the raw periodized jets $c_j(R)=c(u_j^T(R))$. The geometric estimates and the exact center-of-mass (COM) integration identity were established in Lemmas~\ref{lem:jets}, \ref{lem:relative-frame}, and~\ref{lem:ladder}. The remaining task is to compare the three- and four-body terms with a fixed sum of squares. All errors will be bounded by a scalar multiple of $H$.}{本节完成定理~\ref{thm:fermion}的证明。以下记 $H=H_{\mathrm F}$，表示按模型定义归一化的完整 $V_1$ 哈密顿量；简记 $B_p=B_p^F$、$D_z=D_z^F$、$C_3=S_3^F$、$S_4=S_4^F$、$h_T=h_F$ 和 $\varepsilon_2^{\mathrm F}=\epsilon_2^{(1)}$，并使用未经正交化的周期化 jets $c_j(R)=c(u_j^T(R))$。几何估计和精确的质心积分恒等式已由引理~\ref{lem:jets}、\ref{lem:relative-frame}及~\ref{lem:ladder}给出。余下任务是用一组固定的正平方比较三体和四体项，并将所有误差控制为 $H$ 的标量倍数。}
+
+\bi{The finite coefficient data are those of the Fock-space certificate in \cite{OpenAI2026Fock}. Their role here is entirely algebraic: Appendix~\ref{app:F-certificate} prints all seven integer rows and gives the rational calculations proving the finite inequalities used below. No spherical spectral-gap statement is an input to this argument.}{有限系数取自文献~\cite{OpenAI2026Fock}的 Fock 空间证书，其在本证明中的作用完全是代数性的。附录~\ref{app:F-certificate}列出全部七行整数，并给出下文有限不等式的有理算术验证。本论证不以任何球面谱隙定理为前提。}
+
+\subsection{\bi{A four-body frame error paid for by the pair energy}{以对能量支付四体框架误差}}
+\label{subsec:F-four-frame}
+
+\bi{The zero-contraction term in the normal-ordered square of $H$ is}{将 $H$ 的平方正规序后，其零收缩项为}
+\begin{equation}
+ S_4=\int_{T\times T}(B_0(R)B_0(S))^\dagger
+                  (B_0(R)B_0(S))\,\dd\mu_2(R)\dd\mu_2(S)\ge0.
+ \label{eq:F-S4}
+\end{equation}
+\bi{For a Fock-space vector $\psi$, the function $B_0(R)B_0(S)\psi$ lies in $\mathcal H_2(T)\otimes\mathcal H_2(T)$ with values in the remaining Fock space. Apply the finite relative-jet map with charges $a=b=2$ and relative degrees $0\le d\le22$. Its components are}{对任意 Fock 空间向量 $\psi$，函数 $B_0(R)B_0(S)\psi$ 属于以剩余 Fock 空间为值域的 $\mathcal H_2(T)\otimes\mathcal H_2(T)$。取电荷 $a=b=2$，并对相对阶数 $0\le d\le22$ 应用有限相对 jet 映射，其各分量为}
+\begin{equation}
+ C_d(R)=\sum_{p=0}^{d}(-1)^{d-p}
+          \sqrt{\binom dp}\,2^{-d/2}B_p(R)B_{d-p}(R),
+ \qquad
+ T_4=\int_T\sum_{d=0}^{22}C_d(R)^\dagger C_d(R)\,\dd\mu_4(R).
+ \label{eq:F-Cd}
+\end{equation}
+\bi{Pair annihilators commute because each has even fermionic degree. Consequently $C_d=0$ for odd $d$, by exchanging $p$ and $d-p$. Lemma~\ref{lem:relative-frame}, applied to its tensor product with the identity on the spectator space, gives}{对湮灭算符均具有偶数费米次数，故两两对易。交换 $p$ 与 $d-p$ 可知奇数 $d$ 时 $C_d=0$。将引理~\ref{lem:relative-frame}中的映射与旁观者空间上的恒等算符作张量积，得到}
+\begin{equation}
+ T_4\le(1+\varepsilon_4^{\mathrm F}(\Lambda))S_4,
+ \qquad
+ \varepsilon_4^{\mathrm F}(\Lambda)=\epsilon_{2,2,22}(\Lambda)
+       \xrightarrow[\ell(\Lambda)\to\infty]{}0.
+ \label{eq:F-four-bessel}
+\end{equation}
+\bi{This use of the frame bound keeps every COM theta mode and does not introduce the dimension of the spectator space. A second estimate converts its error into pair energy.}{这一框架估计保留全部质心 theta 模式，且不引入旁观者空间的维数。下面的第二个估计将其误差转化为对能量。}
+
+\bi{The method has a spherical antecedent in the fixed-block relative-energy estimate of OpenAI~\cite[Section~7, vanishing-weight lemma and fixed-block-energy estimate]{OpenAI2026Stability}: first bound the finite left pair annihilator, then average the remaining pair energy. The torus proof below supplies its raw-Gram correction and uses the exact parameter pair integral.}
+{此方法的球面前源是OpenAI的固定块相对能量估计~\cite[第7节，vanishing-weight引理与fixed-block-energy估计]{OpenAI2026Stability}：先控制有限左pair湮灭算符，再平均剩余pair能量。下文的环面证明给出原始Gram矩阵修正，并使用精确参数pair积分。}
+\begin{lemma}[\bi{Finite left-factor estimate}{有限左因子估计}]
+\label{lem:F-left-factor}
+\bi{For $0\le p\le22$, and for every center $R$,}{对任意 $0\le p\le22$ 及中心 $R$，有}
+\begin{equation}
+ \|B_p(R)\|^2\le(p+2)(1+e_{23}(\Lambda))^2.
+ \label{eq:F-left-factor}
+\end{equation}
+\bi{In particular,}{特别地，}
+\begin{equation}
+ T_4\le C_4^{\mathrm F}(\Lambda)H,
+ \qquad C_4^{\mathrm F}(\Lambda)=5152(1+e_{23}(\Lambda))^2.
+ \label{eq:F-four-relative}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\bi{Let $C_R:e_j\mapsto u_j^T(R)$ be restricted to the first $p+2$ orbitals. Its Gram matrix is bounded above by $(1+e_{23})I$. The planar pair vector $v_p$ has norm one, so the periodized vector $(\bigwedge^2 C_R)v_p$ has norm at most $1+e_{23}$. A two-form on a space of dimension at most $p+2$ has a canonical orthogonal decomposition $\sum_{a=1}^{r}\sigma_a f_{2a-1}\wedge f_{2a}$, where $r\le(p+2)/2$ and $\sum_a|\sigma_a|^2$ is its squared norm. The corresponding annihilator has norm at most $\sum_a|\sigma_a|$, since each product of two normalized one-particle annihilators is a contraction. Cauchy--Schwarz therefore bounds its squared norm by $r\sum_a|\sigma_a|^2$, which implies the slightly weaker bound \eqref{eq:F-left-factor}.}{将映射 $C_R:e_j\mapsto u_j^T(R)$ 限制于前 $p+2$ 个轨道，其 Gram 矩阵不超过 $(1+e_{23})I$。平面对向量 $v_p$ 的范数为一，故周期化向量 $(\bigwedge^2 C_R)v_p$ 的范数不超过 $1+e_{23}$。维数不超过 $p+2$ 的空间上的二阶外积向量可作标准正交分解 $\sum_{a=1}^{r}\sigma_a f_{2a-1}\wedge f_{2a}$，其中 $r\le(p+2)/2$，且 $\sum_a|\sigma_a|^2$ 等于该向量的范数平方。每个归一化单粒子湮灭算符都是压缩算符，因此相应对湮灭算符的范数不超过 $\sum_a|\sigma_a|$。由 Cauchy--Schwarz 不等式，其范数平方不超过 $r\sum_a|\sigma_a|^2$，从而得到略弱的估计~\eqref{eq:F-left-factor}。}
+
+\bi{The coefficients in \eqref{eq:F-Cd} have squared sum one. Thus, for every $\psi$,}{式~\eqref{eq:F-Cd}中的系数平方和为一。因此对任意 $\psi$，}
+\begin{align}
+ \|C_d(R)\psi\|^2
+ &\le\sum_{p=0}^{d}\|B_p(R)B_{d-p}(R)\psi\|^2\notag\\
+ &\le(1+e_{23})^2\sum_{p=0}^{d}(p+2)
+                      \|B_{d-p}(R)\psi\|^2.
+ \label{eq:F-four-pointwise}
+\end{align}
+\bi{Integrating, use $\dd\mu_4=2\dd\mu_2$ and the exact identity $\int_T B_q^\dagger B_q\,\dd\mu_2=H$ for every $q$, from Lemma~\ref{lem:ladder}. This gives}{积分后，使用 $\dd\mu_4=2\dd\mu_2$ 以及引理~\ref{lem:ladder}对每个 $q$ 给出的精确恒等式 $\int_T B_q^\dagger B_q\,\dd\mu_2=H$，得到}
+\begin{equation}
+ T_4\le2(1+e_{23})^2
+       \sum_{d=0}^{22}\sum_{p=0}^{d}(p+2)H
+     =5152(1+e_{23})^2H.
+\end{equation}
+\bi{Every estimate used a bounded left factor followed by an exact pair-energy integral, so the result is independent of particle number.}{各步均先控制有界的左因子，再使用精确的对能量积分，因此结果与粒子数无关。}
+\end{proof}
+
+\bi{Combining \eqref{eq:F-four-bessel} and \eqref{eq:F-four-relative} yields the form that will enter the final budget:}{合并式~\eqref{eq:F-four-bessel}和~\eqref{eq:F-four-relative}，得到最终预算所需的形式：}
+\begin{equation}
+ S_4\ge\frac{T_4}{1+\varepsilon_4^{\mathrm F}}
+      \ge T_4-C_4^{\mathrm F}(\Lambda)\varepsilon_4^{\mathrm F}(\Lambda)H.
+ \label{eq:F-four-payment}
+\end{equation}
+\bi{The last inequality follows from $1-(1+x)^{-1}=x/(1+x)\le x$ for $x\ge0$. In particular, the error does not multiply $S_4$, a particle-counting operator, or an identity with a size-dependent coefficient.}{最后一步使用 $x\ge0$ 时 $1-(1+x)^{-1}=x/(1+x)\le x$。特别地，该误差不乘以 $S_4$、粒子数计数算符，或带有尺寸依赖系数的恒等算符。}
+
+\subsection{\bi{Pauli control of the complete negative three-body tail}{完整三体负尾的 Pauli 控制}}
+\label{subsec:F-tail}
+
+\bi{The exact three-body identity \eqref{eq:fermion-threebody} contains all relative degrees. Its negative tail cannot be controlled by extending a fixed-degree Gram estimate to arbitrarily high jets. The high-jet estimate of Lemma~\ref{lem:jets}, $\sup_R\|u_j^T(R)\|^2\le C(1+j)$ for $\ell(\Lambda)\ge1$, supplies the uniform majorant needed for the following Pauli estimate.}{精确三体恒等式~\eqref{eq:fermion-threebody}包含全部相对阶数，故不能将固定阶 Gram 估计外推至任意高阶 jets 来控制其负尾。引理~\ref{lem:jets}的高阶 jet 估计在 $\ell(\Lambda)\ge1$ 时给出 $\sup_R\|u_j^T(R)\|^2\le C(1+j)$，为下述 Pauli 估计提供所需的一致控制项。}
+
+\bi{Recall the coefficients and annihilators in the exact three-body identity:}{回顾精确三体恒等式中的系数与湮灭算符：}
+\begin{equation}
+ \begin{aligned}
+ q_z&=(3z-1)(-1/2)^z,\qquad
+ D_z(R)=\sum_{p=0}^{z}s_{z,p}\,c_{z-p}(R)B_p(R),\\
+ s_{z,p}&=(-1)^{z-p}\sqrt{\binom zp}\,3^{-p/2}(2/3)^{(z-p)/2}.
+ \end{aligned}
+ \label{eq:F-Dz}
+\end{equation}
+\bi{The coefficients have squared sum one, and $D_0,D_1,D_3$ vanish as algebraic wedge identities. All even terms are nonnegative. Define}{这些系数的平方和为一，且外积代数恒等式给出 $D_0=D_1=D_3=0$。所有偶数阶项均非负。定义}
+\begin{equation}
+ M_z(\Lambda)=\sup_{R\in T,\,0\le j\le z}\|u_j^T(R)\|^2,
+ \qquad
+ \delta_\Lambda=\frac32\sum_{\substack{z\ge17\\z\ \mathrm{odd}}}
+                     |q_z|(z+1)M_z(\Lambda).
+ \label{eq:F-delta}
+\end{equation}
+\bi{The canonical anticommutation relations give $\|c_j(R)\|=\|u_j^T(R)\|$. Cauchy--Schwarz in the coefficient index therefore gives}{正则反对易关系给出 $\|c_j(R)\|=\|u_j^T(R)\|$。对系数指标使用 Cauchy--Schwarz 不等式，便有}
+\begin{equation}
+ \|D_z(R)\psi\|^2
+ \le\sum_{p=0}^{z}\|c_{z-p}(R)B_p(R)\psi\|^2
+ \le M_z(\Lambda)\sum_{p=0}^{z}\|B_p(R)\psi\|^2.
+ \label{eq:F-Pauli-tail}
+\end{equation}
+\bi{After integrating with $\dd\mu_3=(3/2)\dd\mu_2$, the exact pair-frame identity pays for each of the $z+1$ summands by $H$. Thus the negative tail satisfies}{按 $\dd\mu_3=(3/2)\dd\mu_2$ 积分后，精确的对框架恒等式将 $z+1$ 个求和项中的每一项均控制为 $H$，故负尾满足}
+\begin{equation}
+ \int_T\sum_{\substack{z\ge17\\z\ \mathrm{odd}}}
+       q_zD_z^\dagger D_z\,\dd\mu_3\ge-\delta_\Lambda H.
+ \label{eq:F-tail-bound}
+\end{equation}
+\bi{For each fixed $z$, $M_z(\Lambda)\to1$. Lemma~\ref{lem:jets} gives $M_z\le C(1+z)$ uniformly for $\ell\ge1$, while $|q_z|$ decays geometrically. Dominated convergence therefore yields}{对每个固定 $z$，有 $M_z(\Lambda)\to1$。引理~\ref{lem:jets}在 $\ell\ge1$ 时给出统一上界 $M_z\le C(1+z)$，而 $|q_z|$ 呈几何衰减。于是由控制收敛定理，}
+\begin{equation}
+ \lim_{\ell(\Lambda)\to\infty}\delta_\Lambda
+ =\frac32\sum_{\substack{z\ge17\\z\ \mathrm{odd}}}
+           (3z-1)(z+1)2^{-z}
+ =\sum_{m=8}^{\infty}(9m^2+12m+3)4^{-m}
+ =\frac{61}{4096}.
+ \label{eq:F-tail-limit}
+\end{equation}
+\bi{The middle expression uses $z=2m+1$; the last equality follows by twice differentiating the geometric series beginning at $m=8$. Both the convergence and the resulting constant are uniform in particle number, boundary twist, and lattice shape subject to the stated systole condition.}{中间一式使用 $z=2m+1$；最后一式可由从 $m=8$ 开始的几何级数作两次求导得到。在所述最短周期条件下，该收敛及所得常数均与粒子数、边界 twist 和格子形状无关。}
+
+\subsection{\bi{Decoding the seven rows and the finite coupled spaces}{七行数据及有限耦合空间的解码}}
+\label{subsec:F-data}
+
+\bi{Set $P=10^7$. For row $\rho$, the printed integers are $t_\rho$, $\ell_\rho$, and $a_{pj}^{\rho}$; missing entries are zero. Define}{令 $P=10^7$。对第 $\rho$ 行，所列整数为 $t_\rho$、$\ell_\rho$ 和 $a_{pj}^{\rho}$，未列项均为零。定义}
+\begin{equation}
+ \lambda_\rho=\frac{\ell_\rho}{P},\qquad
+ \alpha_{pj}^{\rho}=\frac{a_{pj}^{\rho}}{P}
+       \sqrt{\frac{2^{p-t_\rho}t_\rho!(p+j-t_\rho)!}{p!j!}},
+ \qquad
+ \eta=\sum_{\rho=1}^{7}\lambda_\rho^2
+      =\frac{93527408868499}{10^{14}}.
+ \label{eq:F-row-decode}
+\end{equation}
+\bi{The seven $t$ values are $0,1,1,2,5,5,7$. Every nonzero entry satisfies $0\le p\le7$, $0\le j\le8$, and $0\le p+j-t_\rho\le8$. These support conditions bound all auxiliary one-particle modes by eight, although their coupled four-body coefficients require jets up to degree twenty-four.}{七个 $t$ 值依次为 $0,1,1,2,5,5,7$。每个非零项均满足 $0\le p\le7$、$0\le j\le8$ 及 $0\le p+j-t_\rho\le8$。这些支撑条件使辅助单粒子模式的编号均不超过八，但其耦合四体系数需要最高二十四阶的 jets。}
+
+\bi{To specify the coefficients without referring to a spherical limit, take $0<u<1$, put $v=\sqrt{1-u^2}$, and define $s^{(u)}_{z,T,p}$ by the exact polynomial identity}{为不借助球面极限直接指定系数，取 $0<u<1$，令 $v=\sqrt{1-u^2}$，并由以下精确多项式恒等式定义 $s^{(u)}_{z,T,p}$：}
+\begin{equation}
+ \frac{(uX-vY)^z(vX+uY)^{T-z}}{\sqrt{z!(T-z)!}}
+ =\sum_{p=0}^{T}s^{(u)}_{z,T,p}
+       \frac{X^pY^{T-p}}{\sqrt{p!(T-p)!}}.
+ \label{eq:F-coupling}
+\end{equation}
+\bi{A coefficient is zero if any of its degree indices is outside its indicated range. The change of variables is orthogonal and preserves the normalized-monomial inner product. For a fixed $T$, the rows indexed by $z$ consequently form an orthogonal matrix. The factor $(vX+uY)^{T-z}/\sqrt{(T-z)!}$ is the normalized COM descendant. This identifies the algebraic transformation with the ladder normalization of Lemma~\ref{lem:ladder}.}{当次数指标超出所示范围时，系数定义为零。该变量变换正交，并保持归一化单项式内积，因此固定 $T$ 时，以 $z$ 为行标的系数构成正交矩阵。因子 $(vX+uY)^{T-z}/\sqrt{(T-z)!}$ 正是归一化的质心后裔，所以此代数变换与引理~\ref{lem:ladder}的梯级归一化一致。}
+
+\bi{For the three-body comparison, set $u=1/\sqrt3$ and abbreviate $s=s^{(1/\sqrt3)}$. Define}{三体比较中取 $u=1/\sqrt3$，简记 $s=s^{(1/\sqrt3)}$，并定义}
+\begin{equation}
+ e_z=\sum_{\rho=1}^{7}\sum_{T=\max(z,t_\rho)}^{15}
+ \left[
+ 2\lambda_\rho s_{z,T,t_\rho}
+       \sum_{p+j=T}\alpha_{pj}^{\rho}s_{z,T,p}
+ +\left(\sum_{p+j=T}\alpha_{pj}^{\rho}s_{z,T,p}\right)^2
+ \right].
+ \label{eq:F-ez}
+\end{equation}
+\bi{The exact rational calculation in Appendix~\ref{app:F-three-arithmetic} proves the thirteen inequalities}{附录~\ref{app:F-three-arithmetic}中的精确有理计算证明以下十三个不等式：}
+\begin{equation}
+ e_z<\frac32q_z,
+ \qquad z\in\{2,4,5,\ldots,15\}.
+ \label{eq:F-three-certificate}
+\end{equation}
+\bi{The excluded indices $0,1,3$ correspond to identically zero wedge images and require no scalar comparison.}{排除的指标 $0,1,3$ 对应恒为零的外积像，无需作标量比较。}
+
+\bi{For four bodies, let $\mathcal R_D=\{1,3,5,\ldots\}\cap[1,D]$, where $1\le D\le23$. In the formal orthonormal input basis $v_p\otimes(e_j\wedge e_k)$, $j<k$, define}{四体部分令 $\mathcal R_D=\{1,3,5,\ldots\}\cap[1,D]$，其中 $1\le D\le23$。在形式上的正交归一输入基 $v_p\otimes(e_j\wedge e_k)$、$j<k$ 中定义}
+\begin{equation}
+ S_r(D,T;p,j,k)=\sqrt2\,
+       s^{(1/\sqrt2)}_{r,j+k,j}
+       s^{(1/\sqrt2)}_{D-r,T-r,p}.
+ \label{eq:F-S}
+\end{equation}
+\bi{This is zero if $r>j+k$ and is extended antisymmetrically in $j,k$. The first coupling separates the relative degree $r$ of the two single-particle factors; odd $r$ is precisely their antisymmetry condition. The second coupling separates their pair COM from that of $v_p$. Its relative degree is $D-r$, and $T-D$ is the total COM descendant degree. The highest-weight wedge columns are}{当 $r>j+k$ 时该系数为零，并关于 $j,k$ 作反对称延拓。第一次耦合分离两个单粒子因子的相对阶数 $r$，而 $r$ 为奇数正对应其反对称性；第二次耦合将它们的对质心与 $v_p$ 的质心分开，其相对阶数为 $D-r$，总质心后裔阶数为 $T-D$。最高权外积列为}
+\begin{equation}
+ w_{D,r}=\sum_{\substack{p+j+k=D\\j<k}}
+     S_r(D,D;p,j,k)\,v_p\wedge e_j\wedge e_k,
+ \qquad W_D=(w_{D,r})_{r\in\mathcal R_D},\qquad G_D=W_D^\dagger W_D.
+ \label{eq:F-wG}
+\end{equation}
+\bi{Each column has physical orbital degree $D+1$, because $v_p$ has degree $p+1$. With $i=p+j-t_\rho$, $k=q+l-t_\rho$, and $T=p+j+k=q+l+i$, set}{由于 $v_p$ 的轨道次数为 $p+1$，每列的物理轨道总次数为 $D+1$。令 $i=p+j-t_\rho$、$k=q+l-t_\rho$ 及 $T=p+j+k=q+l+i$，并设}
+\begin{equation}
+ (E_D)_{rs}=-\sum_{\rho=1}^{7}
+  \sum_{\substack{(p,j),(q,l)\in\operatorname{supp}(a^\rho)\\T\ge D}}
+  \alpha_{pj}^{\rho}\alpha_{ql}^{\rho}
+  S_r(D,T;p,j,k)S_s(D,T;q,l,i).
+ \label{eq:F-E}
+\end{equation}
+\bi{The entry pairs are ordered; exchanging them proves that $E_D$ is real symmetric. Their support implies $T\le23$. Let $\Pi_1$ denote the projection onto the copy index $r=1$, and fix $\varepsilon_{\mathrm F}=3\times10^{-6}$. The four-body certificate is}{两个输入项为有序取值；交换它们即可证明 $E_D$ 为实对称矩阵。支撑条件给出 $T\le23$。以 $\Pi_1$ 表示副本指标 $r=1$ 上的投影，并固定 $\varepsilon_{\mathrm F}=3\times10^{-6}$。四体证书为}
+\begin{equation}
+ G_D(2\Pi_1-E_D+\varepsilon_{\mathrm F}I)G_D\ge0,
+ \qquad 1\le D\le23.
+ \label{eq:F-four-certificate}
+\end{equation}
+\bi{Here $\Pi_1$ has no relation to the boundary semicharacter $\chi$. Appendix~\ref{app:F-four-arithmetic} gives a radical-free rational reconstruction of every matrix in \eqref{eq:F-four-certificate}, together with an exact positivity test.}{此处 $\Pi_1$ 与边界半特征 $\chi$ 无关。附录~\ref{app:F-four-arithmetic}给出式~\eqref{eq:F-four-certificate}中每个矩阵的无根式有理重建及精确正性检验。}
+
+\subsection{\bi{Normal ordering of the positive comparison operator}{正比较算符的正规序展开}}
+\label{subsec:F-squares}
+
+\bi{Using the fixed coefficients above, define the torus operators}{利用上述固定系数，定义环面算符}
+\begin{equation}
+ F_\rho(R)=\lambda_\rho B_{t_\rho}(R)
+       +\sum_{p,j}\alpha_{pj}^{\rho}
+           c_{p+j-t_\rho}(R)^\dagger c_j(R)B_p(R),
+ \qquad
+ K_T=\int_T\sum_{\rho=1}^{7}F_\rho(R)^\dagger F_\rho(R)\,\dd\mu_2(R)\ge0.
+ \label{eq:F-square}
+\end{equation}
+\bi{Every term ends in a pair annihilator. In particular, if $H\psi=0$, the exact pair-frame identity implies $B_p(R)\psi=0$ for every $p$ and almost every $R$, and continuity then gives this equality for all $R$. Hence $F_\rho(R)\psi=0$. The comparison thus preserves the zero-mode ideal exactly.}{每一项的右端均为对湮灭算符。特别地，若 $H\psi=0$，精确对框架恒等式推出对每个 $p$ 及几乎处处的 $R$ 均有 $B_p(R)\psi=0$；再由连续性可知该式对所有 $R$ 成立。因此 $F_\rho(R)\psi=0$，比较算符精确保留零模理想。}
+
+\bi{For one row, suppress $\rho$ and $R$, and put $i=p+j-t$, $k=q+l-t$. Write $g_{ik}=\langle u_i^T,u_k^T\rangle$ and $O_{p,j,k}=c_kc_jB_p$. Applying $c_ic_k^\dagger=g_{ik}-c_k^\dagger c_i$ yields the exact decomposition}{先对一行省略 $\rho,R$，并令 $i=p+j-t$、$k=q+l-t$。记 $g_{ik}=\langle u_i^T,u_k^T\rangle$ 及 $O_{p,j,k}=c_kc_jB_p$。应用 $c_ic_k^\dagger=g_{ik}-c_k^\dagger c_i$，得到精确分解}
+\begin{align}
+ (F^\dagger F)_2={}&\lambda^2 B_t^\dagger B_t,
+ \label{eq:F-normal2}\\
+ (F^\dagger F)_3={}&
+ \sum_{p,j}\lambda\alpha_{pj}
+ \bigl[(c_iB_t)^\dagger c_jB_p+(c_jB_p)^\dagger c_iB_t\bigr]
+ +\sum_{p,j;q,l}\alpha_{pj}\alpha_{ql}g_{ik}
+                      (c_jB_p)^\dagger c_lB_q,
+ \label{eq:F-normal3}\\
+ (F^\dagger F)_4={}&-
+ \sum_{p,j;q,l}\alpha_{pj}\alpha_{ql}
+                         O_{p,j,k}^\dagger O_{q,l,i}.
+ \label{eq:F-normal4}
+\end{align}
+\bi{Only the single contraction in \eqref{eq:F-normal3} contains the local Gram matrix. Let $K_3^{(0)}$ be its integral with $g_{ik}$ replaced by $\delta_{ik}$, including the displayed cross terms, and let $R_{3,\mathrm{metric}}$ be the difference. Let $K_4$ be the integral of \eqref{eq:F-normal4}, summed over rows. The pair-frame identity then gives}{只有式~\eqref{eq:F-normal3}中的单次收缩含有局部 Gram 矩阵。将其中 $g_{ik}$ 换为 $\delta_{ik}$ 并连同所示交叉项积分，记为 $K_3^{(0)}$；差值记为 $R_{3,\mathrm{metric}}$。将式~\eqref{eq:F-normal4}按全部行求和并积分，记为 $K_4$。由对框架恒等式，}
+\begin{equation}
+ K_T=\eta H+K_3^{(0)}+R_{3,\mathrm{metric}}+K_4.
+ \label{eq:F-K-decomposition}
+\end{equation}
+
+\bi{We identify $K_3^{(0)}$ explicitly. Before wedging, its coefficient matrix is on the formal input space $v_p\otimes e_j$. The Kronecker condition $i=k$ says exactly that $p+j=q+l=T$. In a cross term the second input is $v_t\otimes e_{T-t}$, so total degree is again preserved. At fixed $T$, change to the orthonormal coupled basis \eqref{eq:F-coupling}. A relative index $z$ has COM descendant degree $T-z$. The integral in Lemma~\ref{lem:ladder} kills matrix units with unequal descendant degrees and replaces each equal-descendant diagonal block by its highest-weight matrix unit. This traces the COM factor but does not delete any relative matrix entries. The diagonal coefficient that remains is exactly \eqref{eq:F-ez}. Hence}{下面明确识别 $K_3^{(0)}$。在取外积之前，其系数矩阵作用于形式输入空间 $v_p\otimes e_j$。Kronecker 条件 $i=k$ 恰等价于 $p+j=q+l=T$；交叉项的另一输入为 $v_t\otimes e_{T-t}$，故同样保持总次数。固定 $T$ 后，变换到式~\eqref{eq:F-coupling}的正交耦合基，相对指标 $z$ 的质心后裔阶数为 $T-z$。由引理~\ref{lem:ladder}，积分消去后裔阶数不同的矩阵单位，并将后裔阶数相同的对角分块化为相应最高权矩阵单位。这是对质心因子取迹，并未额外删除相对空间矩阵元。留下的对角系数恰为式~\eqref{eq:F-ez}，因此}
+\begin{equation}
+ K_3^{(0)}=\int_T\sum_{z=0}^{15}e_zD_z(R)^\dagger D_z(R)\,\dd\mu_2(R).
+ \label{eq:F-K3}
+\end{equation}
+\bi{Using \eqref{eq:F-three-certificate}, $\dd\mu_3=(3/2)\dd\mu_2$, the three zero wedge identities, and the nonnegativity of even degrees $z\ge16$, the exact three-body term satisfies}{使用式~\eqref{eq:F-three-certificate}、$\dd\mu_3=(3/2)\dd\mu_2$、三个零外积恒等式，以及 $z\ge16$ 时偶数阶项的非负性，精确三体项满足}
+\begin{equation}
+ C_3\ge K_3^{(0)}-\delta_\Lambda H.
+ \label{eq:F-three-comparison}
+\end{equation}
+
+\begin{lemma}[\bi{The finite Gram error is relative to $H$}{有限 Gram 误差相对于 $H$ 的控制}]
+\label{lem:F-metric}
+\bi{Let $n_\rho$ be the number of nonzero entries in row $\rho$, and define}{令 $n_\rho$ 为第 $\rho$ 行非零项的个数，并定义}
+\begin{equation}
+ C_\alpha^{\mathrm F}
+ =\sum_{\rho=1}^{7}n_\rho
+        \max_{0\le i\le8}
+        \sum_{p+j-t_\rho=i}(\alpha_{pj}^{\rho})^2
+ =\frac{297842353828763087}{16800000000000000}.
+ \label{eq:F-Calpha}
+\end{equation}
+\bi{Then, as quadratic-form inequalities on the fermionic Fock space,}{则在费米 Fock 空间上，以二次型不等式的意义有}
+\begin{equation}
+ -C_\alpha^{\mathrm F}e_8(1+e_8)H
+ \le R_{3,\mathrm{metric}}
+ \le C_\alpha^{\mathrm F}e_8(1+e_8)H.
+ \label{eq:F-metric-bound}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\bi{For a fixed row and center, put $X_i=\sum_{p+j-t_\rho=i}\alpha_{pj}^{\rho}c_jB_p$. The metric remainder is $\sum_{i,k}(g_{ik}-\delta_{ik})X_i^\dagger X_k$. Since $\|g-I\|\le e_8$, its absolute quadratic form on $\psi$ is at most $e_8\sum_i\|X_i\psi\|^2$. Cauchy--Schwarz gives}{固定一行及一个中心，令 $X_i=\sum_{p+j-t_\rho=i}\alpha_{pj}^{\rho}c_jB_p$。度量余项为 $\sum_{i,k}(g_{ik}-\delta_{ik})X_i^\dagger X_k$。由于 $\|g-I\|\le e_8$，其在 $\psi$ 上的二次型绝对值至多为 $e_8\sum_i\|X_i\psi\|^2$。由 Cauchy--Schwarz 不等式，}
+\begin{align}
+ \sum_i\|X_i\psi\|^2
+ &\le\left(\max_i\sum_{p+j-t_\rho=i}(\alpha_{pj}^{\rho})^2\right)
+             \sum_{(p,j)\in\operatorname{supp}(a^\rho)}
+                            \|c_jB_p\psi\|^2\notag\\
+ &\le(1+e_8)
+       \left(\max_i\sum_{p+j-t_\rho=i}(\alpha_{pj}^{\rho})^2\right)
+             \sum_{(p,j)\in\operatorname{supp}(a^\rho)}\|B_p\psi\|^2.
+ \label{eq:F-X-bound}
+\end{align}
+\bi{The second inequality uses $\|c_j\|^2=g_{jj}\le1+e_8$. Integrating each term with $\dd\mu_2$ gives $\langle\psi,H\psi\rangle$ exactly; there are $n_\rho$ terms. Summing over rows proves \eqref{eq:F-metric-bound}. Finally, squaring \eqref{eq:F-row-decode} removes every radical, so the value in \eqref{eq:F-Calpha} is computed using rational arithmetic alone.}{第二个不等式使用 $\|c_j\|^2=g_{jj}\le1+e_8$。按 $\dd\mu_2$ 积分后，每项恰给出 $\langle\psi,H\psi\rangle$，而该行共有 $n_\rho$ 项。对全部行求和即得~\eqref{eq:F-metric-bound}。最后，对式~\eqref{eq:F-row-decode}取平方消去全部根式，因此式~\eqref{eq:F-Calpha}中的数值完全由有理算术得到。}
+\end{proof}
+
+\subsection{\bi{Kernel-preserving four-body transfer and the count 1222}{保核四体迁移及计数常数 1222}}
+\label{subsec:F-four-transfer}
+
+\bi{The four-body term \eqref{eq:F-normal4} has no contraction and therefore no local Gram correction. Change each fixed-$T$ formal input block to the coupled basis \eqref{eq:F-S}. Integrating COM descendants by Lemma~\ref{lem:ladder} leaves its copy matrix $E_D$. If $w_{D,r}^T(R)=(\bigwedge^4C_R)w_{D,r}$, this gives the exact identity}{四体项~\eqref{eq:F-normal4}没有收缩，因此也没有局部 Gram 修正。将每个固定 $T$ 的形式输入分块变换到耦合基~\eqref{eq:F-S}，再按引理~\ref{lem:ladder}积分质心后裔，留下的副本矩阵为 $E_D$。令 $w_{D,r}^T(R)=(\bigwedge^4C_R)w_{D,r}$，则有精确恒等式}
+\begin{align}
+ K_4&=\int_T\sum_{D=1}^{23}\sum_{r,s\in\mathcal R_D}
+        (E_D)_{rs}A(w_{D,r}^T(R))^\dagger A(w_{D,s}^T(R))\,\dd\mu_2(R)
+        \notag\\
+    &=\frac12\int_T\sum_{D=1}^{23}\sum_{r,s\in\mathcal R_D}
+        (E_D)_{rs}A(w_{D,r}^T(R))^\dagger A(w_{D,s}^T(R))\,\dd\mu_4(R).
+ \label{eq:F-K4}
+\end{align}
+\bi{At copy index $r=1$, the second two-particle factor also has relative degree one. The remaining coupling has relative degree $d=D-1$, and its coefficient is the normalized binomial coefficient in \eqref{eq:F-Cd}. Therefore}{当副本指标 $r=1$ 时，第二个双粒子因子的相对阶数同样为一。余下耦合的相对阶数为 $d=D-1$，系数恰为式~\eqref{eq:F-Cd}中的归一化二项式系数。因此}
+\begin{equation}
+ A(w_{D,1}^T(R))=C_{D-1}(R),\qquad
+ T_4=2\int_T\sum_{D=1}^{23}
+                  A(w_{D,1}^T(R))^\dagger A(w_{D,1}^T(R))\,\dd\mu_2(R).
+ \label{eq:F-target-copy}
+\end{equation}
+\bi{Both $\dd\mu_4=2\dd\mu_2$ and $D=d+1$ are needed here; together they produce $2\Pi_1$ in the certificate. For even $D$, the $r=1$ column is antisymmetric under exchange of its two pairs, while wedging two degree-two vectors is symmetric, so that column vanishes. The formulas do not require this column, or any other column, to be nonzero or independent.}{这里必须同时使用 $\dd\mu_4=2\dd\mu_2$ 和 $D=d+1$，二者共同产生证书中的 $2\Pi_1$。若 $D$ 为偶数，$r=1$ 列关于两对交换反对称，而两个二阶外积向量的外积关于该交换对称，故该列为零。以上公式并不要求此列或其他列非零，也不要求列向量线性无关。}
+
+\bi{To transfer the certificate, let $A_D=2\Pi_1-E_D+\varepsilon_{\mathrm F}I$. The inequalities $G_DA_DG_D\ge0$ and $W_DA_DW_D^\dagger\ge0$ are equivalent: both test the same quadratic form on $\operatorname{ran}(G_D)=\operatorname{ran}(W_D^\dagger)$. Applying the finite linear map $\bigwedge^4C_R$ by congruence preserves positivity exactly. Applying the positive lift $\mathcal L_4$ and integrating then yields}{为迁移证书，令 $A_D=2\Pi_1-E_D+\varepsilon_{\mathrm F}I$。不等式 $G_DA_DG_D\ge0$ 与 $W_DA_DW_D^\dagger\ge0$ 等价，因为二者检验的是 $\operatorname{ran}(G_D)=\operatorname{ran}(W_D^\dagger)$ 上的同一个二次型。对其施以有限线性映射 $\bigwedge^4C_R$ 的合同变换，会精确保留正性。再应用保正提升 $\mathcal L_4$ 并积分，即得}
+\begin{equation}
+ K_4\le T_4+\varepsilon_{\mathrm F}R_4,\qquad
+ R_4=\int_T\sum_{D=1}^{23}\sum_{r\in\mathcal R_D}
+           A(w_{D,r}^T(R))^\dagger A(w_{D,r}^T(R))\,\dd\mu_2(R).
+ \label{eq:F-R4}
+\end{equation}
+\bi{In particular, the proof never inverts $G_D$ and never perturbs its zero eigenvalues. It transports a positive physical four-body operator, rather than asserting positivity of $A_D$ on the entire copy space.}{特别地，证明既不求 $G_D$ 的逆，也不扰动其零本征值；迁移的是正的物理四体算符，而非声称 $A_D$ 在整个副本空间上非负。}
+
+\bi{The allowance $R_4$ also has a particle-number-independent pair-energy bound. For fixed $D$, the coefficient rows $S_r(D,D;p,j,k)$ are orthonormal in the formal input coordinates $(p,j,k)$ with $p+j+k=D$ and $j<k$. This follows by applying the two orthogonal changes of variables in \eqref{eq:F-S} in succession. Bessel's inequality remains valid when those coordinates are arbitrary Hilbert-space vectors, so}{余项 $R_4$ 同样具有与粒子数无关的对能量界。固定 $D$ 时，系数行 $S_r(D,D;p,j,k)$ 在满足 $p+j+k=D$、$j<k$ 的形式输入坐标 $(p,j,k)$ 中正交归一；这可由依次施行式~\eqref{eq:F-S}中的两个正交变量变换得到。将这些坐标替换为任意 Hilbert 空间向量后，Bessel 不等式仍然成立，因此}
+\begin{align}
+ \sum_{r\in\mathcal R_D}\|A(w_{D,r}^T(R))\psi\|^2
+ &\le\sum_{\substack{p+j+k=D\\j<k}}
+                       \|c_k(R)c_j(R)B_p(R)\psi\|^2\notag\\
+ &\le(1+e_{24})^2
+       \sum_{\substack{p+j+k=D\\j<k}}\|B_p(R)\psi\|^2.
+ \label{eq:F-Bessel-R4}
+\end{align}
+\bi{The last step uses the one-particle CAR norm bound twice. It does not assume that physical torus jets or their wedge images are orthogonal. For $n=j+k\ge1$, there are exactly $\lceil n/2\rceil$ nonnegative pairs $j<k$ with that sum, and $p=D-n$ is determined. Hence}{最后一步两次使用单粒子 CAR 范数界，并不假设物理环面 jets 或它们的外积像正交。对 $n=j+k\ge1$，满足该和的非负整数对 $j<k$ 恰有 $\lceil n/2\rceil$ 个，而 $p=D-n$ 随之确定。因此}
+\begin{equation}
+ n_D=\sum_{n=1}^{D}\left\lceil\frac n2\right\rceil
+     =\left\lfloor\frac{(D+1)^2}{4}\right\rfloor,
+ \qquad \sum_{D=1}^{23}n_D=1222.
+ \label{eq:F-1222-count}
+\end{equation}
+\bi{Integrating every pair term in \eqref{eq:F-Bessel-R4} with the exact pair-frame identity proves}{对式~\eqref{eq:F-Bessel-R4}中的每个对项应用精确对框架恒等式并积分，即得}
+\begin{equation}
+ R_4\le1222(1+e_{24}(\Lambda))^2H,
+ \qquad
+ K_4\le T_4+1222\varepsilon_{\mathrm F}(1+e_{24}(\Lambda))^2H.
+ \label{eq:F-four-final}
+\end{equation}
+
+\subsection{\bi{Closing the fermionic gap estimate}{完成费米谱隙估计}}
+\label{subsec:F-budget}
+
+\bi{We collect the estimates as quadratic forms. The exact normal-ordering identity is $H^2=\mathcal L_2(h_T^2)+C_3+S_4$. The all-COM contact-frame estimate gives $\mathcal L_2(h_T^2)\ge(1-\varepsilon_2^{\mathrm F}(\Lambda))H$; it does not replace $h_T^2$ by $h_T$. Combining this bound with \eqref{eq:F-three-comparison} and \eqref{eq:F-four-payment} yields}{现以二次型形式汇总各估计。精确正规序恒等式为 $H^2=\mathcal L_2(h_T^2)+C_3+S_4$。覆盖全部质心模式的接触框架估计给出 $\mathcal L_2(h_T^2)\ge(1-\varepsilon_2^{\mathrm F}(\Lambda))H$，并未将 $h_T^2$ 直接换为 $h_T$。将此界与式~\eqref{eq:F-three-comparison}和~\eqref{eq:F-four-payment}合并，得到}
+\begin{align}
+ H^2\ge K_3^{(0)}+T_4+
+  \bigl[1-\varepsilon_2^{\mathrm F}-\delta_\Lambda
+                  -C_4^{\mathrm F}\varepsilon_4^{\mathrm F}\bigr]H.
+ \label{eq:F-budget-first}
+\end{align}
+\bi{Next, \eqref{eq:F-K-decomposition}, \eqref{eq:F-metric-bound}, and \eqref{eq:F-four-final} imply}{接着，由式~\eqref{eq:F-K-decomposition}、\eqref{eq:F-metric-bound}及~\eqref{eq:F-four-final}，}
+\begin{equation}
+ K_3^{(0)}+T_4
+ \ge K_T-
+ \bigl[\eta+C_\alpha^{\mathrm F}e_8(1+e_8)
+              +1222\varepsilon_{\mathrm F}(1+e_{24})^2\bigr]H.
+ \label{eq:F-budget-second}
+\end{equation}
+\bi{Consequently}{因此}
+\begin{align}
+ H^2&\ge K_T+\Gamma_{\mathrm F}(\Lambda)H
+       \ge\Gamma_{\mathrm F}(\Lambda)H,\label{eq:F-final-gap}\\
+ \Gamma_{\mathrm F}(\Lambda)
+ &=1-\eta-\delta_\Lambda
+      -1222\varepsilon_{\mathrm F}(1+e_{24}(\Lambda))^2
+      -\varepsilon_2^{\mathrm F}(\Lambda)\notag\\
+ &\hspace{1.5em}-C_\alpha^{\mathrm F}e_8(\Lambda)(1+e_8(\Lambda))
+      -C_4^{\mathrm F}(\Lambda)\varepsilon_4^{\mathrm F}(\Lambda).
+ \label{eq:F-Gamma}
+\end{align}
+\bi{Every term in this scalar budget has been paid for by the same operator $H$. Fixed-degree Gram errors and the two finite relative-frame errors tend to zero uniformly as the actual shortest nonzero lattice vector tends to infinity. Equation~\eqref{eq:F-tail-limit} gives the remaining limit. Therefore}{此标量预算中的每一项均以同一个算符 $H$ 支付。随着实际最短非零格矢趋于无穷，固定阶 Gram 误差及两个有限相对框架误差均一致趋于零；剩余尾项的极限由式~\eqref{eq:F-tail-limit}给出。因此}
+\begin{equation}
+ \lim_{\ell(\Lambda)\to\infty}\Gamma_{\mathrm F}(\Lambda)
+ =1-\frac{93527408868499}{10^{14}}-\frac{61}{4096}
+       -1222\frac{3}{10^6}
+ =\frac{4616733319001}{10^{14}}
+ =:\gamma_{\mathrm F}^{*}.
+ \label{eq:F-gamma-star}
+\end{equation}
+\bi{Given $0<\gamma<\gamma_{\mathrm F}^{*}$, uniform convergence supplies a systole threshold $L_\gamma$ for which $\Gamma_{\mathrm F}(\Lambda)\ge\gamma$. Then \eqref{eq:F-final-gap} proves $H^2\ge\gamma H$ on every particle sector and hence on the full fermionic Fock space. A positive eigenvalue $E$ satisfies $E^2\ge\gamma E$, so $E\ge\gamma$. This proves the gap assertion of Theorem~\ref{thm:fermion}. The argument supplies an asymptotic threshold, not an explicit numerical value of $L_\gamma$.}{任给 $0<\gamma<\gamma_{\mathrm F}^{*}$，一致收敛保证存在最短周期阈值 $L_\gamma$，使 $\Gamma_{\mathrm F}(\Lambda)\ge\gamma$。于是式~\eqref{eq:F-final-gap}在每个粒子扇区乃至整个费米 Fock 空间上给出 $H^2\ge\gamma H$。任意正本征值 $E$ 均满足 $E^2\ge\gamma E$，故 $E\ge\gamma$，从而证明定理~\ref{thm:fermion}的谱隙结论。本论证给出渐近阈值的存在性，而未提供 $L_\gamma$ 的显式数值。}
+
+\bi{In particular, $1/25<\gamma_{\mathrm F}^{*}$. At $M=3N$, the common zero-mode argument identifies the three-dimensional Laughlin ground space, and the same inequality gives a gap at least $1/25$ once the systole is sufficiently large. Particle number, magnetic flux, and twist do not enter the error constants. The geometric condition remains essential: neither increasing area alone nor choosing two long but nearly parallel lattice generators ensures a large shortest cycle.}{特别地，$1/25<\gamma_{\mathrm F}^{*}$。当 $M=3N$ 时，公共零模论证确定了三维 Laughlin 基态空间，而同一不等式在最短周期充分大后给出至少 $1/25$ 的谱隙。粒子数、磁通量和 twist 均不进入误差常数。但几何条件不可省略：仅面积增大，或选取两个很长却近乎平行的格子生成元，都不能保证最短周期很长。}

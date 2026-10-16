@@ -1,0 +1,264 @@
+\section{\bi{Exact definition and verification of the bosonic finite certificate}{玻色有限证书的精确定义与验证}}
+\label{sec:B-certificate}
+
+\bi{This appendix specifies the finite arithmetic input to \eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four}. The construction starts from rational row data, forms the physical normal-ordered coefficients, takes a finite center-of-mass partial trace, and tests twenty-six rational quadratic forms. Each step is stated explicitly so that the finite verification can be reproduced independently of the implementation that generated the rows. The analytic transfer to the torus and the occupation estimates are proved in Section~\ref{sec:B-bosonic}; they are not inferred from these finite tests.}
+{本附录明确给出式~\eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four} 的有限算术输入。构造从有理行数据出发，形成物理正规序系数，取有限质心偏迹，最后检验二十六个有理二次型。以下逐步写明其定义，使有限验证可以独立于生成这些行的实现而复现。到环面的解析移植和占据数估计已在第~\ref{sec:B-bosonic} 节证明，并非从这些有限检验推断。}
+
+\subsection{\bi{Frozen rows and canonical polynomial coordinates}{冻结行与正则多项式坐标}}
+\label{sec:B-certificate-input}
+
+\bi{The numerical input consists of the integers in the accompanying file \texttt{data/\allowbreak bosonic/\allowbreak exact\_\allowbreak shifted\_\allowbreak certificate\_\allowbreak rows.json}, taken from the fixed source accompanying Shen~\cite{Shen2026BosonicCandidate}. No fitted coefficient is recomputed for the torus. For channel $t=0,1,2,3$, the ordered list of columns is}
+{数值输入由随附文件 \texttt{data/\allowbreak bosonic/\allowbreak exact\_\allowbreak shifted\_\allowbreak certificate\_\allowbreak rows.json} 中的整数构成，取自 Shen~\cite{Shen2026BosonicCandidate} 的固定附属来源。环面上不重新拟合任何系数。对通道 $t=0,1,2,3$，列按以下顺序排列：}
+\begin{equation}
+ \mathcal I_t=(\varnothing)\,\Vert\,
+      \bigl((p,d-p):d=t,t+1,\ldots,8;\ p=0,1,\ldots,d\bigr).
+ \label{eq:B-ordered-columns}
+\end{equation}
+\bi{Here $\varnothing$ is the first column, for the pair term, and $\Vert$ denotes concatenation. The file stores this list as \texttt{terms}, the rows as \texttt{integer\_\allowbreak scaled\_\allowbreak rows}, and the common denominator as \texttt{common\_\allowbreak denominator}. The complete sizes are}
+{其中 $\varnothing$ 是配对项所在的首列，$\Vert$ 表示串接。文件分别用 \texttt{terms} 保存该列序、用 \texttt{integer\_\allowbreak scaled\_\allowbreak rows} 保存整数行、用 \texttt{common\_\allowbreak denominator} 保存共同分母。全部尺寸为}
+\begin{equation}
+ \begin{array}{c|rrrr}
+ t&0&1&2&3\\ \hline
+ |\mathcal I_t|&46&45&43&40\\
+ \#\{\rho:t_\rho=t\}&31&37&36&34
+ \end{array},\qquad \mathrm{denominator}=10^{12}.
+ \label{eq:B-row-sizes}
+\end{equation}
+\bi{Dividing the stored integer $m_{\rho,a}$ by $10^{12}$ defines $y_{\rho,a}$, including $y_{\rho,\varnothing}=y_0^\rho$. Equation~\eqref{eq:B-row-decoding}, with the positive square root for each $\kappa_p$, uniquely decodes the physical real coefficients. Equivalently, the row itself is the rational polynomial operator \eqref{eq:B-rational-row}. These specifications fix the input without any floating-point rounding.}
+{将存储整数 $m_{\rho,a}$ 除以 $10^{12}$ 定义 $y_{\rho,a}$，其中 $y_{\rho,\varnothing}=y_0^\rho$。式~\eqref{eq:B-row-decoding} 中各 $\kappa_p$ 取正平方根，便唯一确定物理实系数；等价地，每行就是式~\eqref{eq:B-rational-row} 的有理多项式算符。这些规定不经任何浮点舍入即固定了输入。}
+
+\bi{For $k$ particles and total orbital degree $d$, use the lexicographically ordered basis}
+{对 $k$ 个粒子和总轨道次数 $d$，采用按字典序排列的基}
+\begin{equation}
+ \mathcal B_{k,d}
+  =\{A=(a_1,\ldots,a_k):0\le a_1\le\cdots\le a_k,
+                              \ \textstyle\sum_\ell a_\ell=d\},
+ \qquad |A]_x=\prod_{j\ge0}x_j^{n_j(A)}|0\rangle.
+ \label{eq:B-rational-basis}
+\end{equation}
+\bi{The occupation $n_j(A)$ counts occurrences of $j$ in $A$. The Gram matrix in this basis is diagonal:}
+{占据数 $n_j(A)$ 是 $j$ 在 $A$ 中出现的次数。此基的 Gram 矩阵为对角矩阵：}
+\begin{equation}
+ G_{k,d}=\operatorname{diag}(g_A:A\in\mathcal B_{k,d}),\qquad
+ g_A=\prod_{j\ge0}n_j(A)!(j!)^{n_j(A)}.
+ \label{eq:B-integer-metric}
+\end{equation}
+\bi{A coefficient matrix acts on column vectors. If $O$ is an operator on this degree block, its quadratic-form matrix is $G_{k,d}O$. Physical adjoints obey $\partial_j^*=x_j/j!$ and $x_j^*=j!\partial_j$, rather than $\partial_j^*=x_j$. For a map $F$ between two blocks, its adjoint matrix is $G_{\rm in}^{-1}F^{\mathsf T}G_{\rm out}$. Thus all adjoints and all form matrices can be computed over the rational numbers.}
+{算符系数矩阵作用于列向量。若 $O$ 是该次数块上的算符，其二次型矩阵为 $G_{k,d}O$。物理伴随满足 $\partial_j^*=x_j/j!$ 和 $x_j^*=j!\partial_j$，而非 $\partial_j^*=x_j$。对两个分块间的映射 $F$，其伴随矩阵为 $G_{\rm in}^{-1}F^{\mathsf T}G_{\rm out}$。因此，所有伴随和二次型矩阵都可在有理数域上计算。}
+
+\bi{For completeness, every monomial matrix entry is fixed by the elementary action}
+{为使定义完整，每个单项式矩阵元由以下初等作用唯一确定：}
+\begin{equation}
+ x^\mu\partial^\nu\prod_jx_j^{n_j}
+   =\left[\prod_j(n_j)_{\nu_j}\right]
+       \prod_jx_j^{n_j-\nu_j+\mu_j},
+ \qquad
+ (n)_r=\begin{cases}n!/(n-r)!,&n\ge r,\\0,&n<r.\end{cases}
+ \label{eq:B-monomial-action}
+\end{equation}
+\bi{The coefficient is zero whenever a required annihilation is unavailable. Ordered pair sums are retained as ordered sums, including both terms when the two orbital labels differ; this is required by $\widehat B_p=\sum_{a+b=p}\partial_a\partial_b$. No additional factorial is attached to the physical lift.}
+{当所需湮灭无法完成时，系数为零。配对求和始终保留有序求和形式，两个轨道标号不同时两项都计入，这是 $\widehat B_p=\sum_{a+b=p}\partial_a\partial_b$ 的定义所要求的。物理提升不再附加额外阶乘。}
+
+\subsection{\bi{Direct rational construction of the body coefficients}{体阶系数的直接有理构造}}
+\label{sec:B-certificate-matrices}
+
+\bi{It is sufficient to form the rational row Gram matrices}
+{只需形成有理行 Gram 矩阵}
+\begin{equation}
+ \Gamma_{ab}^{(t)}
+     =\sum_{\rho:t_\rho=t}y_{\rho,a}y_{\rho,b}
+     =10^{-24}\sum_{\rho:t_\rho=t}m_{\rho,a}m_{\rho,b},
+ \qquad a,b\in\mathcal I_t.
+ \label{eq:B-row-gram}
+\end{equation}
+\bi{Write $P_p=\widehat B_p^*=\sum_{a+b=p}x_ax_b/(a!b!)$. For a noninitial column $a=(p,j)$ set $i=p+j-t$, and for $b=(p',j')$ set $i'=p'+j'-t$. Directly commuting $\partial_i$ through $x_{i'}$ gives the following rational normal-ordered operators:}
+{记 $P_p=\widehat B_p^*=\sum_{a+b=p}x_ax_b/(a!b!)$。对非首列 $a=(p,j)$，令 $i=p+j-t$；对 $b=(p',j')$，令 $i'=p'+j'-t$。直接将 $\partial_i$ 与 $x_{i'}$ 对易，得到以下有理正规序算符：}
+\begin{align}
+ \mathsf M_3
+ ={}&\sum_{t=0}^3\sum_{a=(p,j)\in\mathcal I_t\setminus\{\varnothing\}}
+       \Gamma_{\varnothing a}^{(t)}
+       \left(P_t x_i\partial_j\widehat B_p
+                 +(P_t x_i\partial_j\widehat B_p)^*\right)
+ \notag\\
+ &+\sum_{t=0}^3\sum_{a=(p,j),\,b=(p',j')}
+       \Gamma_{ab}^{(t)}\frac{i!}{j!}\,\delta_{ii'}
+           P_p x_j\partial_{j'}\widehat B_{p'},
+ \label{eq:B-rational-M3}\\
+ \mathsf M_4
+ ={}&\sum_{t=0}^3\sum_{a=(p,j),\,b=(p',j')}
+       \Gamma_{ab}^{(t)}\frac{i!}{j!}
+           P_p x_jx_{i'}\partial_i\partial_{j'}\widehat B_{p'}.
+ \label{eq:B-rational-M4}
+\end{align}
+\bi{The double sums run over noninitial columns of $\mathcal I_t$. For example, $(x_i\partial_j\widehat B_p)^*=(i!/j!)P_px_j\partial_i$, which explains the factorial ratio in both formulas. These equations are precisely \eqref{eq:B-row-three}--\eqref{eq:B-row-four} after the change of variables, and they need no recursive subtraction between particle sectors. Each monomial in $\mathsf M_k$ has exactly $k$ creators and $k$ annihilators. Restricting it to $k$ particles therefore gives its physical $k$-body coefficient itself.}
+{双重求和遍历 $\mathcal I_t$ 的非首列。例如，$(x_i\partial_j\widehat B_p)^*=(i!/j!)P_px_j\partial_i$，这解释了两式中的阶乘比。以上两式恰为式~\eqref{eq:B-row-three}--\eqref{eq:B-row-four} 在坐标变换后的形式，不需要在不同粒子数扇区间作递归扣除。$\mathsf M_k$ 的每个单项式恰有 $k$ 个创建和 $k$ 个湮灭算符，因此将其限制到 $k$ 粒子空间，就得到物理 $k$ 体系数本身。}
+
+\bi{Let $M_{k,d}$ be the matrix obtained from \eqref{eq:B-rational-M3} or \eqref{eq:B-rational-M4} on $\mathcal B_{k,d}$ using \eqref{eq:B-monomial-action}. Its form matrix is $G_{k,d}M_{k,d}$. The three-body matrix vanishes for $d>8$ and the four-body matrix vanishes for $d>16$, because the creators' total orbital degrees in the displayed monomials obey these bounds. The two-body row contribution is fixed separately by}
+{用式~\eqref{eq:B-monomial-action}，将式~\eqref{eq:B-rational-M3} 或式~\eqref{eq:B-rational-M4} 作用于 $\mathcal B_{k,d}$，所得矩阵记为 $M_{k,d}$，其二次型矩阵为 $G_{k,d}M_{k,d}$。三体矩阵在 $d>8$ 时为零，四体矩阵在 $d>16$ 时为零，因为上述单项式中创建算符的总轨道次数满足这些上界。两体行贡献则单独由下式固定：}
+\begin{equation}
+ \eta=\sum_{t=0}^3\Gamma_{\varnothing\varnothing}^{(t)}
+                         \frac{2^{t+1}}{t!}.
+ \label{eq:B-eta-rational}
+\end{equation}
+
+\bi{The planar target matrices have equally explicit rational definitions. On $\mathcal B_{k,d}$, let $H_{k,d}^{\rm pl}$ be the matrix of}
+{平面目标矩阵也有同样显式的有理定义。在 $\mathcal B_{k,d}$ 上，令 $H_{k,d}^{\rm pl}$ 为下列算符的矩阵：}
+\begin{equation}
+ H_k^{\rm pl}=\sum_{p\ge0}\frac{p!}{2^{p+1}}P_p\widehat B_p.
+ \label{eq:B-rational-H}
+\end{equation}
+\bi{Only $p\le d$ contribute. For three particles define $S_{3,d}^{\rm pl}=(H_{3,d}^{\rm pl})^2-H_{3,d}^{\rm pl}$. This is the connected coefficient because the planar pair operator is a projection and no four-body term acts on three particles. For four particles the zero-contraction coefficient on degree $d$ is the matrix of}
+{只有 $p\le d$ 的项有贡献。对三粒子，定义 $S_{3,d}^{\rm pl}=(H_{3,d}^{\rm pl})^2-H_{3,d}^{\rm pl}$。由于平面配对算符是投影，且四体项在三粒子空间上不作用，它正是连通系数。对四粒子，次数 $d$ 的零收缩系数由下列算符的矩阵给出：}
+\begin{equation}
+ S_{4,d}^{\rm pl}
+   =\left.\sum_{p+q=d}\frac{p!q!}{2^{d+2}}
+                     P_pP_q\widehat B_p\widehat B_q
+                    \right|_{\mathcal B_{4,d}}.
+ \label{eq:B-rational-S4}
+\end{equation}
+\bi{Here $p+q=d$ because the four annihilators leave the vacuum. The ordered sum over $p,q$ is the zero-contraction sum from the square of $\sum_pB_p^\dagger B_p$, so its normalization agrees with the physical $S_4$.}
+{这里必须有 $p+q=d$，因为四次湮灭后留下真空。对 $p,q$ 的有序求和就是 $\sum_pB_p^\dagger B_p$ 平方的零收缩求和，因此其归一化与物理 $S_4$ 一致。}
+
+\subsection{\bi{Relative blocks and the exact center-of-mass trace}{相对分块与精确质心偏迹}}
+\label{sec:B-certificate-relative}
+
+\bi{On the $k$-particle space, the physical oscillator operators become the integer-coefficient polynomial operators}
+{在 $k$ 粒子空间上，物理振子算符化为整数系数多项式算符}
+\begin{equation}
+ L_{\rm osc}=\sum_{j\ge1}j x_{j-1}\partial_j,
+ \qquad L_{\rm osc}^\dagger=\sum_{j\ge0}x_{j+1}\partial_j,
+ \qquad [L_{\rm osc},L_{\rm osc}^\dagger]=kI.
+ \label{eq:B-rational-ladder}
+\end{equation}
+\bi{For each $z$, form the matrix of $L_{\rm osc}:\mathcal B_{k,z}\to\mathcal B_{k,z-1}$ by \eqref{eq:B-monomial-action}. A rational column matrix $U_{k,z}$ spanning its kernel defines the full relative space. A deterministic choice is the usual reduced-row-echelon kernel basis: scan columns in the order \eqref{eq:B-rational-basis}, use the first available pivot, and list the free-variable vectors in increasing column order. No orthogonalization is needed.}
+{对每个 $z$，使用式~\eqref{eq:B-monomial-action} 形成 $L_{\rm osc}:\mathcal B_{k,z}\to\mathcal B_{k,z-1}$ 的矩阵。以有理列矩阵 $U_{k,z}$ 张成其核，即定义完整相对空间。可以确定性地选取通常的简化行阶梯形零空间基：按式~\eqref{eq:B-rational-basis} 的列序扫描，选取首个可用主元，并按列序递增排列自由变量基向量。此处不需要正交化。}
+
+\bi{Write $D_{k,z}^{(m)}=(L_{\rm osc}^\dagger)^{m-z}U_{k,z}$ for the unnormalized descendants in total degree $m\ge z$. The oscillator relation implies that the normalized descendant is $D_{k,z}^{(m)}/\sqrt{k^{m-z}(m-z)!}$; the relative basis itself may remain nonorthonormal. Let $d_3=8$ and $d_4=16$. The relative form matrix of the averaged row coefficient is then}
+{记 $D_{k,z}^{(m)}=(L_{\rm osc}^\dagger)^{m-z}U_{k,z}$ 为总次数 $m\ge z$ 的未归一化后裔。振子关系给出规范化后裔为 $D_{k,z}^{(m)}/\sqrt{k^{m-z}(m-z)!}$，而相对基本身可以继续保持非正交。令 $d_3=8$、$d_4=16$，则平均行系数的相对二次型矩阵为}
+\begin{equation}
+ \overline M_{k,z}
+   =\frac2k\sum_{m=z}^{d_k}
+       \frac{(D_{k,z}^{(m)})^{\mathsf T}
+                 G_{k,m}M_{k,m}D_{k,z}^{(m)}}
+            {k^{m-z}(m-z)!}.
+ \label{eq:B-finite-partial-trace}
+\end{equation}
+\bi{This is the full center-of-mass partial trace, with the same factor $2/k$ as \eqref{eq:B-torus-seed}. Every center-of-mass descendant with nonzero anchored coefficient is included. The sum is finite because the anchored degree support is finite. The square-root descendant normalization has canceled between the two sides of the quadratic form, so every matrix entry remains rational.}
+{这正是完整质心偏迹，其因子 $2/k$ 与式~\eqref{eq:B-torus-seed} 相同。所有具有非零锚定系数的质心后裔均被纳入。由于锚定次数支撑有限，该和是有限和。后裔归一化中的平方根在二次型两侧相消，因此每个矩阵元仍为有理数。}
+
+\bi{The relative target forms are}
+{相对目标二次型为}
+\begin{equation}
+ h_{k,z}=U_{k,z}^{\mathsf T}G_{k,z}H_{k,z}^{\rm pl}U_{k,z},
+ \qquad
+ s_{k,z}=U_{k,z}^{\mathsf T}G_{k,z}S_{k,z}^{\rm pl}U_{k,z}.
+ \label{eq:B-relative-targets}
+\end{equation}
+\bi{Thus the twenty-six matrices that must be positive are exactly}
+{因此，须检验为正的二十六个矩阵精确为}
+\begin{align}
+ E_{3,z}&=s_{3,z}-\overline M_{3,z}+\delta_Bh_{3,z},
+                      &&z=0,\ldots,8,
+ \label{eq:B-exact-E3}\\
+ E_{4,z}&=\alpha_Bs_{4,z}-\overline M_{4,z}+\delta_Bh_{4,z},
+                      &&z=0,\ldots,16.
+ \label{eq:B-exact-E4}
+\end{align}
+\bi{All symbols on the right-hand sides have been defined by finite sums, rational arithmetic, and the fixed integer input. Positive semidefiniteness in this nonorthogonal relative basis is equivalent to the physical operator inequalities, because $U_{k,z}$ is an injective parametrization of the entire relative space.}
+{右侧所有符号均已通过有限求和、有理数运算和固定整数输入定义。由于 $U_{k,z}$ 是整个相对空间的单射参数化，在这一非正交相对基中的半正定性等价于物理算符不等式。}
+
+\subsection{\bi{Exact positivity, ranks, and zero kernels}{精确正性、秩与零核}}
+\label{sec:B-certificate-positivity}
+
+\bi{Each form matrix is first checked to be symmetric over the rational numbers. The positivity test repeatedly chooses a strictly positive diagonal entry $p$, permutes it to the first position, and replaces the remaining block $C$ by its Schur complement $C-bb^{\mathsf T}/p$. The justification is the exact congruence}
+{首先在有理数域上检查每个二次型矩阵的对称性。正性检验反复选取一个严格为正的对角元 $p$，将其置换到首位，并将剩余块 $C$ 替换为 Schur 补 $C-bb^{\mathsf T}/p$。其依据是精确合同关系}
+\begin{equation}
+ \begin{pmatrix}p&b^{\mathsf T}\\ b&C\end{pmatrix}
+ \sim
+ \begin{pmatrix}p&0\\0&C-bb^{\mathsf T}/p\end{pmatrix}.
+ \label{eq:B-Schur-congruence}
+\end{equation}
+\bi{At every stage, all diagonal entries are required to be nonnegative. If no positive diagonal entry remains, every remaining entry must be exactly zero. This last check is essential: a nonzero off-diagonal entry in a matrix with zero diagonal would prevent positive semidefiniteness. Termination with positive pivots and an exact zero block proves positive semidefiniteness by the displayed congruence, and the number of positive pivots is its rank. No numerical eigenvalue threshold is used.}
+{每一步均要求所有对角元非负。若不再存在正对角元，则所有剩余矩阵元都必须精确为零。最后这一检验不可省略：零对角矩阵中的非零非对角元会破坏半正定性。依照上述合同关系，以正主元和精确零块结束即证明半正定性，而正主元个数就是矩阵秩。整个过程不使用数值本征值阈值。}
+
+\bi{For each block, rational row reduction gives $\ker h_{k,z}$. Verify exactly that $E_{k,z}\ker h_{k,z}=0$. Independently apply the same positive-pivot test to $h_{k,z}$ and compare ranks. The resulting dimensions and ranks of all blocks are as follows; each rank shown is simultaneously the rank of $E_{k,z}$ and $h_{k,z}$.}
+{对每个分块，用有理行消元计算 $\ker h_{k,z}$，并精确检验 $E_{k,z}\ker h_{k,z}=0$。再独立地对 $h_{k,z}$ 作同样的正主元检验并比较秩。全部分块的维数和秩如下，其中每个所列秩同时是 $E_{k,z}$ 与 $h_{k,z}$ 的秩。}
+\begin{equation}
+ \begin{array}{c|rrrrrrrrr}
+ k=3,\ z&0&1&2&3&4&5&6&7&8\\ \hline
+ \dim&1&0&1&1&1&1&2&1&2\\
+ \operatorname{rank}&1&0&1&1&1&1&1&1&1
+ \end{array}
+ \label{eq:B-three-block-table}
+\end{equation}
+\begin{equation}
+ \begin{array}{c|rrrrrrrrr}
+ k=4,\ z&0&1&2&3&4&5&6&7&8\\ \hline
+ \dim&1&0&1&1&2&1&3&2&4\\
+ \operatorname{rank}&1&0&1&1&2&1&3&2&4
+ \end{array}
+ \label{eq:B-four-block-table-one}
+\end{equation}
+\begin{equation}
+ \begin{array}{c|rrrrrrrr}
+ k=4,\ z&9&10&11&12&13&14&15&16\\ \hline
+ \dim&3&5&4&7&5&8&7&10\\
+ \operatorname{rank}&3&5&4&6&5&7&6&8
+ \end{array}
+ \label{eq:B-four-block-table-two}
+\end{equation}
+\bi{The input includes both degree-one zero-dimensional blocks. Across the other blocks the procedure produces sixty-seven strictly positive rational pivots; the remaining Schur blocks are identically zero. The full fractions are included with the machine-readable certificate results. The zero-kernel checks and equal ranks show that each $E_{k,z}$ is strictly positive on the physical image of $H_{k,z}^{\rm pl}$ and vanishes on its kernel. In particular, this proves \eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four} as positive coefficient inequalities on the full relative multiplicity spaces.}
+{输入包括次数一的两个零维块。在其余分块上，该过程产生六十七个严格为正的有理主元，剩余 Schur 块恒为零。全部分数随机器可读证书结果提供。零核检验和秩相等说明，每个 $E_{k,z}$ 在 $H_{k,z}^{\rm pl}$ 的物理像空间上严格为正，并在其零核上消失。特别地，这证明了式~\eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four} 在完整相对重数空间上的正系数不等式。}
+
+\bi{The row constant used for the torus commutator error is also obtained directly from the same integers:}
+{环面对易误差所用的行常数也直接从同一组整数得到：}
+\begin{equation}
+ C_{\rm rows}^B
+  =\sum_{t=0}^3\sum_{\rho:t_\rho=t}
+          \sum_{(p,j)\in\mathcal I_t\setminus\{\varnothing\}}
+    (y_{\rho,pj})^2\frac{2^{p+1}(p+j-t)!}{p!j!}.
+ \label{eq:B-Crows-rational}
+\end{equation}
+\bi{Equations~\eqref{eq:B-eta-rational} and \eqref{eq:B-Crows-rational} give exactly the fractions in \eqref{eq:B-eta} and \eqref{eq:B-row-error-constants}. Thus the positivity certificate and the cost of its noncanonical torus commutators are computed from one and the same fixed set of physical row coefficients.}
+{式~\eqref{eq:B-eta-rational} 与式~\eqref{eq:B-Crows-rational} 精确给出式~\eqref{eq:B-eta} 和式~\eqref{eq:B-row-error-constants} 中的分数。因此，正性证书及其非正则环面对易关系的代价，均由同一组固定物理行系数计算。}
+
+\subsection{\bi{Exact scalar arithmetic for the explicit threshold}{显式阈值的精确标量算术}}
+\label{sec:B-certificate-budget}
+
+\bi{The scalar budget uses only rational numbers after the shell estimates have replaced exponentials by powers of two. With $e=1/10^8$, $s_e=1+e$, $c_e=(1+e)/(1-e)^2$, and $\kappa_e=6C_{\rm rows}^Be$, define}
+{壳层估计将指数函数替换为二的幂之后，标量预算只包含有理数。取 $e=1/10^8$、$s_e=1+e$、$c_e=(1+e)/(1-e)^2$、$\kappa_e=6C_{\rm rows}^Be$，定义}
+\begin{align}
+ \underline A
+ &=1-e-\eta-s_e[c_9+(\delta_B+\kappa_e)C_3^B]
+                      -\delta_BC_4^Bs_e^2,
+ \label{eq:B-exact-budget-A-def}\\
+ \underline B
+ &=1-\alpha_B(1+e)-s_ec_e[c_9+(\delta_B+\kappa_e)C_3^B]
+                      -2\delta_BC_4^Bs_e^2c_e.
+ \label{eq:B-exact-budget-B-def}
+\end{align}
+\bi{Their exact values are}
+{其精确值为}
+\begin{align}
+ \underline A
+ &=\frac{8183525179652905540939777339971061478405006776240354085927}
+         {24266058979973529600000000000000000000000000000000000000000},
+ \label{eq:B-exact-A20}\\
+ \underline B
+ &=\frac{19326695545052423240596864889482025919460640111495553399803410151}
+         {1213302924732617621356765299867648000000000000000000000000000000000}.
+ \label{eq:B-exact-B20}
+\end{align}
+\bi{Multiplication by the positive denominators verifies $\underline A>337241/10^6>1/3$ and $\underline B>15928/10^6>0$. If decimal lower bounds are desired, valid downward truncations are $\underline A\ge0.3372416256964785$ and $\underline B\ge0.015928994442432054$. Rounded decimal displays are approximations only; the exact fractions, rather than floating-point rounding, determine the signs in the proof.}
+{乘以正分母即可检验 $\underline A>337241/10^6>1/3$ 和 $\underline B>15928/10^6>0$。若需要十进制下界，可使用向下截断 $\underline A\ge0.3372416256964785$ 和 $\underline B\ge0.015928994442432054$。舍入后的小数显示仅表示近似，证明中决定符号的是精确分数，而非浮点舍入。}
+
+\bi{For reference, the rational shell bounds used before the common allowance are}
+{为便于核对，使用共同误差上界之前的有理壳层界为}
+\begin{align}
+ b_4&=\frac{50\cdot17^2\cdot16!\cdot20^{32}}{2^{288}},
+ &b_8&=\frac{50\cdot9^2\cdot8!\cdot20^{16}}{2^{288}},
+ &b_2&=\frac{50}{2^{144}}.
+ \label{eq:B-rational-shell-values}
+\end{align}
+\bi{Each is strictly less than $1/10^8$, as are $50/2^{288}$ and $50/2^{576}$ for the diagonal kernels. Consequently, the common substitution in \eqref{eq:B-exact-budget-A-def}--\eqref{eq:B-exact-budget-B-def} enlarges every error in the safe direction. This finite arithmetic closes the analytic estimate; it does not replace the positive thermal transfer, the connected-kernel identity, or the all-center frame bounds used to obtain that estimate.}
+{以上三者均严格小于 $1/10^8$，对角核的两个界 $50/2^{288}$ 和 $50/2^{576}$ 也如此。因此，式~\eqref{eq:B-exact-budget-A-def}--\eqref{eq:B-exact-budget-B-def} 中的共同代入将每个误差都沿安全方向放大。这一有限算术完成了解析估计，但并不替代推导该估计所需的正热核移植、连通核恒等式和全质心框架界。}

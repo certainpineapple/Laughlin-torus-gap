@@ -1,0 +1,627 @@
+\section{\bi{The bosonic bound: positive comparison and a finite certificate}{玻色不等式：正比较与有限证书}}
+\label{sec:B-bosonic}
+
+\bi{We now prove the bosonic assertion of Theorem~\ref{thm:boson}. Throughout this section, $H=H_B$ denotes the full contact interaction, with planar nonzero two-particle eigenvalue one. We also abbreviate the bosonic connected and zero-contraction terms by $S_3$ and $S_4$, and write $H_k^{\rm pl}=H_{k,B}^{\rm pl}$. The exact identities established in the preceding sections reduce the problem to controlling the negative three-body tail and the errors of a finite sum-of-squares certificate. Bosonic occupation numbers are unbounded, so those errors must be compared with the positive operators $H$ and $S_4$, rather than with a particle-number-dependent multiple of the identity. We obtain that comparison from coherent-state occupation inequalities and positive Gaussian kernels.}
+{本节证明定理~\ref{thm:boson} 的玻色结论。全节记 $H=H_B$ 为完整接触相互作用，并取平面两粒子非零本征值为一的归一化。同时将玻色连通项和零收缩项简称为 $S_3$ 和 $S_4$，并记 $H_k^{\rm pl}=H_{k,B}^{\rm pl}$。前文的精确恒等式将问题化为控制三体负尾和有限平方和证书的误差。玻色占据数无界，因此这些误差须与正算符 $H$ 和 $S_4$ 比较，而不能与依赖粒子数的恒等算符倍数比较。我们通过相干态占据数不等式和正高斯核建立所需比较。}
+
+\bi{All operator inequalities in the proof are first understood on a fixed particle sector. The physical torus lowest-Landau-level space is finite dimensional, and every such sector is finite dimensional. The passage to the full bosonic Fock space is made at the end of the section. The periodized orbitals remain the raw jets of Section~\ref{sec:geometry}; none is orthogonalized or pointwise renormalized in the definitions of the interaction or the certificate.}
+{证明中的算符不等式先在固定粒子数扇区上理解。物理环面最低朗道能级空间有限维，每个固定粒子数扇区也有限维。到全玻色 Fock 空间的延拓在本节末尾完成。周期化轨道始终采用第~\ref{sec:geometry} 节的原始 jets；定义相互作用和证书时既不将其正交化，也不逐点重新归一化。}
+
+\subsection{\bi{Coherent occupation inequalities}{相干态占据数不等式}}
+\label{sec:B-occupation}
+\bi{The coherent-occupation comparison is adapted from the bosonic spherical candidate of Shen~\cite{Shen2026BosonicCandidate}. The constants $k_1,k_2,c,s$ below are torus reproducing-kernel quantities. Their bounds and the positive thermal transfer must therefore be established for this geometry, independently of that source's finite-sphere interval verification.}
+{相干态占据数比较借鉴Shen的玻色球面候选证明~\cite{Shen2026BosonicCandidate}。下文的$k_1,k_2,c,s$是环面再生核给出的量，故须在本几何中另证其界及正热核迁移，不能从来源的有限球面区间验证直接推出。}
+
+\bi{Let $K_j^T$ be the charge-$j$ parameter reproducing kernel, and set}
+{记 $K_j^T$ 为电荷 $j$ 参数空间的再生核，并置}
+\begin{equation}
+ k_j(R)=K_j^T(R,R),\qquad
+ s=\sup_{R\in T}k_1(R),\qquad
+ c=\sup_{R\in T}\frac{k_2(R)}{k_1(R)^2}.
+ \label{eq:B-density-constants}
+\end{equation}
+\bi{In the large-systole regime used below, $k_1$ is strictly positive. Write $B_R=B_0^B(R)$ and $\beta_R=u_0^T(R)/\sqrt{k_1(R)}$. The latter orbital is normalized only for the purpose of applying the following occupation estimates.}
+{在下文使用的大最短周期范围内，$k_1$ 严格为正。\par 记 $B_R=B_0^B(R)$，并令 $\beta_R=u_0^T(R)/\sqrt{k_1(R)}$。这里对轨道的归一化仅用于下述占据数估计。}
+
+\begin{lemma}[\bi{One and two coherent spectators}{一个和两个相干旁观粒子}]
+\label{lem:B-occupation}
+\bi{For a normalized coherent orbital $\beta=\beta_R$, let $n_\beta=a(\beta)^\dagger a(\beta)$. Then}
+{对规范化相干轨道 $\beta=\beta_R$，记 $n_\beta=a(\beta)^\dagger a(\beta)$。则}
+\begin{equation}
+ \frac12n_\beta(n_\beta-1)\le cH,\qquad
+ n_\beta\le cH+I.
+ \label{eq:B-one-occupation}
+\end{equation}
+\bi{For any two such orbitals $\beta,\gamma$, including nonorthogonal ones,}
+{对任意两个这样的轨道 $\beta,\gamma$，包括不正交的情形，均有}
+\begin{equation}
+ \bigl(a(\gamma)a(\beta)\bigr)^\dagger
+       a(\gamma)a(\beta)\le4cH+2I.
+ \label{eq:B-two-occupation}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\bi{The two-particle evaluation map $Q$ has $h_T=Q^\dagger Q$, and $Q\psi$ is a charge-two parameter lowest-Landau-level section. Its reproducing property gives $|Q\psi(R)|^2\le k_2(R)\|Q\psi\|^2$. Consequently, $|v_0(R)\rangle\langle v_0(R)|\le k_2(R)h_T$. Applying the positive lift $\mathcal L_2$ yields $B_R^\dagger B_R\le k_2(R)H$. Since}
+{两粒子求值映射 $Q$ 满足 $h_T=Q^\dagger Q$，且 $Q\psi$ 是电荷二参数最低朗道能级截面。再生性质给出 $|Q\psi(R)|^2\le k_2(R)\|Q\psi\|^2$，故 $|v_0(R)\rangle\langle v_0(R)|\le k_2(R)h_T$。施加正提升 $\mathcal L_2$ 得 $B_R^\dagger B_R\le k_2(R)H$。又因为}
+\begin{equation}
+ B_R=\frac{k_1(R)}{\sqrt2}\,a(\beta_R)^2,
+ \qquad
+ B_R^\dagger B_R
+ =\frac{k_1(R)^2}{2}n_{\beta_R}(n_{\beta_R}-1),
+ \label{eq:B-normalized-coherent}
+\end{equation}
+\bi{the first inequality in \eqref{eq:B-one-occupation} follows. The scalar inequality $n\le n(n-1)/2+1$ for every nonnegative integer $n$ gives the second inequality by the spectral calculus for $n_\beta$. In particular, the same statement applies in the output sector after $B_R$ has removed two particles.}
+{式~\eqref{eq:B-one-occupation} 的第一个不等式随即成立。对每个非负整数 $n$，有标量不等式 $n\le n(n-1)/2+1$；对 $n_\beta$ 作谱演算即得第二个不等式。特别地，它同样适用于 $B_R$ 移除两个粒子后的输出扇区。}
+
+\bi{For the two-orbital estimate, put $A=a(\gamma)a(\beta)$ and $\omega=\langle\beta,\gamma\rangle$, so $|\omega|\le1$. The canonical commutation relations give}
+{为证明双轨道估计，令 $A=a(\gamma)a(\beta)$，并记 $\omega=\langle\beta,\gamma\rangle$，故 $|\omega|\le1$。正则对易关系给出}
+\begin{align}
+ A^\dagger A
+ &=\frac12(n_\beta n_\gamma+n_\gamma n_\beta)
+    -\operatorname{Re}\!\left(\omega a(\beta)^\dagger a(\gamma)\right)
+ \notag\\
+ &\le\frac12(n_\beta^2+n_\gamma^2)
+       +\frac12(n_\beta+n_\gamma)
+ \le4cH+2I.
+ \label{eq:B-two-occupation-proof}
+\end{align}
+\bi{The first inequality uses $(n_\beta-n_\gamma)^2\ge0$ and quadratic-form Cauchy--Schwarz on the cross term. For the second, apply $n_x^2\le2cH+n_x$ and then $n_x\le cH+I$ for $x=\beta,\gamma$. This proves the lemma without a bound on an annihilation operator's norm.}
+{第一个不等式使用 $(n_\beta-n_\gamma)^2\ge0$，并对交叉项使用二次型 Cauchy--Schwarz 不等式。第二个不等式先对 $x=\beta,\gamma$ 使用 $n_x^2\le2cH+n_x$，再使用 $n_x\le cH+I$。因此整个证明不需要假设湮灭算符具有一致有界的范数。}
+\end{proof}
+
+\bi{Replacing a normalized spectator by the raw coherent jet introduces at most a factor $s$; replacing two spectators introduces at most $s^2$. No additional factor is attached to the pair anchor. Indeed, its subsequent integration is governed by the exact identities}
+{将一个规范化旁观轨道换回原始相干 jet，至多引入因子 $s$；两个旁观轨道则至多引入 $s^2$。配对锚点不再附加任何因子，因为随后对它的积分由以下精确恒等式控制：}
+\begin{equation}
+ \int_T B_\alpha^\dagger B_\alpha\,\dd\mu_2(\alpha)=H,
+ \qquad
+ \int_T B_\alpha^\dagger H B_\alpha\,\dd\mu_2(\alpha)=S_4.
+ \label{eq:B-anchor-identities}
+\end{equation}
+\bi{The second identity follows by substituting the coherent integral for $H$ and commuting the pair annihilators. Thus the occupation estimates pay for an arbitrary spectator population using precisely the positive zero-contraction term already present in $H^2$.}
+{第二个恒等式通过代入 $H$ 的相干态积分并交换配对湮灭算符得到。因此，占据数估计恰好利用 $H^2$ 中已有的正零收缩项来控制任意大的旁观粒子占据数。}
+
+\subsection{\bi{Positive thermal kernels and their exact torus transfer}{正热核及其精确环面移植}}
+\bi{The planar coherent-comparison input is adapted from Shen~\cite{Shen2026BosonicCandidate}. The exact transfer of positive thermal kernels to the magnetic quotient is established below using the convergent domain of Section~\ref{sec:geometry}; it is not a consequence of the source's spherical Schur averages.}
+{平面相干态比较输入借鉴Shen~\cite{Shen2026BosonicCandidate}。下文利用第~\ref{sec:geometry}节的收敛域建立正热核到磁商空间的精确迁移；这一迁移不是来源中球面Schur平均的直接推论。}
+\label{sec:B-thermal}
+
+\bi{The auxiliary spaces in this subsection are planar spaces. Let $U$ be the planar one-particle Bargmann space and let $V$ be the pair subspace with relative degree zero, with orthonormal center-of-mass basis $v_p$. A normalized coherent vector $|\sqrt2\alpha\rangle_V$ represents the pair vector $B_\alpha^\dagger|0\rangle$ on the plane. The insertion maps are}
+{本小节中的辅助空间均为平面空间。记 $U$ 为平面单粒子 Bargmann 空间，$V$ 为相对次数为零的配对子空间，其质心正交基为 $v_p$。规范化相干向量 $|\sqrt2\alpha\rangle_V$ 表示平面上的配对向量 $B_\alpha^\dagger|0\rangle$。定义插入映射}
+\begin{align}
+ W_3 &:V\otimes U\longrightarrow\Sym^3U,
+ & W_3(v_p\otimes u)&=B_p^\dagger u,
+ \notag\\
+ W_4 &:V\otimes\Sym^2U\longrightarrow\Sym^4U,
+ & W_4(v_p\otimes u)&=B_p^\dagger u.
+ \label{eq:B-insertion-maps}
+\end{align}
+\bi{These maps use the normalized symmetric-tensor to Fock-space identification. In particular, $W_3=\sqrt3P_{\rm sym}\iota_3$, where $\iota_3$ is the isometric embedding of the distinguished pair and the spectator before symmetrization. Moreover,}
+{这些映射采用规范化的对称张量到 Fock 空间识别。特别地，$W_3=\sqrt3P_{\rm sym}\iota_3$，其中 $\iota_3$ 是对称化之前将指定配对与旁观粒子嵌入的等距映射。此外，}
+\begin{equation}
+ W_kW_k^\dagger=H_k^{\rm pl},\qquad
+ \|W_3\|\le\sqrt3,\qquad \|W_4\|\le\sqrt6.
+ \label{eq:B-insertion-norms}
+\end{equation}
+\bi{The first identity is the sum over all physical pairs. The norm bounds follow because $H_k^{\rm pl}$ is the sum of $\binom{k}{2}$ pair projections. Each $W_k$ intertwines the total lowering and raising operators, since inserting a pair is compatible with simultaneous magnetic translation. Hence in the planar center-of-mass decomposition it has the form $I_{\CM}\otimes W_{k,\rm rel}$, including the full relative multiplicity space.}
+{第一个恒等式来自对所有物理粒子对求和。范数上界则因为 $H_k^{\rm pl}$ 是 $\binom{k}{2}$ 个配对投影之和。每个 $W_k$ 都交织总降阶和升阶算符，因为插入配对与同时磁平移相容。因此，在平面质心分解下它具有 $I_{\CM}\otimes W_{k,\rm rel}$ 的形式，并完整保留相对空间的重数。}
+
+\bi{For clarity, the center-of-mass factors used in the transfer are recorded explicitly. The planar twirl of a trace-class anchored seed $\sigma$ and its torus counterpart are}
+{为明确移植所用的质心因子，列出迹类锚定种子 $\sigma$ 的平面平均及其环面对应式：}
+\begin{align}
+ \int_{\mathbb C}T_\alpha^{\otimes k}\sigma
+      T_\alpha^{\otimes k\dagger}\,\dd\mu_2(\alpha)
+ &=\frac2k I_{\CM}\otimes\Tr_{\CM}\sigma,
+ \label{eq:B-planar-twirl}\\
+ \int_T C_\alpha^{(k)}\sigma C_\alpha^{(k)\dagger}
+                  \,\dd\mu_2(\alpha)
+ &=\Omega_k\!\left(\frac2k\Tr_{\CM}\sigma\right).
+ \label{eq:B-torus-seed}
+\end{align}
+\bi{For finite-degree seeds, the second identity is the integrated ladder identity of Lemma~\ref{lem:ladder}. The factor $2/k$ in the first identity comes from the normalized center-of-mass displacement $h=\sqrt{k}\alpha$, so that $\dd\mu_2(\alpha)=(2/k)\dd^2h/\pi$. The Weyl average traces out the center-of-mass oscillator and leaves the relative operator unchanged, rather than replacing it by a scalar. We justify the extension of \eqref{eq:B-torus-seed} to the thermal seeds below. No global relative-coordinate decomposition on the torus is assumed.}
+{对有限次数种子，第二个恒等式即引理~\ref{lem:ladder} 的积分梯级恒等式。第一个恒等式中的 $2/k$ 来自规范化质心位移 $h=\sqrt{k}\alpha$，此时 $\dd\mu_2(\alpha)=(2/k)\dd^2h/\pi$。Weyl 平均对质心振子取偏迹，保留相对算符本身，而不是将其替换为标量。下文将证明式~\eqref{eq:B-torus-seed} 对热种子的延拓。整个论证不假设环面上存在全局相对坐标分解。}
+
+\subsubsection{\bi{One spectator}{一个旁观粒子}}
+\label{sec:B-thermal-one}
+
+\bi{For $a>0$, define a positive one-particle seed by}
+{对 $a>0$，定义正的单粒子种子}
+\begin{equation}
+ R_a=\int_{\mathbb C}e^{-a|\beta|^2}
+        |u_0(\beta)\rangle\langle u_0(\beta)|\,\dd\mu_1(\beta)
+     =\sum_{j=0}^{\infty}(1+a)^{-j-1}|e_j\rangle\langle e_j|.
+ \label{eq:B-thermal-seed}
+\end{equation}
+\bi{The equality follows by expanding the normalized coherent vector in the basis $e_j$: the angular integral makes the matrix diagonal, and the radial Gaussian moment gives $(1+a)^{-j-1}$. In particular, $R_a$ is positive and trace class. Set}
+{将规范化相干向量在基 $e_j$ 中展开即可证明等式：角向积分消去非对角项，径向高斯矩给出 $(1+a)^{-j-1}$。因此 $R_a$ 为正迹类算符。令}
+\begin{equation}
+ \sigma_3=|0\rangle_V\langle0|\otimes R_a,
+ \qquad \widetilde\sigma_3=W_3\sigma_3W_3^\dagger.
+ \label{eq:B-three-seed}
+\end{equation}
+\bi{In the planar simultaneous-translation integral, introduce the coherent coordinates $u=\sqrt2\alpha$ and $v=\alpha+\beta$, followed by the unitary Jacobi change of variables}
+{在平面同时平移积分中，先引入相干坐标 $u=\sqrt2\alpha$ 和 $v=\alpha+\beta$，再作酉 Jacobi 变量变换}
+\begin{equation}
+ \zeta=\frac{\sqrt2u+v}{\sqrt3},\qquad
+ \xi=\frac{-u+\sqrt2v}{\sqrt3}.
+ \label{eq:B-three-jacobi}
+\end{equation}
+\bi{The measure is $\dd\mu_2(\alpha)\dd\mu_1(v)=\dd^2u\dd^2v/\pi^2$, and the Gaussian weight becomes $\exp[-(3a/2)|\xi|^2]$. The $\zeta$ integral resolves the center-of-mass identity, while \eqref{eq:B-thermal-seed} evaluates the $\xi$ integral. Thus, with $r=2/(2+3a)$, the auxiliary twirl is exactly $I_{\CM}\otimes r^{n_\xi+1}$. Intertwining with $W_3$ and comparing with \eqref{eq:B-planar-twirl} gives}
+{测度为 $\dd\mu_2(\alpha)\dd\mu_1(v)=\dd^2u\dd^2v/\pi^2$，高斯权重变为 $\exp[-(3a/2)|\xi|^2]$。对 $\zeta$ 的积分给出质心恒等算符的分解，对 $\xi$ 的积分则由式~\eqref{eq:B-thermal-seed} 求得。因此，令 $r=2/(2+3a)$，辅助空间中的平均恰为 $I_{\CM}\otimes r^{n_\xi+1}$。利用 $W_3$ 的交织性质并与式~\eqref{eq:B-planar-twirl} 比较，得到}
+\begin{equation}
+ \frac23\Tr_{\CM}\widetilde\sigma_3
+   =W_{3,\rm rel}r^{n_\xi+1}W_{3,\rm rel}^\dagger.
+ \label{eq:B-three-partial-trace}
+\end{equation}
+
+\bi{Apply $\Omega_3$ to this planar relative coefficient and use \eqref{eq:B-torus-seed}. Substituting the positive coherent integral for $R_a$ then gives an explicit physical coefficient. Indeed, simultaneous translation by $\alpha$ sends the spectator coherent vector at offset $\beta$ to the periodized vector at $\alpha+\beta$, multiplied by $\exp[-i\operatorname{Im}(\alpha\overline\beta)]$. This phase cancels in the rank-one projector. Positive lifting therefore gives the exact identity}
+{对这一平面相对系数施加 $\Omega_3$，并使用式~\eqref{eq:B-torus-seed}。随后将 $R_a$ 的正相干积分代入，即得显式物理系数。具体而言，同时平移 $\alpha$ 将偏移量为 $\beta$ 的旁观相干向量变为位于 $\alpha+\beta$ 的周期化向量，并乘上相位 $\exp[-i\operatorname{Im}(\alpha\overline\beta)]$。该相位在秩一投影中抵消。因此，正提升给出精确恒等式}
+\begin{align}
+ \mathcal G_3(a)
+ &:={\mathcal L}_3\Omega_3
+       \left(W_{3,\rm rel}r^{n_\xi+1}W_{3,\rm rel}^\dagger\right)
+ \notag\\
+ &=\int_{\alpha\in T}\dd\mu_2(\alpha)
+   \int_{\beta\in\mathbb C}\dd\mu_1(\beta)\,
+   e^{-a|\beta|^2}B_\alpha^\dagger
+   a\bigl(u_0^T(\alpha+\beta)\bigr)^\dagger
+   a\bigl(u_0^T(\alpha+\beta)\bigr)B_\alpha.
+ \label{eq:B-one-spectator-transfer}
+\end{align}
+\bi{The spectator offset ranges over the whole plane. Restricting that integral to one torus cell without retaining its images would change the coefficient and is not part of the transfer. Lemma~\ref{lem:B-occupation} bounds the spectator factor by $s(cH+I)$, and $\int_{\mathbb C}e^{-a|\beta|^2}\dd\mu_1(\beta)=1/a$. The exact anchor identities \eqref{eq:B-anchor-identities} imply}
+{旁观粒子的偏移量遍历整个平面。若将积分限制在环面的单个基胞而不保留其镜像，就会改变系数；移植中并不进行这种替换。引理~\ref{lem:B-occupation} 将旁观因子控制为 $s(cH+I)$，且 $\int_{\mathbb C}e^{-a|\beta|^2}\dd\mu_1(\beta)=1/a$。再由精确锚点恒等式~\eqref{eq:B-anchor-identities} 得}
+\begin{equation}
+ \mathcal G_3(a)\le\frac{s}{a}(cS_4+H).
+ \label{eq:B-three-thermal-bound}
+\end{equation}
+
+\subsubsection{\bi{Two spectators}{两个旁观粒子}}
+\label{sec:B-thermal-two}
+
+\bi{On $V\otimes\Sym^2U$, use the seed}
+{在 $V\otimes\Sym^2U$ 上使用种子}
+\begin{equation}
+ \sigma_4=|0\rangle_V\langle0|\otimes[R_a\otimes R_a]_{\rm sym},
+ \qquad \widetilde\sigma_4=W_4\sigma_4W_4^\dagger,
+ \label{eq:B-four-seed}
+\end{equation}
+\bi{where $[\cdot]_{\rm sym}$ denotes compression to the normalized symmetric tensor space. Set $u=\sqrt2\alpha$, $v=\alpha+\beta$, and $w=\alpha+\gamma$. The unitary Jacobi coordinates are}
+{其中 $[\cdot]_{\rm sym}$ 表示压缩到规范化对称张量空间。令 $u=\sqrt2\alpha$、$v=\alpha+\beta$、$w=\alpha+\gamma$。酉 Jacobi 坐标为}
+\begin{equation}
+ \zeta=\frac{\sqrt2u+v+w}{2},\qquad
+ \xi_1=\frac{v-w}{\sqrt2},\qquad
+ \xi_2=\frac{u}{\sqrt2}-\frac{v+w}{2}.
+ \label{eq:B-four-jacobi}
+\end{equation}
+\bi{The measure is preserved, and the weight separates because}
+{该变换保持测度，而权重因下式分离：}
+\begin{equation}
+ |\beta|^2+|\gamma|^2=|\xi_1|^2+2|\xi_2|^2.
+ \label{eq:B-four-gaussian}
+\end{equation}
+\bi{The center-of-mass coherent integral gives the identity; the two remaining Gaussian moments give $r_1^{n_1+1}r_2^{n_2+1}$ with $r_1=(1+a)^{-1}$ and $r_2=(1+2a)^{-1}$. Spectator interchange sends $\xi_1$ to $-\xi_1$ and fixes $\xi_2$, so the symmetric spectator space is the subspace with even $n_1$. Equation~\eqref{eq:B-planar-twirl}, now with $k=4$, therefore yields}
+{质心相干积分给出恒等算符；其余两个高斯矩给出 $r_1^{n_1+1}r_2^{n_2+1}$，其中 $r_1=(1+a)^{-1}$、$r_2=(1+2a)^{-1}$。交换两个旁观粒子将 $\xi_1$ 变为 $-\xi_1$，并保持 $\xi_2$，故旁观粒子的对称空间对应 $n_1$ 为偶数的子空间。于是，在式~\eqref{eq:B-planar-twirl} 中取 $k=4$ 得}
+\begin{equation}
+ \frac12\Tr_{\CM}\widetilde\sigma_4
+ =W_{4,\rm rel}
+       \left[r_1^{n_1+1}r_2^{n_2+1}\right]W_{4,\rm rel}^\dagger.
+ \label{eq:B-four-partial-trace}
+\end{equation}
+
+\bi{Transfer this relative coefficient by $\Omega_4$ and then lift it. The resulting positive integral is}
+{先通过 $\Omega_4$ 移植这一相对系数，再作正提升，所得正积分为}
+\begin{align}
+ \mathcal G_4(a)
+ &:={\mathcal L}_4\Omega_4
+   \left(W_{4,\rm rel}
+       [r_1^{n_1+1}r_2^{n_2+1}]W_{4,\rm rel}^\dagger\right)
+ \notag\\
+ &=\frac12\int_{\alpha\in T}\dd\mu_2(\alpha)
+       \int_{\beta,\gamma\in\mathbb C}
+           \dd\mu_1(\beta)\dd\mu_1(\gamma)\,
+       e^{-a(|\beta|^2+|\gamma|^2)}
+       B_\alpha^\dagger A_{\alpha;\beta\gamma}^\dagger
+                  A_{\alpha;\beta\gamma}B_\alpha,
+ \label{eq:B-two-spectator-transfer}\\
+ A_{\alpha;\beta\gamma}
+ &=a\bigl(u_0^T(\alpha+\gamma)\bigr)
+       a\bigl(u_0^T(\alpha+\beta)\bigr).
+ \notag
+\end{align}
+\bi{The factor $1/2$ in this integral has a different origin from the factor $1/2$ in \eqref{eq:B-four-partial-trace}. The latter is the center-of-mass factor $2/k$. The former comes from the symmetric-tensor identification}
+{该积分前的 $1/2$ 与式~\eqref{eq:B-four-partial-trace} 中的 $1/2$ 来源不同：后者是质心因子 $2/k$，前者则来自对称张量识别}
+\begin{equation}
+ P_{\rm sym}^{(2)}\bigl(|\beta\rangle\otimes|\gamma\rangle\bigr)
+ \longleftrightarrow
+ \frac{a(\beta)^\dagger a(\gamma)^\dagger|0\rangle}{\sqrt2}.
+ \label{eq:B-sym-factor}
+\end{equation}
+\bi{Both factors have therefore been included, once each. The two offsets in \eqref{eq:B-two-spectator-transfer} again range over the entire plane. Applying \eqref{eq:B-two-occupation} to the unnormalized jets costs at most $s^2(4cH+2I)$; the two Gaussian marginals give $1/a^2$. Together with \eqref{eq:B-anchor-identities}, this proves}
+{因此，这两个因子均已分别计入一次。式~\eqref{eq:B-two-spectator-transfer} 中的两个偏移量也都遍历整个平面。将式~\eqref{eq:B-two-occupation} 应用于未归一化 jets，至多付出 $s^2(4cH+2I)$；两个高斯边缘积分给出 $1/a^2$。结合式~\eqref{eq:B-anchor-identities}，得到}
+\begin{equation}
+ \mathcal G_4(a)\le\frac{s^2}{a^2}(2cS_4+H).
+ \label{eq:B-four-thermal-bound}
+\end{equation}
+
+\subsubsection{\bi{Convergence and preservation of positive order}{收敛与正序的保持}}
+\label{sec:B-thermal-convergence}
+
+\bi{The preceding formulas can be obtained without treating infinite periodization as a bounded operator on the entire planar Bargmann space. To see this, truncate each anchored seed by total degree $d$. Before insertion, the degree-$d$ traces obey}
+{上述公式的建立不需要将无限周期化视为整个平面 Bargmann 空间上的有界算符。具体而言，按总次数 $d$ 对每个锚定种子作截断。在插入之前，次数 $d$ 的迹满足}
+\begin{equation}
+ \Tr(\sigma_{3,d})\le(1+a)^{-d-1},\qquad
+ \Tr(\sigma_{4,d})\le(d+1)(1+a)^{-d-2}.
+ \label{eq:B-seed-decay}
+\end{equation}
+\bi{Insertion multiplies these bounds by at most $3$ and $6$, respectively, by \eqref{eq:B-insertion-norms}. The raw-jet estimate of Lemma~\ref{lem:jets} bounds the squared norm of $C_R^{(k)}$ on a degree-$d$ block by $C_k(d+1)^{2k}$, uniformly in $R$ on the fixed torus. Consequently,}
+{由式~\eqref{eq:B-insertion-norms}，插入映射至多将这两个上界分别乘以 $3$ 和 $6$。引理~\ref{lem:jets} 的原始 jet 估计将 $C_R^{(k)}$ 在次数 $d$ 块上的范数平方控制为 $C_k(d+1)^{2k}$，且在固定环面上对 $R$ 一致。因此，}
+\begin{equation}
+ \sum_{d=0}^{\infty}\sup_{R\in T}
+  \Tr\!\left(C_R^{(k)}\widetilde\sigma_{k,d}
+             C_R^{(k)\dagger}\right)<\infty,
+ \qquad k=3,4.
+ \label{eq:B-thermal-convergence}
+\end{equation}
+\bi{The fundamental cell has finite area. Thus finite-degree identities pass to the limit in trace norm on the physical few-body space, and the center-of-mass partial trace and coherent integrals may be interchanged with that limit. On the coherent side, boundedness of $\sup_R\|u_0^T(R)\|$ and Gaussian integrability also give direct domination. This proves \eqref{eq:B-one-spectator-transfer} and \eqref{eq:B-two-spectator-transfer} with all offsets retained.}
+{基胞面积有限，故有限次数恒等式可在物理少体空间上以迹范数取极限，质心偏迹和相干积分也可与该极限交换。在相干积分一侧，$\sup_R\|u_0^T(R)\|$ 有界以及高斯可积性同样给出直接支配。由此证明了保留全部偏移量的式~\eqref{eq:B-one-spectator-transfer} 和式~\eqref{eq:B-two-spectator-transfer}。}
+
+\bi{Every relative comparison below is diagonal in total relative degree, although its blocks may have nontrivial multiplicity. On each finite collection of blocks, take the positive difference of the two coefficients and apply the congruence defining $\Omega_k$. The resulting operator remains positive. The exponential domination just established then passes this inequality through a positive limit. Hence the thermal comparisons preserve order on the torus without defining $\Omega_k$ on arbitrary nondecaying infinite relative operators.}
+{下文的相对比较均按总相对次数分块对角，但块内可以存在非平凡重数。在任意有限块集上，先取两个系数之差这一正矩阵，再施加定义 $\Omega_k$ 的合同变换，所得算符仍为正。刚建立的指数支配随后使该不等式通过正极限。因此，热核比较在环面上保持序关系，而无需对任意不衰减的无限相对算符定义 $\Omega_k$。}
+
+\subsection{\bi{The negative tail and two finite comparison operators}{负尾与两个有限比较算符}}
+\label{sec:B-comparisons}
+
+\bi{Let $\xi_z=\xi_z^B$ be the normalized pair--spectator relative oscillator vector of degree $z$, as in the three-body calculation leading to \eqref{eq:boson-threebody}. Put}
+{记 $\xi_z=\xi_z^B$ 为相对次数 $z$ 的规范化配对--旁观粒子相对振子向量，与导出式~\eqref{eq:boson-threebody} 的三体计算中的定义一致。令}
+\begin{align}
+ T_9&=\mathcal L_3\Omega_3
+ \left(W_{3,\rm rel}
+   \left[2\!\sum_{\substack{z\ge9\\z\ {\rm odd}}}
+        2^{-z}|\xi_z\rangle\langle\xi_z|\right]
+       W_{3,\rm rel}^\dagger\right),
+ \label{eq:B-tail-definition}\\
+ R_{k,D}&=\mathcal L_k\Omega_k
+       \left(H_{k,\rm rel}^{\rm pl}\Pi_{\le D}^{(k)}\right),
+ \qquad (k,D)=(3,8),(4,16).
+ \label{eq:B-finite-comparisons}
+\end{align}
+\bi{The projections in \eqref{eq:B-finite-comparisons} retain every physical relative multiplicity at the indicated degree. They are not projections onto only one selected vector in each degree.}
+{式~\eqref{eq:B-finite-comparisons} 中的投影保留所示次数内的全部物理相对重数，并非每个次数只选取一个向量的投影。}
+
+\begin{proposition}[\bi{Bosonic comparison constants}{玻色比较常数}]
+\label{prop:B-comparisons}
+\bi{The operators just defined satisfy}
+{上述算符满足}
+\begin{align}
+ T_9&\le c_9s(cS_4+H),
+ &c_9&=30\left(\frac59\right)^9
+       =\frac{19531250}{129140163},
+ \label{eq:B-tail-bound}\\
+ R_{3,8}&\le C_3^B s(cS_4+H),
+ &C_3^B&=12\left(\frac98\right)^9
+       =\frac{1162261467}{33554432},
+ \label{eq:B-R3-bound}\\
+ R_{4,16}&\le C_4^B s^2(2cS_4+H),
+ &C_4^B&=272\left(\frac98\right)^{17}
+       =\frac{283512088894331673}{140737488355328}.
+ \label{eq:B-R4-bound}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+\bi{For $r=9/10$, comparison of each relative eigenvalue gives}
+{取 $r=9/10$，逐个比较相对本征值得}
+\begin{equation}
+ 2\!\sum_{\substack{z\ge9\\z\ {\rm odd}}}
+       2^{-z}|\xi_z\rangle\langle\xi_z|
+ \le \frac2r\left(\frac1{2r}\right)^9r^{n_\xi+1}.
+ \label{eq:B-tail-scalar}
+\end{equation}
+\bi{At $z=9$ the corresponding scalar coefficients agree; for higher odd $z$ their ratio decreases because $2r>1$, and the left-hand coefficient is zero in every other degree. Choosing $a=2/27$ gives $r=2/(2+3a)$. Apply the positive maps $W_{3,\rm rel}(\cdot)W_{3,\rm rel}^\dagger$, $\Omega_3$, and $\mathcal L_3$, in that order. Equation~\eqref{eq:B-three-thermal-bound} then proves \eqref{eq:B-tail-bound}, because $(2/(ar))(1/(2r))^9=30(5/9)^9$.}
+{在 $z=9$ 时，相应的标量系数相等；在更高奇数次数上，由于 $2r>1$，其比值递减；其余次数的左侧系数为零。取 $a=2/27$ 即有 $r=2/(2+3a)$。依次施加正映射 $W_{3,\rm rel}(\cdot)W_{3,\rm rel}^\dagger$、$\Omega_3$ 和 $\mathcal L_3$。再由式~\eqref{eq:B-three-thermal-bound} 得式~\eqref{eq:B-tail-bound}，其中 $(2/(ar))(1/(2r))^9=30(5/9)^9$。}
+
+\bi{For the finite three-body operator, take $a=1/12$ and $r=8/9$. On relative degrees $0\le z\le8$, $r^{z+1}\ge r^9$, so $\Pi_{\le8}^{\rm aux}\le r^{-9}r^{n_\xi+1}$. Since $W_3$ intertwines the center-of-mass oscillator and preserves total degree, \eqref{eq:B-insertion-norms} also gives}
+{对有限三体算符，取 $a=1/12$、$r=8/9$。在相对次数 $0\le z\le8$ 上，$r^{z+1}\ge r^9$，因此 $\Pi_{\le8}^{\rm aux}\le r^{-9}r^{n_\xi+1}$。由于 $W_3$ 交织质心振子并保持总次数，式~\eqref{eq:B-insertion-norms} 还给出}
+\begin{equation}
+ W_{k,\rm rel}\Pi_{\le D}^{\rm aux}W_{k,\rm rel}^\dagger
+   =H_{k,\rm rel}^{\rm pl}\Pi_{\le D}^{(k)},
+ \qquad k=3,4.
+ \label{eq:B-wide-cutoff}
+\end{equation}
+\bi{Applying the same positive maps and \eqref{eq:B-three-thermal-bound} gives \eqref{eq:B-R3-bound}, with $r^{-9}/a=12(9/8)^9$.}
+{施加同样的正映射并使用式~\eqref{eq:B-three-thermal-bound}，即得式~\eqref{eq:B-R3-bound}，其常数为 $r^{-9}/a=12(9/8)^9$。}
+
+\bi{For four particles, use the full auxiliary space $V\otimes\Sym^2U$ from \eqref{eq:B-insertion-maps}. On $n_1+n_2\le16$ with $n_1$ even, the smallest eigenvalue of $r_1^{n_1+1}r_2^{n_2+1}$ is $r_1r_2^{17}$: $r_2\le r_1<1$, so the minimum places all sixteen relative quanta in the second oscillator. Hence the auxiliary cutoff is bounded by $(r_1r_2^{17})^{-1}$ times the thermal coefficient. Apply \eqref{eq:B-wide-cutoff} and \eqref{eq:B-four-thermal-bound}, and set $a=1/16$. Then $r_1=16/17$, $r_2=8/9$, and}
+{对四粒子，使用式~\eqref{eq:B-insertion-maps} 中的完整辅助空间 $V\otimes\Sym^2U$。在 $n_1+n_2\le16$ 且 $n_1$ 为偶数时，$r_1^{n_1+1}r_2^{n_2+1}$ 的最小本征值为 $r_1r_2^{17}$：因为 $r_2\le r_1<1$，最小值对应将全部十六个相对量子置于第二个振子。因此，辅助截断投影不大于热系数乘以 $(r_1r_2^{17})^{-1}$。使用式~\eqref{eq:B-wide-cutoff} 和式~\eqref{eq:B-four-thermal-bound}，并取 $a=1/16$。此时 $r_1=16/17$、$r_2=8/9$，且}
+\begin{equation}
+ \frac1{a^2r_1r_2^{17}}=272\left(\frac98\right)^{17},
+ \label{eq:B-four-constant}
+\end{equation}
+\bi{which proves \eqref{eq:B-R4-bound}. All comparisons were established at the positive few-body coefficient level before lifting, so their constants do not depend on the number of particles.}
+{从而证明式~\eqref{eq:B-R4-bound}。所有比较均在正少体系数层面先建立、随后才提升，因此其常数不依赖粒子数。}
+\end{proof}
+
+\subsection{\bi{The fixed 138-row certificate}{固定的 138 行证书}}
+\label{sec:B-rows}
+
+\bi{The finite input is the planar row certificate supplied with the bosonic candidate manuscript of Shen~\cite{Shen2026BosonicCandidate}. Only its fixed rational row data and the finite planar block inequalities are used here. No spherical gap theorem or finite-flux interval estimate is an assumption. Appendix~\ref{sec:B-certificate} gives the exact data decoding, occupation metric, relative-block construction, and rational positivity test.}
+{有限输入取自 Shen 的玻色候选手稿~\cite{Shen2026BosonicCandidate} 所附平面行证书。本节只使用其固定有理行数据与有限平面分块不等式，不假设任何球面谱隙定理或有限磁通区间估计。附录~\ref{sec:B-certificate} 给出数据的精确解码、占据数度量、相对块构造以及有理数正性检验。}
+
+\bi{For each row $\rho$, the channel $t_\rho$ belongs to $\{0,1,2,3\}$. The respective row counts are $31,37,36,34$. Define, using raw periodized jets,}
+{每一行 $\rho$ 的通道 $t_\rho$ 取自 $\{0,1,2,3\}$，相应行数为 $31,37,36,34$。使用原始周期化 jets 定义}
+\begin{align}
+ F^\rho(R)
+ &=\lambda_\rho B_{t_\rho}^B(R)
+   +\sum_{\substack{p,j\ge0\\t_\rho\le p+j\le8}}
+      \alpha_{pj}^\rho
+      a_{p+j-t_\rho}(R)^\dagger a_j(R)B_p^B(R),
+ \label{eq:B-rows}\\
+ K&=\int_T\sum_\rho F^\rho(R)^\dagger F^\rho(R)\,
+                      \dd\mu_2(R)\ge0.
+ \label{eq:B-SOS}
+\end{align}
+\bi{The frozen integers divided by $10^{12}$ specify the rational numbers $y_0^\rho$ and $y_{pj}^\rho$. Their relation to the physical coefficients is}
+{冻结整数除以 $10^{12}$ 后定义有理数 $y_0^\rho$ 和 $y_{pj}^\rho$，它们与物理系数的关系为}
+\begin{equation}
+ y_0^\rho=\lambda_\rho\kappa_{t_\rho},\qquad
+ y_{pj}^\rho=\alpha_{pj}^\rho\kappa_p\sqrt{\frac{j!}{i!}},
+ \quad i=p+j-t_\rho,\qquad
+ \kappa_p^2=\frac{p!}{2^{p+1}},\quad\kappa_p>0.
+ \label{eq:B-row-decoding}
+\end{equation}
+\bi{Thus all real algebraic row coefficients are uniquely fixed. On the plane, the canonical polynomial variables $x_j=\sqrt{j!}\,a_j^\dagger$ and $\partial_j=a_j/\sqrt{j!}$ satisfy $[\partial_i,x_j]=\delta_{ij}$. In these variables $B_p=\kappa_p\widehat B_p$, where $\widehat B_p=\sum_{a+b=p}\partial_a\partial_b$, and each row becomes the rational differential operator}
+{因而所有实代数行系数都被唯一固定。在平面上，正则多项式变量 $x_j=\sqrt{j!}\,a_j^\dagger$、$\partial_j=a_j/\sqrt{j!}$ 满足 $[\partial_i,x_j]=\delta_{ij}$。在这些变量中，$B_p=\kappa_p\widehat B_p$，其中 $\widehat B_p=\sum_{a+b=p}\partial_a\partial_b$；每行于是成为有理微分算符}
+\begin{equation}
+ F^\rho=y_0^\rho\widehat B_{t_\rho}
+      +\sum_{p,j}y_{pj}^\rho x_{p+j-t_\rho}\partial_j\widehat B_p.
+ \label{eq:B-rational-row}
+\end{equation}
+\bi{Physical adjoints in these coordinates are taken with the occupation metric $\prod_j n_j!(j!)^{n_j}$, not with the Euclidean metric of the coefficient vector.}
+{这些坐标中的物理伴随须相对于占据数度量 $\prod_j n_j!(j!)^{n_j}$ 计算，不能采用系数向量的欧氏度量。}
+
+\bi{Suppress the row label temporarily and put $i=p+j-t$, $i'=p'+j'-t$. With canonical planar commutators, the normal-ordered contributions beyond $\lambda^2B_t^\dagger B_t$ are exactly}
+{暂时省略行指标，并记 $i=p+j-t$、$i'=p'+j'-t$。使用平面正则对易关系时，除 $\lambda^2B_t^\dagger B_t$ 外的正规序贡献精确为}
+\begin{align}
+ \mathsf K_3^{\rm row}
+ &=\lambda\sum_{p,j}\alpha_{pj}
+   \left(B_t^\dagger a_i^\dagger a_jB_p+
+             (B_t^\dagger a_i^\dagger a_jB_p)^\dagger\right)
+ \notag\\[-2pt]
+ &\quad+\sum_{p,j,p',j'}\alpha_{pj}\alpha_{p'j'}\delta_{ii'}
+           B_p^\dagger a_j^\dagger a_{j'}B_{p'},
+ \label{eq:B-row-three}\\
+ \mathsf K_4^{\rm row}
+ &=\sum_{p,j,p',j'}\alpha_{pj}\alpha_{p'j'}
+       B_p^\dagger a_j^\dagger a_{i'}^\dagger a_i a_{j'}B_{p'}.
+ \label{eq:B-row-four}
+\end{align}
+\bi{The first coefficient has total orbital degree at most eight; the second has total orbital degree at most sixteen. Let $\overline{\mathsf K}_{k,\rm rel}$ be their summed center-of-mass partial traces with the factor $2/k$ from \eqref{eq:B-torus-seed}. The exact finite certificate is}
+{第一个系数的总轨道次数至多为八，第二个至多为十六。记 $\overline{\mathsf K}_{k,\rm rel}$ 为将这些系数求和后作质心偏迹，并乘以式~\eqref{eq:B-torus-seed} 中因子 $2/k$ 的结果。精确有限证书为}
+\begin{align}
+ S_{3,\rm rel}^{\rm pl}\Pi_{\le8}^{(3)}
+   -\overline{\mathsf K}_{3,\rm rel}
+   +\delta_B H_{3,\rm rel}^{\rm pl}\Pi_{\le8}^{(3)}&\ge0,
+ \label{eq:B-certificate-three}\\
+ \alpha_B S_{4,\rm rel}^{\rm pl}\Pi_{\le16}^{(4)}
+   -\overline{\mathsf K}_{4,\rm rel}
+   +\delta_B H_{4,\rm rel}^{\rm pl}\Pi_{\le16}^{(4)}&\ge0,
+ \label{eq:B-certificate-four}\\
+ \delta_B=10^{-6},\qquad
+ \mu_B=\frac1{50},\qquad
+ \alpha_B=1-c_9-\mu_B.&
+ \notag
+\end{align}
+\bi{These are $9+17=26$ rational block tests, including the zero-dimensional degree-one blocks. Rational Schur elimination verifies positive semidefiniteness; in each block the exact kernel of $H_k^{\rm pl}$ is preserved, and the positive rank equals that of $H_k^{\rm pl}$. The equations define finite-dimensional statements with no limiting tolerance. Their construction and the block dimensions and ranks are given in Appendix~\ref{sec:B-certificate}.}
+{它们对应 $9+17=26$ 个有理分块检验，包括次数一的零维块。有理 Schur 消元检验其半正定性；每块均保持 $H_k^{\rm pl}$ 的精确零核，且正秩等于 $H_k^{\rm pl}$ 的秩。这些都是不含极限容差的有限维命题，其构造与分块维数、秩列于附录~\ref{sec:B-certificate}。}
+
+\bi{The two-body row cost is}
+{行证书的两体代价为}
+\begin{equation}
+ \eta=\sum_\rho\lambda_\rho^2
+ =\frac{764191703750823432978457}
+        {1500000000000000000000000}.
+ \label{eq:B-eta}
+\end{equation}
+\bi{Apply the positive periodization map and then the positive lift to \eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four}. Define}
+{先对式~\eqref{eq:B-certificate-three}--\eqref{eq:B-certificate-four} 施加正周期化映射，再作正提升。定义}
+\begin{equation}
+ K_3^0=\mathcal L_3\Omega_3(\overline{\mathsf K}_{3,\rm rel}),\qquad
+ K_4=\mathcal L_4\Omega_4(\overline{\mathsf K}_{4,\rm rel}),\qquad
+ T_4=\mathcal L_4\Omega_4
+      (S_{4,\rm rel}^{\rm pl}\Pi_{\le16}^{(4)}).
+ \label{eq:B-transferred-rows}
+\end{equation}
+\bi{This transfer is a congruence of coefficient tensors, followed by integration. It therefore requires neither an inverse torus few-body Gram matrix nor a choice of basis for its varying kernel. The exact connected formula \eqref{eq:boson-threebody} has nonnegative even-degree tail and negative odd-degree tail $-T_9$. Consequently, the transferred inequalities imply}
+{这一移植先对系数张量作合同变换，再积分。因此它既不需要环面少体 Gram 矩阵的逆，也不需要为其变化的零核选取基。精确连通公式~\eqref{eq:boson-threebody} 的偶数次数尾为非负，而奇数次数负尾为 $-T_9$。故移植后的不等式给出}
+\begin{equation}
+ S_3\ge K_3^0-\delta_B R_{3,8}-T_9,
+ \qquad
+ K_4\le\alpha_B T_4+\delta_B R_{4,16}.
+ \label{eq:B-certificate-transferred}
+\end{equation}
+
+\subsection{\bi{The raw-jet commutator error in Loewner order}{原始 jet 对易误差的 Loewner 序控制}}
+\label{sec:B-metric}
+
+\bi{On the torus, $[a_i(R),a_{i'}(R)^\dagger]=g_{ii'}(R)$. In the normal ordering of a row square, the only change from \eqref{eq:B-row-three}--\eqref{eq:B-row-four} is the replacement of the single contraction $\delta_{ii'}$ by $g_{ii'}(R)$. The zero-contraction four-body coefficient is unchanged. The exact pair ladder identity integrates the two-body coefficient to $\eta H$, so}
+{在环面上，$[a_i(R),a_{i'}(R)^\dagger]=g_{ii'}(R)$。对每个行平方作正规序时，相比式~\eqref{eq:B-row-three}--\eqref{eq:B-row-four}，唯一变化是单次收缩中的 $\delta_{ii'}$ 被 $g_{ii'}(R)$ 替换；零收缩的四体系数保持不变。精确配对梯级恒等式将两体系数积分为 $\eta H$，因此}
+\begin{equation}
+ K=\eta H+K_3^0+K_4+R_g.
+ \label{eq:B-K-decomposition}
+\end{equation}
+\bi{Let}
+{令}
+\begin{align}
+ e_8&=\sup_{R\in T}\|g_{0,\ldots,8}(R)-I\|,
+ \notag\\
+ C_{\rm rows}^B
+ &=\sum_{\rho,p,j}(\alpha_{pj}^\rho)^2
+   =\frac{31171576329140678412829557}
+          {8750000000000000000000000},
+ \qquad
+ \kappa_B=6C_{\rm rows}^B e_8.
+ \label{eq:B-row-error-constants}
+\end{align}
+
+\begin{lemma}[\bi{Two-sided commutator estimate}{双边对易误差估计}]
+\label{lem:B-metric}
+\begin{equation}
+ -\kappa_B R_{3,8}\le R_g\le\kappa_B R_{3,8}.
+ \label{eq:B-metric-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\bi{At a fixed center, write $X_{pj}=a_jB_p^B$ and, for each row, collect $Y_i^\rho=\sum_{p+j-t_\rho=i}\alpha_{pj}^\rho X_{pj}$. The local remainder is the Hermitian quadratic form}
+{固定中心后，记 $X_{pj}=a_jB_p^B$，并对每行合并为 $Y_i^\rho=\sum_{p+j-t_\rho=i}\alpha_{pj}^\rho X_{pj}$。局部余项为 Hermitian 二次型}
+\begin{equation}
+ R_g(R)=\sum_{\rho,i,i'}
+      (Y_i^\rho)^\dagger\bigl(g_{ii'}(R)-\delta_{ii'}\bigr)Y_{i'}^\rho.
+ \label{eq:B-local-metric}
+\end{equation}
+\bi{The matrix inequality $-e_8I\le g-I\le e_8I$ is valid for all indices occurring here. Apply it to the vector of output states $Y_i^\rho\psi$ and then apply Cauchy--Schwarz to each finite coefficient sum. This gives the pointwise Loewner bounds}
+{这里出现的所有指标均满足矩阵不等式 $-e_8I\le g-I\le e_8I$。将它用于输出态向量 $Y_i^\rho\psi$，再对各有限系数和使用 Cauchy--Schwarz，得到逐中心的 Loewner 序界}
+\begin{equation}
+ -\mathcal E(R)\le R_g(R)\le\mathcal E(R),\qquad
+ \mathcal E(R)=e_8C_{\rm rows}^B
+       \sum_{p+j\le8}(a_jB_p^B)^\dagger(a_jB_p^B).
+ \label{eq:B-local-envelope}
+\end{equation}
+\bi{There is no estimate of $\|a_j\|$ in this step. To integrate the envelope, use the auxiliary orthonormal vectors $v_p\otimes e_j$. Its coefficient is $W_3P_{\mathrm{degree}\le8}^{\rm aux}W_3^\dagger$. A relative oscillator state of degree $z\le8$ has exactly $9-z$ center-of-mass descendants in this cutoff. Equation~\eqref{eq:B-torus-seed} therefore assigns it the partial-trace coefficient $(2/3)(9-z)\le6$. Intertwining with $W_3$, preserving positive order, and lifting now give}
+{这一步没有使用 $\|a_j\|$ 的任何估计。为积分这一包络，采用辅助正交向量 $v_p\otimes e_j$，其系数即 $W_3P_{\mathrm{degree}\le8}^{\rm aux}W_3^\dagger$。次数为 $z\le8$ 的相对振子态，在该截断中恰有 $9-z$ 个质心后裔。因此，式~\eqref{eq:B-torus-seed} 赋予它偏迹系数 $(2/3)(9-z)\le6$。利用 $W_3$ 的交织性质、正序保持以及正提升，得}
+\begin{equation}
+ \int_T\mathcal E(R)\,\dd\mu_2(R)
+      \le6e_8C_{\rm rows}^B R_{3,8}.
+ \label{eq:B-envelope-integrated}
+\end{equation}
+\bi{Integrating both inequalities in \eqref{eq:B-local-envelope} proves \eqref{eq:B-metric-bound}. Thus the raw-jet metric error remains a three-body error with a particle-number-independent coefficient.}
+{对式~\eqref{eq:B-local-envelope} 的两边分别积分，即证式~\eqref{eq:B-metric-bound}。因此，原始 jet 度量误差仍是一个系数不依赖粒子数的三体误差。}
+\end{proof}
+
+\subsection{\bi{Assembly of the bosonic inequality}{玻色不等式的汇总}}
+\label{sec:B-assembly}
+
+\bi{Use the exact decomposition $H^2=\mathcal L_2(h_T^2)+S_3+S_4$ from Proposition~\ref{prop:connected}. The pair almost-projector estimate gives $\mathcal L_2(h_T^2)\ge(1-\epsilon_2)H$. The relative frame bound of Lemma~\ref{lem:relative-frame}, with charges two and two and relative degrees up to sixteen, gives $T_4\le(1+\epsilon_4)S_4$. In terms of the raw pair descendants, that finite four-body coefficient is explicitly}
+{使用命题~\ref{prop:connected} 的精确分解 $H^2=\mathcal L_2(h_T^2)+S_3+S_4$。配对近投影估计给出 $\mathcal L_2(h_T^2)\ge(1-\epsilon_2)H$。引理~\ref{lem:relative-frame} 中电荷二与电荷二、相对次数至多十六的相对框架界给出 $T_4\le(1+\epsilon_4)S_4$。用原始配对后裔表示，这一有限四体系数显式为}
+\begin{align}
+ C_d(R)&=\sum_{p=0}^d(-1)^{d-p}
+       \sqrt{\binom dp}\,2^{-d/2}B_p^B(R)B_{d-p}^B(R),
+ \notag\\
+ T_4&=\int_T\sum_{d=0}^{16}C_d(R)^\dagger C_d(R)\,
+                       \dd\mu_4(R)
+       \le(1+\epsilon_4)S_4.
+ \label{eq:B-four-frame}
+\end{align}
+\bi{Odd $d$ vanish because the pair annihilators commute. The estimate retains the error as a multiple of $S_4$, which is the positive term available in the bosonic argument.}
+{由于配对湮灭算符彼此对易，奇数 $d$ 的项消失。此估计将误差保留为 $S_4$ 的倍数，正好对应玻色论证可用的正项。}
+
+\bi{Substitute \eqref{eq:B-certificate-transferred} into the connected decomposition, then eliminate $K_3^0+K_4$ using \eqref{eq:B-K-decomposition}. Since $\alpha_B>0$, the four-body frame comparison is used in the correct direction. Finally use the upper bound on $R_g$ from Lemma~\ref{lem:B-metric}. The result is}
+{将式~\eqref{eq:B-certificate-transferred} 代入连通分解，再用式~\eqref{eq:B-K-decomposition} 消去 $K_3^0+K_4$。由于 $\alpha_B>0$，四体框架比较具有所需方向。最后使用引理~\ref{lem:B-metric} 对 $R_g$ 的上界，得到}
+\begin{align}
+ H^2\ge{}&K+(1-\epsilon_2-\eta)H
+       +[1-\alpha_B(1+\epsilon_4)]S_4
+ \notag\\
+ &-(\delta_B+\kappa_B)R_{3,8}
+       -\delta_B R_{4,16}-T_9.
+ \label{eq:B-master-before-payment}
+\end{align}
+\bi{Apply Proposition~\ref{prop:B-comparisons} to the three negative terms. This gives}
+{对三个负项应用命题~\ref{prop:B-comparisons}，得}
+\begin{equation}
+ H^2\ge K+A_\Lambda H+B_\Lambda S_4,
+ \label{eq:B-master}
+\end{equation}
+\begin{align}
+ A_\Lambda
+ &=1-\epsilon_2-\eta
+       -s\bigl[c_9+(\delta_B+\kappa_B)C_3^B\bigr]
+       -\delta_B C_4^B s^2,
+ \label{eq:B-A-budget}\\
+ B_\Lambda
+ &=1-\alpha_B(1+\epsilon_4)
+       -sc\bigl[c_9+(\delta_B+\kappa_B)C_3^B\bigr]
+       -2\delta_B C_4^B s^2c.
+ \label{eq:B-B-budget}
+\end{align}
+\bi{As the actual shortest nonzero lattice vector tends to infinity, the common frame estimates give $\epsilon_2,\epsilon_4,e_8\to0$ and $s,c\to1$, uniformly in twists and independently of the displayed lattice basis. Therefore,}
+{当实际最短非零格矢趋于无穷时，公共框架估计给出 $\epsilon_2,\epsilon_4,e_8\to0$ 以及 $s,c\to1$，并且对边界 twists 一致，不依赖选取的格基。因此，}
+\begin{align}
+ A_\infty
+ &=1-\eta-c_9-\delta_B(C_3^B+C_4^B)
+ \notag\\
+ &=\frac{23382014633024415475988526498535740455597}
+         {69331597085638656000000000000000000000000}
+   \approx0.33724904107059384>\frac13,
+ \label{eq:B-A-infinity}\\
+ B_\infty
+ &=\mu_B-\delta_B(C_3^B+2C_4^B)
+   =\frac{1121425355698906343}{70368744177664000000}
+   \approx0.015936412803780887>0.
+ \label{eq:B-B-infinity}
+\end{align}
+\bi{Since $K$ and $S_4$ are positive, every $\gamma<A_\infty$ admits a systole threshold for $H^2\ge\gamma H$. We next give a fully explicit sufficient threshold for $\gamma=1/3$.}
+{由于 $K$ 和 $S_4$ 均为正，每个 $\gamma<A_\infty$ 都存在一个最短周期阈值，使 $H^2\ge\gamma H$ 成立。下面对 $\gamma=1/3$ 给出完全显式的充分阈值。}
+
+\subsection{\bi{An explicit rational budget at systole twenty}{最短周期为二十时的显式有理预算}}
+\label{sec:B-systole}
+
+\bi{Assume $\ell(\Lambda)\ge L=20$ in the dimensionless coordinate $z=x/(\sqrt2\ell_B)$. Partition the nonzero lattice vectors into the shells $nL\le|\lambda|<(n+1)L$, $n\ge1$. Disks of radius $L/2$ about distinct lattice points have disjoint interiors. A shell is contained in the disk of radius $(n+3/2)L$ after adjoining these smaller disks, so its number of points is at most $(2n+3)^2$. This bound uses only the shortest lattice vector.}
+{假设在无量纲坐标 $z=x/(\sqrt2\ell_B)$ 中，$\ell(\Lambda)\ge L=20$。将非零格矢按壳层 $nL\le|\lambda|<(n+1)L$（$n\ge1$）划分。以不同格点为中心、半径为 $L/2$ 的圆盘内部互不相交；将这些小圆盘附于一壳层后，整体包含在半径 $(n+3/2)L$ 的圆盘中，因此每壳格点数至多为 $(2n+3)^2$。这一估计只使用最短格矢。}
+
+\bi{For the displacement estimate with $\nu=1$ and indices $d,e\le D$, the finite sum in the common jet bound has at most $D+1$ terms. For $r=|\lambda|\ge20$, each term is at most $D!r^{2D}e^{-r^2/2}$. A row-sum bound on the $(D+1)\times(D+1)$ matrix therefore gives}
+{对 $\nu=1$、指标 $d,e\le D$ 的位移估计，公共 jet 界中的有限和至多含 $D+1$ 项。对 $r=|\lambda|\ge20$，每项不超过 $D!r^{2D}e^{-r^2/2}$。再对 $(D+1)\times(D+1)$ 矩阵使用行和界，得到}
+\begin{equation}
+ \mathrm{error}_D\le(D+1)^2D!
+   \sum_{\lambda\ne0}|\lambda|^{2D}e^{-|\lambda|^2/2}.
+ \label{eq:B-jet-shell-start}
+\end{equation}
+\bi{For $D\le16$, $r^{2D}e^{-r^2/2}$ decreases on $r\ge20$. The ratio of consecutive shell majorants is bounded by $2^{33}e^{-600}<1/2$: the shell-count ratio is less than two, the polynomial ratio is at most $2^{32}$, and the exponential ratio is at most $e^{-600}$. Thus the sum is bounded by twice its first-shell majorant, giving}
+{当 $D\le16$ 时，$r^{2D}e^{-r^2/2}$ 在 $r\ge20$ 上递减。相邻壳层上界之比不超过 $2^{33}e^{-600}<1/2$：壳层计数之比小于二，多项式之比至多 $2^{32}$，指数之比至多 $e^{-600}$。因此该和不超过首壳上界的两倍，即}
+\begin{equation}
+ \sum_{\lambda\ne0}|\lambda|^{2D}e^{-|\lambda|^2/2}
+       \le50\,20^{2D}e^{-200}.
+ \label{eq:B-shell-bound}
+\end{equation}
+\bi{The elementary Taylor bound $e^{25/36}>\sum_{j=0}^{4}(25/36)^j/j!>2$ proves $\log2<25/36$. It follows that $e^{-200}<2^{-288}$, $e^{-100}<2^{-144}$, and $e^{-400}<2^{-576}$. Applying \eqref{eq:B-jet-shell-start} with $D=16$ to the two-center pair frame, and with $D=8$ to the raw-jet Gram matrix, yields}
+{初等 Taylor 界 $e^{25/36}>\sum_{j=0}^{4}(25/36)^j/j!>2$ 证明 $\log2<25/36$，从而 $e^{-200}<2^{-288}$、$e^{-100}<2^{-144}$、$e^{-400}<2^{-576}$。将式~\eqref{eq:B-jet-shell-start} 的 $D=16$ 情形用于双中心配对框架、$D=8$ 情形用于原始 jet Gram 矩阵，得到}
+\begin{align}
+ \epsilon_4
+ &\le\frac{50\cdot17^2\cdot16!\cdot20^{32}}{2^{288}}
+      <2.612\times10^{-28},
+ \label{eq:B-explicit-e4}\\
+ e_8
+ &\le\frac{50\cdot9^2\cdot8!\cdot20^{16}}{2^{288}}
+      <2.152\times10^{-58}.
+ \label{eq:B-explicit-e8}
+\end{align}
+\bi{The same shell argument applied directly to the zero-degree pair error and the diagonal charge-$j$ kernels gives}
+{将同一壳层论证直接用于零次数配对误差与电荷 $j$ 核的对角元，得}
+\begin{equation}
+ \epsilon_2\le50\,2^{-144}<2.243\times10^{-42},\qquad
+ |k_1(R)-1|\le50\,2^{-288},\qquad
+ |k_2(R)-1|\le50\,2^{-576}.
+ \label{eq:B-explicit-diagonals}
+\end{equation}
+\bi{In particular, $k_1$ is positive, as required in \eqref{eq:B-density-constants}. To keep the final calculation rational and simple, enlarge all five errors $\epsilon_2,\epsilon_4,e_8,|k_1-1|,|k_2-1|$ to the common allowance $e=10^{-8}$. Then}
+{特别地，$k_1$ 为正，满足式~\eqref{eq:B-density-constants} 的要求。为使最终计算保持为简单的有理数计算，将五个误差 $\epsilon_2,\epsilon_4,e_8,|k_1-1|,|k_2-1|$ 全部放宽到共同上界 $e=10^{-8}$。此时}
+\begin{equation}
+ s\le s_e:=1+e,\qquad
+ c\le c_e:=\frac{1+e}{(1-e)^2},\qquad
+ \kappa_B\le\kappa_e:=6C_{\rm rows}^Be.
+ \label{eq:B-rational-allowances}
+\end{equation}
+\bi{Every subtracted term in \eqref{eq:B-A-budget}--\eqref{eq:B-B-budget} is monotone in these nonnegative errors. Substitute $s_e,c_e,\kappa_e$ and $\epsilon_2=\epsilon_4=e$ to obtain rational lower bounds $\underline A$ and $\underline B$. Their exact values are recorded in Appendix~\ref{sec:B-certificate}; direct rational comparison gives}
+{式~\eqref{eq:B-A-budget}--\eqref{eq:B-B-budget} 中的每个被减项都随这些非负误差单调增加。代入 $s_e,c_e,\kappa_e$ 和 $\epsilon_2=\epsilon_4=e$，得到有理下界 $\underline A$ 和 $\underline B$。其精确值列于附录~\ref{sec:B-certificate}；直接进行有理数比较得}
+\begin{align}
+ A_\Lambda\ge\underline A
+ &\approx0.3372416256964786,\qquad \underline A>\frac{337241}{10^6}>\frac13,
+ \label{eq:B-explicit-A}\\
+ B_\Lambda\ge\underline B
+ &\approx0.015928994442432054,\qquad \underline B>\frac{15928}{10^6}>0.
+ \label{eq:B-explicit-B}
+\end{align}
+\bi{Equations~\eqref{eq:B-master}, \eqref{eq:B-explicit-A}, and \eqref{eq:B-explicit-B}, together with $K,S_4\ge0$, prove $H_B^2\ge H_B/3$ on every particle sector whenever $\ell(\Lambda)\ge20$. The threshold is sufficient and deliberately conservative; no optimization of the lattice budget is used.}
+{由式~\eqref{eq:B-master}、\eqref{eq:B-explicit-A}、\eqref{eq:B-explicit-B} 以及 $K,S_4\ge0$，可知当 $\ell(\Lambda)\ge20$ 时，每个粒子数扇区均满足 $H_B^2\ge H_B/3$。这一阈值是刻意保守的充分条件，证明没有使用格点预算的优化。}
+
+\bi{Finally, take the algebraic direct sum of finite-particle sectors as a common core. On each sector the preceding inequality excludes spectrum in $(0,1/3)$. The self-adjoint direct sum $H_B=\bigoplus_{N\ge0}H_{B,N}$ has the same spectral exclusion, and its spectral calculus gives the asserted full-Fock quadratic-form inequality. This step does not require $H_B$ to be a bounded operator on Fock space. At flux $M=2N$, the common zero-mode argument identifies its two-dimensional Laughlin kernel, so the bound is a gap above that kernel. For a square torus, $\ell(\Lambda)=\sqrt{\pi M}$, and on the even-flux sequence the sufficient condition holds for $N\ge64$.}
+{最后，以有限粒子数扇区的代数直和为共同核心。上述不等式在每个扇区排除 $(0,1/3)$ 内的谱。自伴直和 $H_B=\bigoplus_{N\ge0}H_{B,N}$ 具有相同的谱排除性质，通过谱演算即得所述全 Fock 空间二次型不等式。这一步不要求 $H_B$ 在 Fock 空间上有界。在磁通 $M=2N$ 时，公共零模论证将零核识别为二维 Laughlin 空间，故该界给出零核上方的谱隙。对方形环面，$\ell(\Lambda)=\sqrt{\pi M}$，因此在偶磁通序列上，$N\ge64$ 即满足这一充分条件。}

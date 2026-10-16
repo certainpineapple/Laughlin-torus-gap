@@ -1,0 +1,253 @@
+\section{\bi{The complete finite fermionic certificate}{完整的有限费米证书}}
+\label{app:F-certificate}
+
+\bi{This appendix specifies all finite input data and all arithmetic required for \eqref{eq:F-three-certificate} and \eqref{eq:F-four-certificate}. The coefficients originate in \cite{OpenAI2026Fock}; the formulation below uses their planar oscillator values directly. The proof consists of finite sums of integers and rational numbers, followed by exact positivity tests. It neither estimates a many-particle spectrum nor introduces a size-dependent optimization problem.}{本附录给出式~\eqref{eq:F-three-certificate}和~\eqref{eq:F-four-certificate}所需的全部有限输入数据及算术。系数源自文献~\cite{OpenAI2026Fock}；下文直接使用其平面振子数值。证明由有限整数、有理数求和以及精确正性检验组成，既不估算多粒子能谱，也不引入随系统尺寸增长的优化问题。}
+
+\subsection{\bi{All seven integer rows}{全部七行整数数据}}
+\label{app:F-rows}
+
+\bi{Let $P=10^7$. The first two integers of each row are $t_\rho$ and $\ell_\rho=P\lambda_\rho$. An entry written as $pj:a$ means $a_{pj}^{\rho}=a$, with $p$ and $j$ read as separate single-digit indices. Indented continuation lines belong to the preceding row. Every omitted entry is zero. Thus the following data, together with \eqref{eq:F-row-decode}, determine every coefficient without a fitted or rounded decimal input.}{令 $P=10^7$。每行的前两个整数为 $t_\rho$ 及 $\ell_\rho=P\lambda_\rho$。条目 $pj:a$ 表示 $a_{pj}^{\rho}=a$，其中 $p,j$ 应解析为两个单独的个位指标。缩进续行属于前一行，所有未列出的条目均为零。因此下列数据与式~\eqref{eq:F-row-decode}共同确定全部系数，无需拟合值或舍入的小数输入。}
+
+\begingroup\scriptsize
+\begin{verbatim}
+0 7181518 05:-849651 07:-2958744 15:751659 16:-43084 17:-146216 32:720949 35:-127514
+  42:222437 43:-262822 53:-117700 61:-55024 71:-166049
+1 -112991 05:142772 06:-142342 07:527055 08:50742 16:197917 18:-18343 24:5764 27:-21183
+  32:75832 35:-6115 45:2660 53:-9455 61:-27091 63:-3494 71:479 72:-15331
+1 -4247311 05:-12207250 06:-14064191 07:-14063663 08:-15662679 16:483831 18:3987214
+  24:-814558 27:888887 32:966462 35:145978 45:-171722 53:34350 61:389319 63:97603
+  71:412447 72:-53786
+2 3438746 14:6689266 15:6620205 16:6625065 17:4969272 18:4878238 27:-1387380 36:-586188
+  37:344087 42:-1120634 45:-318530 46:559169 55:157455 61:1207103 63:211617 64:33240
+  71:577001 73:-142578
+5 -98645 05:-2719776 08:-8519913 14:-949523 17:-1952105 18:-1562606 28:-8919966 32:248826
+  35:-1017623 37:3656005 38:-2081871 42:-33163 43:-305905 46:35677 47:-1320749
+  48:-1040378 53:502094 55:1060633 58:-998003 61:-113617 63:184919 64:209239 65:-68198
+  67:-266297 72:-606696 73:-563620 74:437345 76:-432189
+5 -3160276 05:-1698129 08:10575875 14:-252576 17:-8002616 18:22592844 28:7370640
+  32:289294 35:1400647 37:1987740 38:4030699 42:-1731401 43:-1034062 46:-1106371
+  47:-1257051 48:1461735 53:1408149 55:1136847 58:1878501 61:-2838516 63:-734099
+  64:1062416 65:11745 67:611312 72:-480776 73:20459 74:316925 76:37092
+7 1441784 07:3441286 08:-6097155 37:-1002399 47:-251321 58:1143225 66:-17397 71:-1007464
+  73:-662286 76:-344621 78:-1115284
+\end{verbatim}
+\endgroup
+
+\bi{The row support satisfies $0\le p\le7$, $0\le j\le8$, and $0\le p+j-t_\rho\le8$. Direct integer addition gives}{各行支撑满足 $0\le p\le7$、$0\le j\le8$ 及 $0\le p+j-t_\rho\le8$。直接作整数加法得到}
+\begin{equation}
+ \sum_{\rho=1}^{7}\ell_\rho^2=93527408868499,
+ \qquad \eta=\frac{93527408868499}{10^{14}}.
+ \label{eq:F-eta-arithmetic}
+\end{equation}
+
+\subsection{\bi{Exact three-body arithmetic}{精确三体算术}}
+\label{app:F-three-arithmetic}
+
+\bi{For $c\in\{1,2\}$ and integers $0\le z,p\le T$, define the integer polynomial coefficient}{对 $c\in\{1,2\}$ 及整数 $0\le z,p\le T$，定义整数多项式系数}
+\begin{equation}
+ \mathsf U(c,z,T,p)=
+ \sum_{h=\max(0,p+z-T)}^{\min(p,z)}
+ (-1)^{z-h}\binom zh\binom{T-z}{p-h}c^{p-h}.
+ \label{eq:F-U}
+\end{equation}
+\bi{Set $\mathsf U$ to zero whenever $z$ or $p$ lies outside $[0,T]$. Expanding \eqref{eq:F-coupling} at $u=1/\sqrt3$ gives}{当 $z$ 或 $p$ 超出 $[0,T]$ 时，将 $\mathsf U$ 定义为零。将式~\eqref{eq:F-coupling}在 $u=1/\sqrt3$ 时展开，得到}
+\begin{equation}
+ s^{(1/\sqrt3)}_{z,T,p}
+ =\mathsf U(2,z,T,p)
+       \sqrt{\frac{2^z\binom Tz}{3^T2^p\binom Tp}}.
+ \label{eq:F-s-rational}
+\end{equation}
+\bi{Inserting this expression and \eqref{eq:F-row-decode} into \eqref{eq:F-ez} cancels every square root. Explicitly, let}{将此式及~\eqref{eq:F-row-decode}代入~\eqref{eq:F-ez}，全部平方根消去。具体地，令}
+\begin{equation}
+ X_{\rho,T}(z)=\sum_{p+j=T}a_{pj}^{\rho}\mathsf U(2,z,T,p).
+ \label{eq:F-X-rational}
+\end{equation}
+\bi{Empty sums are zero, and the required rational expression is}{空求和取零，所需有理表达式为}
+\begin{equation}
+ P^2e_z=
+ \sum_{\rho=1}^{7}\sum_{T=\max(z,t_\rho)}^{15}
+ \frac{2^z\binom Tz}{3^T2^{t_\rho}\binom T{t_\rho}}
+ X_{\rho,T}(z)
+ \bigl[X_{\rho,T}(z)+2\ell_\rho\mathsf U(2,z,T,t_\rho)\bigr].
+ \label{eq:F-e-rational}
+\end{equation}
+\bi{To see the cancellation directly, for a fixed $T$ the product $\alpha_{pj}^{\rho}s_{z,T,p}$ equals $a_{pj}^{\rho}/P$ times a factor independent of $p$. Its square is $2^z\binom Tz/(3^T2^{t_\rho}\binom T{t_\rho})$. The same factor multiplies $\lambda_\rho s_{z,T,t_\rho}$, which proves \eqref{eq:F-e-rational}.}{为直接看出根式的消去，固定 $T$ 后，乘积 $\alpha_{pj}^{\rho}s_{z,T,p}$ 等于 $a_{pj}^{\rho}/P$ 乘以一个与 $p$ 无关的因子，其平方为 $2^z\binom Tz/(3^T2^{t_\rho}\binom T{t_\rho})$。同一个因子也出现在 $\lambda_\rho s_{z,T,t_\rho}$ 中，故得到式~\eqref{eq:F-e-rational}。}
+
+\bi{For each nonzero wedge sector, compute the exact margin}{对每个非零外积扇区，计算精确裕量}
+\begin{equation}
+ m_z=\frac32(3z-1)(-1/2)^z-e_z.
+ \label{eq:F-margin}
+\end{equation}
+\bi{The following table gives the integer floors of $10^6m_z$. These are obtained by integer division after writing each rational number with a positive denominator.}{下表列出 $10^6m_z$ 的整数下取整值；将每个有理数写成分母为正的形式后，通过整数除法即可得到。}
+\begin{center}
+\small
+\begin{tabular}{c|rrrrrrr}
+$z$&2&4&5&6&7&8&9\\ \hline
+$\lfloor10^6m_z\rfloor$&1298313&211317&249&250&249&250&250
+\end{tabular}
+\par\smallskip
+\begin{tabular}{c|rrrrrr}
+$z$&10&11&12&13&14&15\\ \hline
+$\lfloor10^6m_z\rfloor$&250&249&250&250&6470&250
+\end{tabular}
+\end{center}
+\bi{All thirteen floors are positive, and therefore every $m_z$ is strictly positive. This proves \eqref{eq:F-three-certificate} without floating-point sign decisions. The sectors $z=0,1,3$ are absent because their wedge maps vanish identically.}{十三个下取整值全部为正，因此每个 $m_z$ 均严格为正。这证明式~\eqref{eq:F-three-certificate}，且无需通过浮点数判断符号。$z=0,1,3$ 三个扇区未列入，因为其外积映射恒为零。}
+
+\bi{For completeness, the constant controlling the torus Gram error is equally rational. Put $A_{\rho,i}=\sum_{p+j-t_\rho=i}(\alpha_{pj}^{\rho})^2$. Squaring \eqref{eq:F-row-decode} gives}{为完整起见，控制环面 Gram 误差的常数也同样是有理数。令 $A_{\rho,i}=\sum_{p+j-t_\rho=i}(\alpha_{pj}^{\rho})^2$，对式~\eqref{eq:F-row-decode}取平方得到}
+\begin{equation}
+ A_{\rho,i}=\frac1{P^2}
+    \sum_{p+j-t_\rho=i}(a_{pj}^{\rho})^2
+                  \frac{2^{p-t_\rho}t_\rho!i!}{p!j!}.
+ \label{eq:F-A-rational}
+\end{equation}
+\bi{The nonzero-entry counts $n_\rho$, maximizing indices $i_\rho$, and maxima are}{非零项个数 $n_\rho$、取最大值的指标 $i_\rho$ 及相应最大值为}
+\begin{center}
+\small
+\begin{tabular}{c|r|r|l}
+$\rho$&$n_\rho$&$i_\rho$&$A_{\rho,i_\rho}$\\ \hline
+1&12&8&$237052991863/390625000000$\\
+2&16&6&$1154980099359/1400000000000000$\\
+3&16&8&$4366100262613/15000000000000$\\
+4&17&5&$90518611137713/600000000000000$\\
+5&27&5&$289563620848499/5600000000000000$\\
+6&27&2&$9393778357061/150000000000000$\\
+7&10&8&$77741150041/6250000000000$
+\end{tabular}
+\end{center}
+\bi{Comparison with the other eight rational values in each row verifies the maxima. Multiplying by $n_\rho$ and summing gives}{将每个最大值与该行其余八个有理值比较即可核实其最大性。乘以 $n_\rho$ 后求和，得到}
+\begin{equation}
+ C_\alpha^{\mathrm F}=\sum_{\rho=1}^{7}n_\rho A_{\rho,i_\rho}
+  =\frac{297842353828763087}{16800000000000000}.
+\end{equation}
+
+\subsection{\bi{Rational reconstruction of all four-body blocks}{全部四体分块的有理重建}}
+\label{app:F-four-arithmetic}
+
+\bi{Fix $1\le D\le23$ and let all copy indices range over $\mathcal R_D$. Define}{固定 $1\le D\le23$，所有副本指标均在 $\mathcal R_D$ 中取值。定义}
+\begin{equation}
+ u_r=\frac1{r!(D-r)!},\qquad
+ (E_D)_{rs}=\sqrt{u_ru_s}\,Y_{rs},\qquad
+ (G_D)_{rs}=\sqrt{u_ru_s}\,Z_{rs}.
+ \label{eq:F-scale}
+\end{equation}
+\bi{We now express $Y$ and $Z$ entirely over the rationals. First put}{下面将 $Y,Z$ 完全写成有理数矩阵。首先令}
+\begin{equation}
+ \mathsf V_r(D,T;p,j,k)
+ =\mathsf U(1,r,j+k,j)\mathsf U(1,D-r,T-r,p),
+ \label{eq:F-V}
+\end{equation}
+\bi{with value zero for $r>j+k$. Two expansions of \eqref{eq:F-coupling} at $u=1/\sqrt2$ give}{当 $r>j+k$ 时取零。对式~\eqref{eq:F-coupling}在 $u=1/\sqrt2$ 时展开两次，得到}
+\begin{equation}
+ S_r(D,T;p,j,k)=\mathsf V_r(D,T;p,j,k)
+       \sqrt{2^{1-(j+k)-T+r}
+                  \frac{j!k!p!\,u_r}{(T-D)!}}.
+ \label{eq:F-S-rational}
+\end{equation}
+\bi{Consequently, the matrix defined by \eqref{eq:F-E} is determined by}{因此，式~\eqref{eq:F-E}定义的矩阵可由下式确定：}
+\begin{align}
+ P^2Y_{rs}=-\sum_{\rho=1}^{7}
+  \sum_{\substack{(p,j),(q,l)\in\operatorname{supp}(a^\rho)\\T\ge D}}
+ &a_{pj}^{\rho}a_{ql}^{\rho}
+   \mathsf V_r(D,T;p,j,k)\mathsf V_s(D,T;q,l,i)\notag\\
+ &\times2^{1-2T+p+q-t_\rho+(r+s)/2}
+                    \frac{i!k!t_\rho!}{(T-D)!},
+ \label{eq:F-Y-rational}
+\end{align}
+\bi{where $i=p+j-t_\rho$, $k=q+l-t_\rho$, and $T=p+j+k$. Both sums over input entries are ordered. To verify the square-root cancellation, multiply the two factors in \eqref{eq:F-S-rational} by the two coefficient factors in \eqref{eq:F-row-decode}. The factorial product under the combined radical is $(t_\rho!i!k!)^2u_ru_s/((T-D)!)^2$. Since $j+k=T-p$ and $l+i=T-q$, the exponent of two under that radical is $2+2p+2q-2t_\rho-4T+r+s$. Taking its positive square root and removing $\sqrt{u_ru_s}$ gives exactly \eqref{eq:F-Y-rational}.}{其中 $i=p+j-t_\rho$、$k=q+l-t_\rho$，以及 $T=p+j+k$。两个输入项的求和均为有序求和。为核查平方根消去，将式~\eqref{eq:F-S-rational}中的两个因子乘以式~\eqref{eq:F-row-decode}中的两个系数因子；合并根号内的阶乘乘积为 $(t_\rho!i!k!)^2u_ru_s/((T-D)!)^2$。由于 $j+k=T-p$、$l+i=T-q$，根号内二的指数为 $2+2p+2q-2t_\rho-4T+r+s$。取正平方根并除去 $\sqrt{u_ru_s}$ 后，恰得到式~\eqref{eq:F-Y-rational}。}
+
+\bi{To reconstruct the Gram matrix, let $A$ be an increasing quadruple of nonnegative indices with sum $D+1$, and put $f(A)=\prod_{b\in A}b!$. For a choice $x<y$ from $A$, write the complementary indices as $j<k$ and set $p=x+y-1$. Let $\sigma(x,y,j,k)$ be the sign of sorting this ordered list into increasing order. Define}{为重建 Gram 矩阵，令 $A$ 为总和等于 $D+1$ 的非负整数递增四元组，并设 $f(A)=\prod_{b\in A}b!$。从 $A$ 中选取 $x<y$，将余下指标记为 $j<k$，并令 $p=x+y-1$。以 $\sigma(x,y,j,k)$ 表示将该有序列表重排为递增次序的符号。定义}
+\begin{equation}
+ L_r(A)=2^{(1-2D+r)/2}
+ \sum_{\substack{x,y\in A,\ x<y\\\{j,k\}=A\setminus\{x,y\},\ j<k}}
+ \sigma(x,y,j,k)(x-y)p!j!k!
+                 \mathsf V_r(D,D;p,j,k).
+ \label{eq:F-L-rational}
+\end{equation}
+\bi{Indeed, the coefficient of $e_x\wedge e_y$ in $v_p$ is $(x-y)\sqrt{p!/(2^px!y!)}$ when $x+y=p+1$. Multiplication by \eqref{eq:F-S-rational}, followed by the wedge sorting sign, shows that the coefficient of $w_{D,r}$ on the normalized Slater wedge $A$ is $\sqrt{u_r/f(A)}L_r(A)$. Taking inner products in this orthonormal wedge basis therefore gives}{事实上，当 $x+y=p+1$ 时，$v_p$ 在 $e_x\wedge e_y$ 上的系数为 $(x-y)\sqrt{p!/(2^px!y!)}$。将其乘以式~\eqref{eq:F-S-rational}并计入外积排序符号，可知 $w_{D,r}$ 在归一化 Slater 外积 $A$ 上的系数为 $\sqrt{u_r/f(A)}L_r(A)$。因此在此正交归一外积基中取内积，得到}
+\begin{equation}
+ Z_{rs}=\sum_{\substack{A\subset\mathbb Z_{\ge0},\ |A|=4\\\sum_{b\in A}b=D+1}}
+                \frac{L_r(A)L_s(A)}{f(A)}.
+ \label{eq:F-Z-rational}
+\end{equation}
+\bi{All powers of two in \eqref{eq:F-Y-rational} and \eqref{eq:F-L-rational} have integer exponents because $r,s$ are odd. Thus $Y$ and $Z$ are rational matrices. Empty quadruple sums, which occur at small $D$, are exactly zero.}{由于 $r,s$ 均为奇数，式~\eqref{eq:F-Y-rational}和~\eqref{eq:F-L-rational}中二的指数全部为整数，故 $Y,Z$ 均为有理矩阵。较小 $D$ 时出现的空四元组求和严格为零。}
+
+\bi{Write $D_u=\operatorname{diag}(u_r)$ and $D_{\sqrt u}=\operatorname{diag}(\sqrt{u_r})$. Introduce rational matrices}{记 $D_u=\operatorname{diag}(u_r)$ 和 $D_{\sqrt u}=\operatorname{diag}(\sqrt{u_r})$，并引入有理矩阵}
+\begin{equation}
+ \mathsf B=\operatorname{diag}\bigl((2\mathbf1_{r=1}+\varepsilon_{\mathrm F})u_r\bigr)
+                  -D_uYD_u,
+ \qquad \mathsf M=Z\mathsf BZ.
+ \label{eq:F-M-rational}
+\end{equation}
+\bi{Here $\mathsf M$ is a certificate matrix, distinct from the magnetic flux $M$. Substitution into \eqref{eq:F-scale} gives the exact congruence}{此处 $\mathsf M$ 为证书矩阵，与磁通量 $M$ 区分。代入式~\eqref{eq:F-scale}，得到精确合同关系}
+\begin{equation}
+ G_D(2\Pi_1-E_D+\varepsilon_{\mathrm F}I)G_D
+      =D_{\sqrt u}\mathsf M D_{\sqrt u}.
+ \label{eq:F-rational-congruence}
+\end{equation}
+\bi{Every $u_r$ is strictly positive. Hence proving $\mathsf M\ge0$ proves the desired certificate. This transformation only uses a positive diagonal congruence; it does not invert $G_D$ or discard its kernel.}{每个 $u_r$ 均严格为正，因此只需证明 $\mathsf M\ge0$ 即可得到所需证书。此变换仅使用正对角合同变换，既不求 $G_D$ 的逆，也不丢弃其核。}
+
+\subsection{\bi{Exact positive-semidefiniteness tests}{精确半正定检验}}
+\label{app:F-PSD}
+
+\bi{The finite matrices in \eqref{eq:F-M-rational} can be tested by symmetric Schur elimination using rational numbers throughout. Order the copy indices increasingly and initialize $A=\mathsf M$. At each remaining index, read its diagonal entry $a$. If $a<0$, the matrix is not positive semidefinite. If $a=0$, every other entry in that row must be exactly zero; otherwise the associated $2\times2$ principal minor has determinant $-|b|^2<0$. A zero row and column may be removed without changing the rank. If $a>0$, write the remaining matrix as}{式~\eqref{eq:F-M-rational}中的有限矩阵可始终以有理数进行对称 Schur 消元检验。将副本指标递增排序，并初始化 $A=\mathsf M$。每一步读取当前对角元 $a$：若 $a<0$，则矩阵不是半正定的；若 $a=0$，则该行其余元素必须精确为零，否则相应 $2\times2$ 主子式的行列式为 $-|b|^2<0$。零行和零列可删除，秩保持不变。若 $a>0$，将当前矩阵写为}
+\begin{equation}
+ A=\begin{pmatrix}a&b^\dagger\\b&C\end{pmatrix}
+  =\begin{pmatrix}1&0\\b/a&I\end{pmatrix}
+    \begin{pmatrix}a&0\\0&C-bb^\dagger/a\end{pmatrix}
+    \begin{pmatrix}1&b^\dagger/a\\0&I\end{pmatrix}.
+ \label{eq:F-Schur}
+\end{equation}
+\bi{This invertible congruence reduces positivity to that of the smaller Schur complement $C-bb^\dagger/a$ and increases the accumulated rank by one. Iterating proves positive semidefiniteness if every pivot is positive or has an exactly zero remaining row. Rational subtraction and division determine the decision without a tolerance for small eigenvalues.}{该可逆合同变换将正性归结为更小的 Schur 补 $C-bb^\dagger/a$ 的正性，并使累计秩增加一。反复执行后，若每个主元均为正，或其为零且剩余行精确为零，则证明半正定性。有理数减法与除法确定所有判定，无需为小本征值设置容差。}
+
+\bi{A second finite check can be obtained from characteristic coefficients. For a block of dimension $d=|\mathcal R_D|$, set $J_0=I_d$ and recursively compute}{另一种有限检验可由特征多项式系数得到。对维数为 $d=|\mathcal R_D|$ 的分块，令 $J_0=I_d$，并递归计算}
+\begin{equation}
+ X_b=\mathsf M J_{b-1},\qquad
+ c_b=\frac{\operatorname{Tr}X_b}{b},\qquad
+ J_b=c_bI_d-X_b,\qquad 1\le b\le d.
+ \label{eq:F-characteristic-recurrence}
+\end{equation}
+\bi{Newton's identities, or direct coefficient comparison in the polynomial adjugate identity, give}{由 Newton 恒等式，或直接比较多项式伴随矩阵恒等式中的系数，可得}
+\begin{equation}
+ \det(xI_d+\mathsf M)=x^d+c_1x^{d-1}+\cdots+c_d.
+ \label{eq:F-characteristic}
+\end{equation}
+\bi{For example, the recursion starts with $c_1=\operatorname{Tr}\mathsf M$ and $c_2=((\operatorname{Tr}\mathsf M)^2-\operatorname{Tr}\mathsf M^2)/2$. If all $c_b\ge0$, the polynomial in \eqref{eq:F-characteristic} is positive for every $x>0$. Since $\mathsf M$ is real symmetric, a negative eigenvalue would give a positive root, a contradiction. Thus nonnegative characteristic coefficients are an independent exact criterion for this calculation.}{例如，递归前两步为 $c_1=\operatorname{Tr}\mathsf M$ 及 $c_2=((\operatorname{Tr}\mathsf M)^2-\operatorname{Tr}\mathsf M^2)/2$。若所有 $c_b\ge0$，则式~\eqref{eq:F-characteristic}中的多项式在每个 $x>0$ 处均为正。由于 $\mathsf M$ 为实对称矩阵，若存在负本征值，就会给出一个正根，形成矛盾。因此特征系数非负为本计算提供了另一项精确判据。}
+
+\bi{Evaluating the finite sums \eqref{eq:F-U}, \eqref{eq:F-Y-rational}, \eqref{eq:F-L-rational}, and \eqref{eq:F-Z-rational} at $\varepsilon_{\mathrm F}=3/10^6$ gives the following results. The rank is the number of positive Schur pivots. The sign string lists $c_1,\ldots,c_d$ in order; a plus means a strictly positive rational numerator with positive denominator, and zero means exact zero. Every block passes the Schur test, including its zero-row checks, and all characteristic coefficients are nonnegative.}{以 $\varepsilon_{\mathrm F}=3/10^6$ 计算有限和~\eqref{eq:F-U}、\eqref{eq:F-Y-rational}、\eqref{eq:F-L-rational}及~\eqref{eq:F-Z-rational}，得到下表。秩等于正 Schur 主元的个数；符号串依次列出 $c_1,\ldots,c_d$，其中加号表示分母为正时分子严格为正，零表示精确为零。每个分块均通过 Schur 检验及其零行检验，全部特征系数也均非负。}
+\begin{center}
+\small
+\begin{tabular}{r|r|r|l}
+$D$&$d$&$\operatorname{rank}(\mathsf M)$&\bi{Signs}{符号}\\ \hline
+1&1&0&\texttt{0}\\
+2&1&0&\texttt{0}\\
+3&2&0&\texttt{00}\\
+4&2&0&\texttt{00}\\
+5&3&1&\texttt{+00}\\
+6&3&0&\texttt{000}\\
+7&4&1&\texttt{+000}\\
+8&4&1&\texttt{+000}\\
+9&5&2&\texttt{++000}\\
+10&5&1&\texttt{+0000}\\
+11&6&3&\texttt{+++000}\\
+12&6&2&\texttt{++0000}\\
+13&7&4&\texttt{++++000}\\
+14&7&3&\texttt{+++0000}\\
+15&8&5&\texttt{+++++000}\\
+16&8&4&\texttt{++++0000}\\
+17&9&6&\texttt{++++++000}\\
+18&9&5&\texttt{+++++0000}\\
+19&10&7&\texttt{+++++++000}\\
+20&10&6&\texttt{++++++0000}\\
+21&11&8&\texttt{++++++++000}\\
+22&11&7&\texttt{+++++++0000}\\
+23&12&9&\texttt{+++++++++000}
+\end{tabular}
+\end{center}
+\bi{The matrices have dimension at most twelve, and every sum ranges over the printed integer rows and explicitly bounded indices. Equations~\eqref{eq:F-rational-congruence} and~\eqref{eq:F-Schur}, or alternatively \eqref{eq:F-characteristic}, therefore prove all twenty-three instances of \eqref{eq:F-four-certificate}. Their kernels are retained throughout.}{这些矩阵的维数至多为十二，全部求和仅涉及已列出的整数行和具有显式界的指标。因此由式~\eqref{eq:F-rational-congruence}与~\eqref{eq:F-Schur}，或采用式~\eqref{eq:F-characteristic}，便证明式~\eqref{eq:F-four-certificate}的全部二十三个实例，且全过程均保留其核。}
+
+\bi{Finally, the finite arithmetic and the analytic tail bound give the exact limiting budget}{最后，有限算术与解析尾界给出精确的极限预算}
+\begin{equation}
+ 1-\eta-\frac{61}{4096}-1222\varepsilon_{\mathrm F}
+     =\frac{4616733319001}{10^{14}}>0.
+\end{equation}
+\bi{The extension from these finite matrices to the full torus Hamiltonian is supplied by the positive congruence and the $H$-relative estimates in Section~\ref{sec:F-proof}; finite arithmetic alone is not a substitute for those analytic steps.}{由这些有限矩阵推广至完整环面哈密顿量，依靠的是第~\ref{sec:F-proof}节中的保正合同变换及相对于 $H$ 的估计；有限算术本身不能替代这些解析步骤。}

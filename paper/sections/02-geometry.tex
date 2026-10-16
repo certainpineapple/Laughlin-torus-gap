@@ -1,0 +1,236 @@
+\section{\bi{Magnetic periodization and local oscillator identities}{磁周期化与局部振子恒等式}}\label{sec:geometry}
+\bi{Torus coherent states and their reproducing kernels provide the geometric background~\cite{Fremling2013Coherent}. We specify the magnetic phases, measures, and raw-jet normalization below, and derive the full-COM frame estimate rather than assume it from a localized coherent-state construction.}
+{环面相干态及其再生核提供几何背景~\cite{Fremling2013Coherent}。下文明确磁相位、测度和原始jet的归一化，并推导全COM框架估计；这一估计不作为局域相干态构造的现成结论使用。}
+\subsection{\bi{Line bundles, measures, and the parameter Landau levels}{线丛、测度与参数Landau能级}}
+\bi{Let $\Lambda=\mathbb Z\omega_1+\mathbb Z\omega_2\subset\mathbb C$, with $\operatorname{Im}(\overline\omega_1\omega_2)=\pi M$, and write $T=\mathbb C/\Lambda$. Lengths are measured in the coordinate $z=x/(\sqrt2\ell_B)$, where $\ell_B$ is the magnetic length. The systole is $\ell(\Lambda)=\min_{\lambda\in\Lambda\setminus\{0\}}|\lambda|$. All limits below concern this actual shortest lattice vector. Fix arbitrary real boundary angles $\theta_1,\theta_2$, and set}
+{令$\Lambda=\mathbb Z\omega_1+\mathbb Z\omega_2\subset\mathbb C$，其中$\operatorname{Im}(\overline\omega_1\omega_2)=\pi M$，并记$T=\mathbb C/\Lambda$。长度使用坐标$z=x/(\sqrt2\ell_B)$计量，$\ell_B$为磁长。定义最短周期$\ell(\Lambda)=\min_{\lambda\in\Lambda\setminus\{0\}}|\lambda|$。以下所有几何极限都针对这一实际最短格矢。固定任意实边界相位$\theta_1,\theta_2$，定义}
+\begin{equation}
+ \chi(m\omega_1+n\omega_2)=e^{i(m\theta_1+n\theta_2)}(-1)^{Mmn},\qquad \chi_k=\chi^k.
+\end{equation}
+\bi{For positive integer charge $k$, use the measure $\dd\mu_k(z)=k\dd^2z/\pi$ and magnetic translations}
+{对正整数电荷$k$，使用测度$\dd\mu_k(z)=k\dd^2z/\pi$及磁平移}
+\begin{align}
+ (T_x^{(k)}f)(z)&=\exp\!\left[\frac{k}{2}(z\bar x-\bar z x)\right]f(z-x),\label{eq:translation}\\
+ T_x^{(k)}T_y^{(k)}&=e^{-ik\operatorname{Im}(x\bar y)}T_{x+y}^{(k)},\qquad
+ \chi_k(\lambda)\chi_k(\mu)=e^{-ik\operatorname{Im}(\lambda\bar\mu)}\chi_k(\lambda+\mu).
+\end{align}
+\bi{The charge-$k$ lowest Landau level (LLL) $\mathcal H_k(T)$ consists of Gaussian-holomorphic sections satisfying $T_\lambda^{(k)}f=\chi_k(\lambda)f$. Equivalently,}
+{电荷$k$的最低Landau能级（LLL）$\mathcal H_k(T)$由满足$T_\lambda^{(k)}f=\chi_k(\lambda)f$的高斯全纯截面构成。等价地，}
+\begin{equation}
+ f(z+\lambda)=\chi_k(\lambda)^{-1}
+ e^{k(z\bar\lambda-\bar z\lambda)/2}f(z).
+\end{equation}
+\bi{Its dimension is $kM$. The plane reproducing kernel in the same measure is $K_k(z,w)=\exp[k(z\bar w-|z|^2/2-|w|^2/2)]$. For a Gaussian times a polynomial define}
+{其维数为$kM$。同一测度下的平面再生核为$K_k(z,w)=\exp[k(z\bar w-|z|^2/2-|w|^2/2)]$。对高斯函数乘多项式，定义}
+\begin{equation}
+ P_k f=\sum_{\lambda\in\Lambda}\chi_k(\lambda)^{-1}T_\lambda^{(k)}f,
+ \qquad K_k^T=P_k K_k.\label{eq:periodization}
+\end{equation}
+\bi{These series and any fixed number of their derivatives converge absolutely. Reindexing gives the stated boundary law. Unfolding a fundamental-cell integral proves the reproducing property of $K_k^T$ with no additional area normalization. We do not assert that $P_k$ is a bounded map on the entire infinite-dimensional planar LLL. Its use is restricted to finite-degree vectors and the weighted, absolutely convergent series justified below.}
+{这些级数及任意固定阶导数绝对收敛。重排指标得到上述边界规律，展开基本胞积分则证明$K_k^T$的再生性质，无需额外面积归一化。这里不声称$P_k$在整个无限维平面LLL上是有界映射；它只作用于有限次数向量及下文证明绝对收敛的带权级数。}
+
+\bi{Let $e_j(z)=z^j e^{-|z|^2/2}/\sqrt{j!}$, $u_j(R)=T_R^{(1)}e_j$, and $u_j^T(R)=P_1u_j(R)$. A common-image unfolding gives, for finite Gaussian polynomials $f,g$,}
+{令$e_j(z)=z^j e^{-|z|^2/2}/\sqrt{j!}$、$u_j(R)=T_R^{(1)}e_j$、$u_j^T(R)=P_1u_j(R)$。对有限高斯多项式$f,g$，展开共同image可得}
+\begin{equation}
+ \langle P_1f,P_1g\rangle_T
+ =\sum_{\lambda\in\Lambda}\chi(\lambda)^{-1}
+   \langle f,T_\lambda^{(1)}g\rangle_{\mathbb C}.\label{eq:inner-unfold}
+\end{equation}
+\bi{Indeed, write the two images as $\mu$ and $\mu+\lambda$. The cocycle and semicharacter factors cancel the common translation, and the translated cells tile the plane. Absolute Gaussian convergence permits this rearrangement. In particular, putting $b_\lambda(R)=\chi(\lambda)e^{i\operatorname{Im}(\lambda\bar R)}$,}
+{具体地，把两个image写成$\mu$及$\mu+\lambda$；cocycle与semicharacter因子消去共同平移，而平移后的基本胞铺满平面。高斯绝对收敛保证这种重排合法。特别地，记$b_\lambda(R)=\chi(\lambda)e^{i\operatorname{Im}(\lambda\bar R)}$，则}
+\begin{equation}
+ u_j^T(R+\lambda)=b_\lambda(R)u_j^T(R),\qquad
+ g^T_{ij}(R,S)=\sum_{\lambda\in\Lambda}b_\lambda(S)^{-1}g^{\rm pl}_{ij}(R,S+\lambda),\label{eq:gram-unfold}
+\end{equation}
+\bi{where $g_{ij}(R,S)=\langle u_i(R),u_j(S)\rangle$. The phase in the second identity follows from $T_\lambda u_j(S)=e^{-i\operatorname{Im}(\lambda\bar S)}u_j(S+\lambda)$.}
+{其中$g_{ij}(R,S)=\langle u_i(R),u_j(S)\rangle$。第二个恒等式的相位来自$T_\lambda u_j(S)=e^{-i\operatorname{Im}(\lambda\bar S)}u_j(S+\lambda)$。}
+
+\bi{For every fixed $R$, all $u_j^T(R)$ are physical one-particle LLL vectors in the variable $z$. Their dependence on the center $R$ is different: $u_j^T$ lies in the $j$th Landau level of the dual parameter line bundle. The annihilation amplitude is its conjugate and has the holomorphic-side automorphy, but is in the parameter LLL only for $j=0$. More generally, write $\mathcal H_{k,n}(T)$ for parameter charge $k$ and Landau level $n$, with $\mathcal H_k=\mathcal H_{k,0}$. A $k$-body center-of-mass (COM) vacuum seed has an amplitude in $\mathcal H_k$; its $n$th COM descendant has an amplitude in $\mathcal H_{k,n}$. A shared boundary multiplier alone is not the LLL differential condition.}
+{对每个固定$R$，所有$u_j^T(R)$都是物理变量$z$的一粒子LLL向量。但它们对中心$R$的依赖不同：$u_j^T$位于对偶参数线丛的第$j$个Landau能级。湮灭振幅取其共轭，具有全纯侧的边界规律，但仅在$j=0$时属于参数LLL。一般记$\mathcal H_{k,n}(T)$为电荷$k$、第$n$级的参数空间，并令$\mathcal H_k=\mathcal H_{k,0}$。$k$体质心（COM）真空种子的振幅属于$\mathcal H_k$，其第$n$个COM后裔的振幅属于$\mathcal H_{k,n}$。共同边界乘子本身并不等于LLL微分条件。}
+
+\subsection{\bi{The positive lift and exact COM integration}{正提升与精确COM积分}}
+\bi{The positive normal-ordered lift is the Fock-space device used for the fermionic comparison in OpenAI~\cite[Section~2]{OpenAI2026Fock} and for the bosonic comparison in Shen~\cite[Section~1]{Shen2026BosonicCandidate}. We retain its vacuum normalization. The parameter Landau-level identities that follow supply the torus replacement for the sources' spherical averaging step.}
+{正的正规序提升沿用OpenAI费米比较~\cite[第2节]{OpenAI2026Fock}及Shen玻色比较~\cite[第1节]{Shen2026BosonicCandidate}中的Fock空间方法，并保留其真空归一化。后续参数Landau能级恒等式给出环面上替代原方案球面平均步骤的构造。}
+\bi{In either statistics, let $\mathcal L_k(|v\rangle\langle w|)=A(v)^\dagger A(w)$, where $A(v)^\dagger|\mathrm{vac}\rangle=v$ with normalized symmetric or antisymmetric tensors. This linear map preserves positivity, equals the input operator in the $k$-particle sector, and vanishes below that sector. For bosonic occupation vectors, $A(\boldsymbol\nu)=\prod_j a_j^{\nu_j}/\sqrt{\nu_j!}$; thus no extra $k!$ occurs. All few-body inequalities are lifted by this map, rather than estimated by counting particle subsets.}
+{对两种统计，定义$\mathcal L_k(|v\rangle\langle w|)=A(v)^\dagger A(w)$，其中$A(v)^\dagger|\mathrm{vac}\rangle=v$，对称或反对称张量均取规范化约定。该线性映射保正，在$k$粒子扇区等于输入算符，在更低粒子数扇区为零。玻色占据向量满足$A(\boldsymbol\nu)=\prod_j a_j^{\nu_j}/\sqrt{\nu_j!}$，因此没有额外$k!$。所有少体不等式都通过这一映射提升，不通过粒子子集数估计。}
+
+\bi{On dual parameter sections define}
+{在对偶参数截面上定义}
+\begin{equation}
+ \mathfrak a_k=-\frac{\partial_R+k\bar R/2}{\sqrt k},\qquad
+ \mathfrak a_k^\dagger=\frac{\partial_{\bar R}-kR/2}{\sqrt k},\qquad
+ [\mathfrak a_k,\mathfrak a_k^\dagger]=1.\label{eq:parameter-ladder}
+\end{equation}
+\bi{They preserve the boundary law and are adjoints in the cell integral. Differentiating the Gaussian series gives}
+{它们保持边界规律，并在基本胞积分中互为伴随。逐项微分高斯级数得到}
+\begin{equation}
+ \mathfrak a_1u_j^T=\sqrt j\,u_{j-1}^T,\qquad
+ \mathfrak a_1^\dagger u_j^T=\sqrt{j+1}\,u_{j+1}^T.
+\end{equation}
+\bi{These canonical commutation relations act on the infinite parameter Landau-level space, not inside the finite physical LLL.}
+{这些正则对易关系作用于无限维参数Landau能级空间，不是在有限维物理LLL内实现。}
+
+\begin{lemma}[\bi{COM integration}{COM积分}]\label{lem:ladder}
+\bi{Let $w,z$ be finite-degree $k$-body COM vacuum seeds of the chosen statistics. Define}
+{设$w,z$为所选统计下有限次数的$k$体COM真空种子。定义}
+\begin{equation}
+ w_n^T=(\mathfrak a_k^\dagger)^nw^T/\sqrt{n!},\qquad
+ z_m^T=(\mathfrak a_k^\dagger)^mz^T/\sqrt{m!}.
+\end{equation}
+\bi{Then}{则}
+\begin{equation}
+ \int_T|w_n^T(R)\rangle\langle z_m^T(R)|\dd\mu_k(R)
+ =\delta_{nm}\int_T|w^T(R)\rangle\langle z^T(R)|\dd\mu_k(R).\label{eq:ladder-integral}
+\end{equation}
+\bi{Different relative seeds need not be orthogonal; equal COM levels retain their full relative matrix unit.}
+{不同相对种子无需正交；相同COM级数保留它们之间完整的相对matrix unit。}
+\end{lemma}
+\begin{proof}
+\bi{Evaluate the operator identity between fixed physical bras and kets. Integration by parts on the parameter line bundle has no boundary term, because the two boundary multipliers cancel. Move lowering operators across the integral, use $[\mathfrak a_k,(\mathfrak a_k^\dagger)^n]=n(\mathfrak a_k^\dagger)^{n-1}$, and annihilate the vacuum seeds. Unequal levels vanish; equal levels contribute $n!$, cancelled by the two normalizations. Polarization gives the identity for distinct seeds.}
+{在固定物理bra与ket之间检验该算符恒等式。两个边界乘子相消，因此参数线丛上的积分分部没有边界项。把降低算符移过积分，使用$[\mathfrak a_k,(\mathfrak a_k^\dagger)^n]=n(\mathfrak a_k^\dagger)^{n-1}$并湮灭真空种子。不等的级数给零，相等的级数给$n!$，恰被两侧规范化抵消。极化即给出不同种子之间的恒等式。}
+\end{proof}
+
+\bi{Let $C_R e_j=u_j^T(R)$ and let $C_R^{(k)}$ denote its symmetric or exterior $k$th tensor action. If $X$ is an operator on the physical relative space, define}
+{令$C_Re_j=u_j^T(R)$，$C_R^{(k)}$表示其第$k$次对称张量或外幂作用。对物理相对空间上的算符$X$，定义}
+\begin{equation}
+ \Omega_k(X)=\int_T C_R^{(k)}
+ \bigl(X\otimes|0_{\CM}\rangle\langle0_{\CM}|\bigr)
+ C_R^{(k)\dagger}\dd\mu_k(R).\label{eq:Omega}
+\end{equation}
+\bi{For finite support this is a positive map, including when the raw-jet Gram matrix has a kernel. For every finite-degree anchored operator $A$, Lemma~\ref{lem:ladder} gives}
+{对有限支撑，这是保正映射，即使原始jet的Gram矩阵有核也成立。对任意有限次数anchored算符$A$，引理~\ref{lem:ladder}给出}
+\begin{equation}
+ \int_T C_R^{(k)}A C_R^{(k)\dagger}\dd\mu_2(R)
+ =\Omega_k\!\left(\frac2k\Tr_{\CM}A\right).\label{eq:torus-partial-trace}
+\end{equation}
+\bi{The corresponding plane twirl is}
+{对应的平面twirl为}
+\begin{equation}
+ \int_{\mathbb C}T_R^{\otimes k}A T_R^{\otimes k\dagger}\dd\mu_2(R)
+ =\frac2k I_{\CM}\otimes\Tr_{\CM}A.\label{eq:plane-twirl}
+\end{equation}
+\bi{To verify the normalization, the normalized COM displacement is $h=\sqrt k R$. Writing $h=(q+ip)/\sqrt2$, Weyl conjugation sends the COM position kernel $A(x,y)$ to $e^{ip(x-y)}A(x-q,y-q)$. Integrating first in $p$ and then in $q$, with measure $\dd q\dd p/(2\pi)$, gives identity in COM and trace in that factor. The change of measure $\dd\mu_2(R)=(2/k)\dd^2h/\pi$ supplies the factor $2/k$. This argument also applies to relative-operator-valued kernels; it does not scalarize multiplicity spaces.}
+{为核对归一化，规范化COM位移是$h=\sqrt kR$。写$h=(q+ip)/\sqrt2$，Weyl共轭把COM位置核$A(x,y)$变为$e^{ip(x-y)}A(x-q,y-q)$。按测度$\dd q\dd p/(2\pi)$先积$p$再积$q$，得到COM恒等算符及该因子上的迹。测度变换$\dd\mu_2(R)=(2/k)\dd^2h/\pi$给出$2/k$。该论证同样适用于取值为相对算符的核，不把重数空间误作标量。}
+
+\subsection{\bi{Uniform raw-jet bounds and the convergent domain}{一致原始jet界与收敛定义域}}
+\begin{lemma}[\bi{Finite and high jets}{有限阶与高阶jet}]\label{lem:jets}
+\bi{For fixed $J$, define}{对固定$J$，定义}
+\begin{equation}
+ e_J(\Lambda)=\sup_R\|(\langle u_i^T(R),u_j^T(R)\rangle)_{0\le i,j\le J}-I\|.
+\end{equation}
+\bi{There is a constant $C_J$, independent of flux, twist, particle number, and lattice shape, such that}
+{存在与磁通、twist、粒子数及格子形状无关的常数$C_J$，使}
+\begin{equation}
+ e_J(\Lambda)\le C_J\sum_{\lambda\ne0}(1+|\lambda|)^{2J}e^{-|\lambda|^2/2}
+ \longrightarrow0\quad(\ell(\Lambda)\to\infty).\label{eq:finite-jet}
+\end{equation}
+\bi{For all lattices with $\ell(\Lambda)\ge1$, a universal constant $C$ also satisfies}
+{对所有满足$\ell(\Lambda)\ge1$的格子，还存在统一常数$C$使}
+\begin{equation}
+ \sup_R\|u_j^T(R)\|^2\le C(1+j),\qquad j\ge0.\label{eq:high-jet}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\bi{Equation~\eqref{eq:inner-unfold} expresses the finite Gram matrix as its identity image plus oscillator displacement matrices. Each fixed matrix element is a Gaussian times a polynomial of degree at most $i+j$, proving~\eqref{eq:finite-jet} by a finite matrix norm bound. For the diagonal element use $\langle e_j,T_\lambda e_j\rangle=e^{-t/2}L_j(t)$, $t=|\lambda|^2$. Unitarity bounds its modulus by one, whereas the finite Laguerre series gives}
+{式~\eqref{eq:inner-unfold}把有限Gram矩阵写成恒等image加上振子位移矩阵。每个固定矩阵元都是高斯函数乘次数至多$i+j$的多项式，有限矩阵范数估计即证明~\eqref{eq:finite-jet}。对角元使用$\langle e_j,T_\lambda e_j\rangle=e^{-t/2}L_j(t)$，其中$t=|\lambda|^2$。酉性给出其模至多为一，而有限Laguerre级数给出}
+\begin{equation}
+ |L_j(t)|\le\sum_{r=0}^j\frac{(jt)^r}{(r!)^2}\le e^{2\sqrt{jt}}.
+\end{equation}
+\bi{For $t\ge64j$, the product with $e^{-t/2}$ is at most $e^{-t/4}$. The points with $|\lambda|<8\sqrt j$ number at most $C(1+j)$ by disjoint discs of radius $1/2$; the exterior Gaussian sum is uniformly bounded. The same packing argument bounds every fixed polynomial-Gaussian lattice sum uniformly in shape and makes it vanish as the systole grows.}
+{在$t\ge64j$时，与$e^{-t/2}$相乘后的上界为$e^{-t/4}$。通过半径$1/2$的不交圆盘，$|\lambda|<8\sqrt j$内的格点数至多为$C(1+j)$；外部高斯和一致有界。同一packing论证对每个固定多项式乘高斯的格点和给出与形状无关的控制，并使其随最短周期增大而消失。}
+\end{proof}
+\bi{On the span of $e_0,\ldots,e_L$, the squared norm of $C_R$ is at most the sum of the squared column norms, hence at most $C(L+1)^2$. Its $k$th tensor action has squared norm at most $C_k(L+1)^{2k}$. Consequently all anchored degree blocks with trace norms bounded by a polynomial times $\rho^L$, $0<\rho<1$, remain absolutely summable after periodization. Equations~\eqref{eq:torus-partial-trace} and~\eqref{eq:plane-twirl} extend to precisely the exponentially weighted seeds used below by finite-degree truncation. This convergence is first established at fixed flux and particle sector; particle-number uniformity of the final gap comes from the relative energy bounds, not from a coarse many-body norm estimate.}
+{在$e_0,\ldots,e_L$张成的空间中，$C_R$的范数平方至多为列范数平方之和，因此不超过$C(L+1)^2$。其第$k$次张量作用的范数平方不超过$C_k(L+1)^{2k}$。于是，迹范数被多项式乘$\rho^L$（$0<\rho<1$）控制的anchored次数块在周期化后仍绝对可和。通过有限次数截断，式~\eqref{eq:torus-partial-trace}与~\eqref{eq:plane-twirl}延拓到下文实际使用的指数带权种子。先在固定磁通和粒子扇区建立这一收敛；最终谱隙对粒子数的一致性来自相对能量界，不来自粗略的多体范数估计。}
+
+\subsection{\bi{A relative jet frame retaining every COM mode}{保留全部COM模式的相对jet frame}}
+\begin{lemma}[\bi{Full-COM relative frame}{全COM相对frame}]\label{lem:relative-frame}
+\bi{Let $a,b$ be positive integers, $t=a+b$, and $\nu=ab/t$. On $\mathcal H_a(T)\otimes\mathcal H_b(T)$ define the covariant normal jet along the diagonal by}
+{设$a,b$为正整数，$t=a+b$、$\nu=ab/t$。在$\mathcal H_a(T)\otimes\mathcal H_b(T)$上，沿对角线定义协变法向jet}
+\begin{equation}
+ J_dF(C)=(\nu^dd!)^{-1/2}
+ \left.\partial_r^d\left\{e^{\nu|r|^2/2}
+ F(C+br/t,C-ar/t)\right\}\right|_{r=0}.\label{eq:J-definition}
+\end{equation}
+\bi{For a fixed finite set $\mathcal D\subset\{0,\ldots,D\}$ the output is $\bigoplus_{d\in\mathcal D}\mathcal H_t(T)$, retaining all $tM$ COM modes in each summand. Its Gram operator satisfies the exact identity}
+{对固定有限集合$\mathcal D\subset\{0,\ldots,D\}$，输出为$\bigoplus_{d\in\mathcal D}\mathcal H_t(T)$，每个直和项保留全部$tM$个COM模式。其Gram算符满足精确恒等式}
+\begin{equation}
+ J_dJ_e^\dagger
+ =\sum_{\delta\in\Lambda}\chi_a(\delta)^{-1}
+ M_{de}^{(\nu)}(\delta)\,T_{a\delta/t}^{(t)},\qquad
+ M_{de}^{(\nu)}(\delta)=\langle d|T_\delta^{(\nu)}|e\rangle.\label{eq:exact-JJ}
+\end{equation}
+\bi{Every output translation in this formula is unitary on the same fixed-twist space. In particular,}
+{该式中的每个输出平移都在同一固定twist空间上为酉算符。特别地，}
+\begin{equation}
+ \|JJ^\dagger-I\|\le\epsilon_{a,b,D}(\Lambda)
+ \le C_{a,b,D}\sum_{\delta\ne0}(1+|\delta|)^{2D}e^{-\nu|\delta|^2/2}\longrightarrow0,
+ \qquad J^\dagger J\le(1+\epsilon_{a,b,D})I.\label{eq:J-bound}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\bi{The weighted Jacobi change $C=(aR+bS)/t$, $r=R-S$ gives}
+{带权Jacobi变换$C=(aR+bS)/t$、$r=R-S$给出}
+\begin{equation}
+ a|R|^2+b|S|^2=t|C|^2+\nu|r|^2,\qquad
+ \dd\mu_a(R)\dd\mu_b(S)=\dd\mu_t(C)\dd\mu_\nu(r).
+\end{equation}
+\bi{On the plane this is a unitary tensor factorization. In the normalized relative oscillator basis $e_d^{(\nu)}(r)=(\sqrt\nu r)^d e^{-\nu|r|^2/2}/\sqrt{d!}$, $J_d$ extracts the $d$th coefficient, so $J_dJ_e^\dagger=\delta_{de}I$. This plane calculation defines the local diagonal jet on the torus; no global COM-times-relative torus factorization is assumed.}
+{在平面上，这是酉的张量分解。相对振子的规范化基为$e_d^{(\nu)}(r)=(\sqrt\nu r)^d e^{-\nu|r|^2/2}/\sqrt{d!}$，$J_d$提取第$d$个系数，故$J_dJ_e^\dagger=\delta_{de}I$。这一平面计算定义了环面对角线上的局部jet，并未假设环面全局分解成独立的COM与相对环面。}
+
+\bi{Expand both input reproducing kernels using~\eqref{eq:periodization}. Under the Jacobi unitary $U$, their images obey}
+{利用~\eqref{eq:periodization}展开两个输入再生核。在Jacobi酉变换$U$下，它们的image满足}
+\begin{equation}
+ U(T_\lambda^{(a)}\otimes T_\mu^{(b)})U^\dagger
+ =T_{(a\lambda+b\mu)/t}^{(t)}\otimes T_{\lambda-\mu}^{(\nu)}.
+\end{equation}
+\bi{Set $\delta=\lambda-\mu$ and $\eta=a\delta/t$. There is no extra phase in this factorization: the magnetic bilinear form and Gaussian quadratic form split by the same change of variables. The remaining cocycles cancel explicitly:}
+{令$\delta=\lambda-\mu$及$\eta=a\delta/t$。这一分解没有额外相位，因为磁双线性型与高斯二次型按同一变量变换分解。余下的cocycle逐式相消：}
+\begin{align}
+ \chi_a(\mu+\delta)^{-1}\chi_b(\mu)^{-1}
+ &=\chi_t(\mu)^{-1}\chi_a(\delta)^{-1}e^{-ia\operatorname{Im}(\mu\bar\delta)},\\
+ T_{\mu+\eta}^{(t)}&=e^{ia\operatorname{Im}(\mu\bar\delta)}T_\mu^{(t)}T_\eta^{(t)}.
+\end{align}
+\bi{Summing the common image $\mu$ recovers the charge-$t$ torus kernel. Taking relative oscillator matrix elements yields~\eqref{eq:exact-JJ}. For any $\gamma\in\Lambda$, the commutator of $T_\gamma^{(t)}$ and $T_\eta^{(t)}$ has phase $e^{-2ia\operatorname{Im}(\gamma\bar\delta)}=1$, since $\operatorname{Im}(\gamma\bar\delta)\in\pi M\mathbb Z$ and $aM$ is an integer. Thus the fractional lattice translation preserves the output boundary conditions.}
+{对共同image $\mu$求和恢复电荷$t$的环面核，取相对振子矩阵元即得~\eqref{eq:exact-JJ}。对任意$\gamma\in\Lambda$，$T_\gamma^{(t)}$与$T_\eta^{(t)}$的交换相位为$e^{-2ia\operatorname{Im}(\gamma\bar\delta)}=1$，因为$\operatorname{Im}(\gamma\bar\delta)\in\pi M\mathbb Z$且$aM$为整数。因此这一分数格点平移保持输出边界条件。}
+
+\bi{The zero image is $\delta_{de}I$ on the entire output theta space. The oscillator formula bounds each nonzero image by}
+{零image是在整个输出theta空间上的$\delta_{de}I$。振子公式对每个非零image给出}
+\begin{equation}
+ |M_{de}^{(\nu)}(\delta)|\le e^{-\nu|\delta|^2/2}\sqrt{d!e!}
+ \sum_{l=0}^{\min(d,e)}\frac{(\sqrt\nu|\delta|)^{d+e-2l}}{l!(d-l)!(e-l)!}.\label{eq:displacement-polynomial}
+\end{equation}
+\bi{The triangle inequality and a finite matrix norm estimate prove~\eqref{eq:J-bound}. No factor $tM$ occurs. Tensoring with the identity of any spectator Hilbert space leaves the norm unchanged; this is the form used for Fock-valued annihilation amplitudes.}
+{逐项三角不等式及有限矩阵范数估计证明~\eqref{eq:J-bound}，不会产生$tM$因子。与任意spectator Hilbert空间上的恒等算符作张量积不改变范数；下文正是将该形式用于取值为Fock空间的湮灭振幅。}
+\end{proof}
+
+\subsection{\bi{The pair almost-projector and the common four-body frame}{两体近投影子与共同四体frame}}
+\bi{For relative degree $r=0$ in the bosonic case and $r=1$ in the fermionic case, define $Q\psi(R)=\langle v_0^T(R),\psi\rangle$. The target is all of $\mathcal H_2(T)$. On normalized symmetric tensors $Q=J_0$; on normalized antisymmetric tensors $Q=J_1$, because our seed is $v_0^F=-e_0\wedge e_1=(z_1-z_2)/\sqrt2$ and the relative charge is $1/2$. Thus neither case has an additional $\sqrt2$. Restriction to the appropriate statistics does not change $J_rJ_r^\dagger$, since the relative jet already has that parity.}
+{玻色情形的相对次数为$r=0$，费米情形为$r=1$。定义$Q\psi(R)=\langle v_0^T(R),\psi\rangle$，其目标是整个$\mathcal H_2(T)$。在规范化对称张量上$Q=J_0$；在规范化反对称张量上$Q=J_1$，因为本文种子为$v_0^F=-e_0\wedge e_1=(z_1-z_2)/\sqrt2$且相对电荷为$1/2$。两种情形均无额外$\sqrt2$。限制到相应统计不改变$J_rJ_r^\dagger$，因为相对jet本身已经具有该奇偶性。}
+\begin{equation}
+ QQ^\dagger-I=\sum_{\delta\ne0}\chi(\delta)^{-1}
+ L_r(|\delta|^2/2)e^{-|\delta|^2/4}T_{\delta/2}^{(2)},\qquad
+ \epsilon_2^{(r)}=\sum_{\delta\ne0}|L_r(|\delta|^2/2)|e^{-|\delta|^2/4}.\label{eq:pair-fullCOM}
+\end{equation}
+\bi{Here $L_0(x)=1$ and $L_1(x)=1-x$. Since $h_T=Q^\dagger Q$, the relative estimate is the exact algebraic consequence}
+{这里$L_0(x)=1$、$L_1(x)=1-x$。由于$h_T=Q^\dagger Q$，相对估计是如下精确代数恒等式的推论：}
+\begin{equation}
+ h_T^2-h_T=Q^\dagger(QQ^\dagger-I)Q,\qquad
+ -\epsilon_2h_T\le h_T^2-h_T\le\epsilon_2h_T,\qquad
+ \mathcal L_2(h_T^2)\ge(1-\epsilon_2)H.\label{eq:pair-relative}
+\end{equation}
+\bi{For $\epsilon_2<1$, this also controls every nonzero pair eigenvalue in $[1-\epsilon_2,1+\epsilon_2]$ and proves that $Q$ is onto. It cannot miss a high-COM small singular value.}
+{当$\epsilon_2<1$时，它同时把全部两体非零本征值控制在$[1-\epsilon_2,1+\epsilon_2]$中，并证明$Q$满射，不会漏掉高COM处的小奇异值。}
+
+\bi{Both pair families obey $v_p^T=(\mathfrak a_2^\dagger)^pv_0^T/\sqrt{p!}$. Hence Lemma~\ref{lem:ladder} gives $\int_TB_p^\dagger B_q\dd\mu_2=\delta_{pq}H$. The amplitude $B_p$ has parameter level $p$, but $B_0$ is in the parameter LLL. For $F(R,S)=B_0(R)B_0(S)\psi$, apply Lemma~\ref{lem:relative-frame} with $a=b=2$. The relative ladder binomial expansion gives}
+{两种pair族均满足$v_p^T=(\mathfrak a_2^\dagger)^pv_0^T/\sqrt{p!}$。因此引理~\ref{lem:ladder}给出$\int_TB_p^\dagger B_q\dd\mu_2=\delta_{pq}H$。振幅$B_p$处于参数level $p$，而$B_0$属于参数LLL。对$F(R,S)=B_0(R)B_0(S)\psi$，以$a=b=2$应用引理~\ref{lem:relative-frame}。相对梯级的二项展开给出}
+\begin{equation}
+ J_dF=C_d\psi,\qquad C_d=\sum_{p=0}^d(-1)^{d-p}\sqrt{\binom dp}\,2^{-d/2}B_pB_{d-p},\qquad
+ T_{4,D}=\int_T\sum_{d=0}^DC_d^\dagger C_d\dd\mu_4.\label{eq:four-frame}
+\end{equation}
+\bi{Odd $d$ vanish because pair annihilators commute. The tensor-valued frame estimate yields}
+{由于pair湮灭算符彼此对易，奇数$d$项消失。取值于张量空间的frame估计给出}
+\begin{equation}
+ T_{4,D}\le(1+\epsilon_{2,2,D})S_4.\label{eq:four-Bessel}
+\end{equation}
+\bi{We use $D=22$ for fermions and $D=16$ for bosons. The fermionic proof converts the resulting error into a multiple of $H$ using bounded annihilators; the bosonic proof retains and pays for an $S_4$ contribution using occupation inequalities. These are different steps, and the latter never uses a bounded bosonic annihilator.}
+{费米采用$D=22$，玻色采用$D=16$。费米证明利用有界湮灭算符把所得误差转为$H$的倍数；玻色证明保留$S_4$误差，并用占据数不等式支付。两者是不同步骤，后者从不把玻色湮灭算符当成有界算符。}

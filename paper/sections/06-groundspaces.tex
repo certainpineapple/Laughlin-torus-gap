@@ -1,0 +1,41 @@
+\section{\bi{Laughlin zero modes and the geometric scope}{Laughlin零模与几何适用范围}}\label{sec:groundspaces}
+\begin{proposition}[\bi{The zero-energy space at filling $1/m$}{填充$1/m$处的零能空间}]\label{prop:kernel}
+\bi{Take $m=2$ for the bosonic $V_0$ interaction or $m=3$ for the fermionic $V_1$ interaction. At flux $M=mN$ and any fixed common single-particle twist, $\dim\ker H=m$. The kernel is exactly the torus Laughlin space.}
+{对玻色$V_0$取$m=2$，对费米$V_1$取$m=3$。在磁通$M=mN$及任意固定共同单粒子twist下，有$\dim\ker H=m$，且零空间恰为环面Laughlin空间。}
+\end{proposition}
+\begin{proof}
+\bi{We use the torus Laughlin--Jastrow theta construction of Haldane--Rezayi and Greiter--Schnells--Thomale~\cite{HaldaneRezayi1985Periodic,GreiterSchnellsThomale2016} for the factors and their multipliers. The following argument must additionally identify the kernel of the physical interaction and exhaust it, including the flat twist. This kernel argument is not included in the selected gap-root acceptance.}
+{因子及其乘子使用Haldane--Rezayi和Greiter--Schnells--Thomale的环面Laughlin--Jastrow theta构造~\cite{HaldaneRezayi1985Periodic,GreiterSchnellsThomale2016}。下述论证还须识别并穷尽物理相互作用的核，包括平坦twist。这一核论证不在选定谱隙根的验收覆盖内。}
+\bi{Positivity of~\eqref{eq:physical-H} makes zero energy equivalent to vanishing of the contact pair amplitude at every center, with the other particle coordinates arbitrary. In the bosonic case the wavefunction vanishes on every pair diagonal; exchange symmetry makes its local relative zero at least quadratic. In the fermionic case the wavefunction is already odd in the relative coordinate and the relative-degree-one contact derivative also vanishes, so its zero has order at least three. Analyticity promotes the integral zero condition to the pointwise statement.}
+{式~\eqref{eq:physical-H}的正性使零能条件等价于在任意中心、其他粒子坐标任意时接触pair振幅均为零。玻色情形的波函数在每条pair对角线上消失；交换对称性使局部相对零点至少二阶。费米波函数本已对相对坐标为奇函数，而相对次数一的接触导数也消失，因此零点至少三阶。解析性把积分为零的条件提升为逐点条件。}
+
+\bi{Put $E=\mathbb C/\Lambda$, choose $y_i=z_i/\omega_1$ and $\tau=\omega_2/\omega_1$, and divide the holomorphic factor of the wavefunction by}
+{令$E=\mathbb C/\Lambda$，选$y_i=z_i/\omega_1$及$\tau=\omega_2/\omega_1$，把波函数的全纯部分除以}
+\begin{equation}
+ J_m(\boldsymbol y)=\prod_{i<j}\vartheta_1(y_i-y_j\mid\tau)^m.
+\end{equation}
+\bi{The quotient is holomorphic, including at intersections of pair diagonals, because its divisor has no negative component. The original line bundle on $E^N$ has Chern matrix $M I$. The Jastrow factor has matrix $m(NI-\mathbf1\mathbf1^{\mathsf T})$. At $M=mN$ the quotient therefore has matrix}
+{商是全纯的，包括pair对角线的交点，因为其除子没有负分量。$E^N$上原线丛的Chern矩阵为$MI$，Jastrow因子的矩阵为$m(NI-\mathbf1\mathbf1^{\mathsf T})$。在$M=mN$时，商的矩阵因此为}
+\begin{equation}
+ mN I-m(NI-\mathbf1\mathbf1^{\mathsf T})=m\mathbf1\mathbf1^{\mathsf T}.
+\end{equation}
+\bi{The flat part also descends through the sum map, not just the Chern class. In a theta-function gauge the original holomorphic factor obeys $f(y_i+1)=e^{i\phi_1}f$ and $f(y_i+\tau)=e^{i\phi_2}e^{-i\pi M(2y_i+\tau)}f$. The theta multipliers show that, after division, a shift of any one coordinate has multiplier}
+{不仅Chern类如此，平坦部分也通过求和映射下降。在theta函数规范中，原全纯部分满足$f(y_i+1)=e^{i\phi_1}f$及$f(y_i+\tau)=e^{i\phi_2}e^{-i\pi M(2y_i+\tau)}f$。Theta乘子表明，除掉Jastrow因子后，平移任意一个坐标的乘子均为}
+\begin{equation}
+ (-1)^{m(N-1)}e^{i\phi_1},\qquad
+ (-1)^{m(N-1)}e^{i\phi_2}e^{-i\pi m(2Z+\tau)},\qquad Z=\sum_i y_i.
+\end{equation}
+\bi{Hence the quotient bundle is exactly $\Sigma^*L$, where $\Sigma:E^N\to E$ is summation and $L$ is a degree-$m$ line bundle with the indicated fixed flat twist. The fibers are connected compact copies of $E^{N-1}$. A holomorphic section of a pullback is constant along each fiber in a local trivialization, so}
+{因此商线丛恰为$\Sigma^*L$，其中$\Sigma:E^N\to E$是求和映射，$L$是具有上述固定平坦twist的次数$m$线丛。其纤维是连通紧的$E^{N-1}$。拉回线丛的全纯截面在局部平凡化后沿每条纤维为常数，故}
+\begin{equation}
+ H^0(E^N,\Sigma^*L)\cong H^0(E,L),\qquad \dim H^0(E,L)=m.
+\end{equation}
+\bi{The last equality is Riemann--Roch on the elliptic curve for positive degree. Conversely, every such COM theta section multiplied by $J_m$ has the required statistics, boundary conditions, and pair zeros, so it is a zero mode. This proves both existence and exhaustion. The general torus theta construction is consistent with~\cite{HaldaneRezayi1985Periodic,GreiterSchnellsThomale2016}; the rectangular-torus pairing formulas and the fermionic threefold exhaustion statement in~\cite{OrtizNussinovDukelskySeidel2013} provide complementary background, not the proof for arbitrary shape and twist used here.}
+{最后一个等式来自椭圆曲线上正次数线丛的Riemann--Roch定理。反过来，每个这样的COM theta截面乘以$J_m$都具有所需统计、边界条件及pair零点，因而是零模。这同时证明了存在性与穷尽性。一般环面theta构造与文献~\cite{HaldaneRezayi1985Periodic,GreiterSchnellsThomale2016}一致；文献~\cite{OrtizNussinovDukelskySeidel2013}中的矩形环面pairing公式与费米三重零模穷尽声明提供互补背景，但不替代这里对任意形状和twist的证明。}
+\end{proof}
+
+\bi{For a nonnegative self-adjoint operator, $H^2\ge\gamma H$ is equivalent by spectral calculus to $\operatorname{spec}(H)\subset\{0\}\cup[\gamma,\infty)$, or $H\ge\gamma(I-P_0)$ with $P_0$ the full kernel projection. This needs no uniqueness of the ground state. Applying Proposition~\ref{prop:kernel} proves Corollary~\ref{cor:fillings}. The torus relations are $M=2N$ and $M=3N$, not the spherical shifted relations $2(N-1)$ and $3(N-1)$.}
+{对非负自伴算符，谱演算使$H^2\ge\gamma H$等价于$\operatorname{spec}(H)\subset\{0\}\cup[\gamma,\infty)$，亦即$H\ge\gamma(I-P_0)$，其中$P_0$是整个零空间的投影。这不要求基态唯一。应用命题~\ref{prop:kernel}即得推论~\ref{cor:fillings}。环面关系是$M=2N$及$M=3N$，不是球面的带shift关系$2(N-1)$和$3(N-1)$。}
+
+\bi{At fixed shape the dimensionless systole grows as $\sqrt M$, uniformly on compact shape families. More general families are covered whenever their actual systole tends to infinity, even if their aspect ratio is not bounded. Conversely, a long displayed basis vector does not compensate for a short nonzero lattice combination. The proofs do not address fixed short circumferences. No claim uniform over arbitrary degenerating torus shapes follows from these estimates.}
+{固定形状时，无量纲最短周期按$\sqrt M$增长，并在紧的形状族上一致成立。更一般的族只要实际最短周期趋于无穷，也在适用范围内，即使长宽比没有统一上界。相反，展示出的长格基向量无法补偿某个很短的非零格点组合。本证明不处理固定短周长。这些估计不能推出对任意退化环面形状都一致成立的结论。}

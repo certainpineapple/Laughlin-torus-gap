@@ -1,0 +1,15 @@
+\section{\bi{Why hard orbital truncation does not follow from the transfer}{为何硬轨道截断不由本迁移推出}}\label{app:disk}
+\bi{A hard disk cutoff is not a magnetic-periodic quotient. Let $P_m$ retain the planar orbitals $e_0,\ldots,e_m$ and compress the fermionic relative-degree-one projector to $\bigwedge^2P_mU$. The highest total-degree sector $2m-1$ contains only $e_{m-1}\wedge e_m$. The pair coefficient~\eqref{eq:F-pair} therefore gives its exact eigenvalue}
+{硬disk截断不是磁周期商空间。令$P_m$保留平面轨道$e_0,\ldots,e_m$，把费米相对次数一的投影子压缩到$\bigwedge^2P_mU$。最高总次数$2m-1$扇区只含$e_{m-1}\wedge e_m$。Pair系数~\eqref{eq:F-pair}因此给出其精确本征值}
+\begin{equation}
+ E_m=\frac{(2m-2)!}{2^{2m-2}(m-1)!m!}
+ =\frac1m\frac{\binom{2m-2}{m-1}}{4^{m-1}}
+ \sim\frac1{\sqrt\pi m^{3/2}}>0.
+\end{equation}
+\bi{For example, $E_{12}=29393/2097152$. Hence a particle-number and cutoff-uniform positive gap for all these disk compressions is false already with two particles. Compression does not preserve a squared lower bound: for any many-body projection $P$,}
+{例如$E_{12}=29393/2097152$。因此，这些disk压缩模型对粒子数及截断一致的正谱隙在两粒子层面就不成立。压缩不保持平方下界：对任意多体投影$P$，}
+\begin{equation}
+ (PHP)^2=PH^2P-PH(I-P)HP.
+\end{equation}
+\bi{The omitted term is nonnegative and cannot be discarded in a lower-bound proof. In the present method the exact failure is visible in the pair map: the compressed disk map has a highest-COM singular value squared $E_m$, so its Gram operator is not uniformly close to the identity, even on its nonzero support. Local disk jets also cease to be uniformly close to planar jets outside the droplet, and there is no lattice-image identity~\eqref{eq:gram-unfold}. The full-COM estimate and unfolding, rather than agreement on a few low orbitals, distinguish the torus construction.}
+{被遗漏项非负，在下界证明中不能删除。在本文方法中，具体失效处可直接由pair映射看出：压缩后的disk映射在最高COM处有奇异值平方$E_m$，故其Gram算符即使限制到非零支撑，也不一致趋近恒等算符。Disk局部jets在液滴外同样不再一致接近平面jets，且不存在格点image恒等式~\eqref{eq:gram-unfold}。区分环面构造的是全COM估计与展开，而非少数低轨道上的一致。}

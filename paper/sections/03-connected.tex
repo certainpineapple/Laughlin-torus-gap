@@ -1,0 +1,146 @@
+\section{\bi{The exact three-body connected operator}{精确三体连通算符}}\label{sec:connected}
+\bi{The separation by contraction number is Wick normal ordering~\cite{Wick1950}. Its use to reduce the Laughlin gap to two-, three-, and four-body coefficients follows OpenAI~\cite[Section~2]{OpenAI2026Fock} and the bosonic adaptation in Shen~\cite[Section~1]{Shen2026BosonicCandidate}. On a finite torus the double-contraction coefficient must be recomputed from the physical pair operator; it cannot be replaced by the spherical projector coefficient.}
+{按收缩数分离各项使用Wick正规序~\cite{Wick1950}。以此把Laughlin谱隙归结为二体、三体和四体系数的方法沿用OpenAI~\cite[第2节]{OpenAI2026Fock}及Shen的玻色推广~\cite[第1节]{Shen2026BosonicCandidate}。有限环面上须从物理两体算符重新计算双收缩系数，不能直接代入球面投影子的系数。}
+\bi{Write $\sigma=B,F$ for bosons and fermions. Normal ordering the square of the full Hamiltonian gives}
+{用$\sigma=B,F$分别表示玻色与费米。对完整Hamiltonian的平方作正规序，得到}
+\begin{equation}
+ H_\sigma^2=\mathcal L_2(h_\sigma^2)+S_3^\sigma+S_4^\sigma,\qquad
+ S_4^\sigma=\int_{T^2}(B_0(R)B_0(S))^\dagger B_0(R)B_0(S)\dd\mu_2(R)\dd\mu_2(S).\label{eq:normal-square}
+\end{equation}
+\bi{The double-contraction term is $\mathcal L_2(h_\sigma^2)$, not $H_\sigma$. The zero-contraction term $S_4^\sigma$ is positive. The remaining term has one internal contraction. Its exact periodization requires both an unfolding identity and a COM partial trace.}
+{双收缩项是$\mathcal L_2(h_\sigma^2)$，不是$H_\sigma$。零收缩项$S_4^\sigma$非负。余下项具有一条内部收缩。对它作精确周期化，需要同时使用展开恒等式和COM偏迹。}
+
+\subsection{\bi{The CCR and CAR kernels and their phases}{CCR、CAR核及其相位}}
+\bi{For bosons set $a_R=a(u_0^T(R))$ and $g_{RS}=\langle u_0^T(R),u_0^T(S)\rangle$. The canonical commutation relations (CCR) give}
+{玻色情形记$a_R=a(u_0^T(R))$及$g_{RS}=\langle u_0^T(R),u_0^T(S)\rangle$。正则对易关系（CCR）给出}
+\begin{equation}
+ a_R^2a_S^{\dagger2}=a_S^{\dagger2}a_R^2+4g_{RS}a_S^\dagger a_R+2g_{RS}^2.
+\end{equation}
+\bi{Since $B_0(R)=a_R^2/\sqrt2$, the three-body integrand is $g_{RS}a_R^{\dagger2}a_S^\dagger a_Ra_S^2$. Define the unnormalized physical vectors $t_{RRS}=a_R^{\dagger2}a_S^\dagger|\mathrm{vac}\rangle$ and $t_{RSS}=a_R^\dagger a_S^{\dagger2}|\mathrm{vac}\rangle$. Its coefficient operator is therefore}
+{由于$B_0(R)=a_R^2/\sqrt2$，三体被积项为$g_{RS}a_R^{\dagger2}a_S^\dagger a_Ra_S^2$。定义未另行规范化的物理向量$t_{RRS}=a_R^{\dagger2}a_S^\dagger|\mathrm{vac}\rangle$及$t_{RSS}=a_R^\dagger a_S^{\dagger2}|\mathrm{vac}\rangle$，其系数算符为}
+\begin{equation}
+ \mathsf S_3^B=\int_{T^2}g_{RS}|t_{RRS}\rangle\langle t_{RSS}|\dd\mu_2(R)\dd\mu_2(S).
+\end{equation}
+\bi{The double contraction is consistent with $\langle v_R,v_S\rangle=g_{RS}^2$: its Fock coefficient is $\frac12g_{RS}^2a_R^{\dagger2}a_S^2$, exactly the kernel of $\mathcal L_2(h_B^2)$.}
+{双收缩与$\langle v_R,v_S\rangle=g_{RS}^2$一致：其Fock系数为$\frac12g_{RS}^2a_R^{\dagger2}a_S^2$，恰是$\mathcal L_2(h_B^2)$的核。}
+
+\bi{For fermions take $v_R=a\wedge b$, $v_S=c\wedge d$, $g_{xy}=\langle x,y\rangle$, and denote single-particle annihilation by $a(x)$. With $B_R=a(b)a(a)$ and $B_S=a(d)a(c)$, the canonical anticommutation relations (CAR) give}
+{费米情形取$v_R=a\wedge b$、$v_S=c\wedge d$、$g_{xy}=\langle x,y\rangle$，以$a(x)$表示一粒子湮灭算符。令$B_R=a(b)a(a)$、$B_S=a(d)a(c)$，正则反对易关系（CAR）给出}
+\begin{align}
+ B_RB_S^\dagger={}&\det(g)I-g_{ac}a(d)^\dagger a(b)+g_{bc}a(d)^\dagger a(a)\notag\\
+ &+g_{ad}a(c)^\dagger a(b)-g_{bd}a(c)^\dagger a(a)+B_S^\dagger B_R.
+\end{align}
+\bi{After multiplying by $B_R^\dagger$ on the left and $B_S$ on the right, the four single-contraction terms are}
+{左乘$B_R^\dagger$、右乘$B_S$后，四个单收缩项为}
+\begin{align}
+ &-g_{ac}[a(d)B_R]^\dagger[a(b)B_S],\qquad
+ +g_{bc}[a(d)B_R]^\dagger[a(a)B_S],\notag\\
+ &+g_{ad}[a(c)B_R]^\dagger[a(b)B_S],\qquad
+ -g_{bd}[a(c)B_R]^\dagger[a(a)B_S].\label{eq:four-CAR}
+\end{align}
+\bi{Integrating them gives $S_3^F$. This calculation fixes the signs without assuming that the moving torus jets are orthogonal.}
+{将它们积分即得$S_3^F$。这一计算不假设运动中的环面jets正交，并明确固定了全部符号。}
+
+\bi{In each of these bosonic or fermionic coefficient kernels, the exterior rank-one operator $E(R,S)$ contains one $S$-centered orbital in the ket and two in the bra. Equation~\eqref{eq:gram-unfold} thus gives}
+{在上述玻色或费米系数核中，外部rank-one算符$E(R,S)$的ket含一个以$S$为中心的轨道，bra含两个。于是式~\eqref{eq:gram-unfold}给出}
+\begin{equation}
+ E(R,S+\lambda)=b_\lambda(S)^{-1}E(R,S),\qquad
+ g^T_{ij}(R,S)E(R,S)=\sum_{\lambda\in\Lambda}g^{\rm pl}_{ij}(R,S+\lambda)E(R,S+\lambda).
+\end{equation}
+\bi{The phases agree term by term, not merely in modulus. The sum and the $S$-cell integral therefore unfold to $S\in\mathbb C$, while $R$ remains in a cell and every exterior orbital remains periodized. Fixed-order planar contractions are polynomial-Gaussian, and exterior jets change only by unit phases under cell translations, so the unfolding is absolutely convergent. One internal edge leaves no unaccounted winding variable.}
+{这里相位逐项相同，不只是模相同。因此求和与$S$基本胞积分展开为$S\in\mathbb C$，而$R$仍在基本胞内，所有外部轨道仍保持周期化。固定阶平面收缩是多项式乘高斯函数，外部jets在胞平移下只改变单位相位，所以展开绝对收敛。一条内部边不会留下尚未处理的winding变量。}
+
+\subsection{\bi{Anchored operators and the order of the limiting operations}{Anchored算符与取极限的次序}}
+\bi{On the planar three-particle space put $A_B=\tfrac12n_0(n_0-1)$ and $A_F=n_0n_1$, and define}
+{在平面三粒子空间上令$A_B=\tfrac12n_0(n_0-1)$、$A_F=n_0n_1$，定义}
+\begin{equation}
+ K_\sigma=A_\sigma(H_{3,\sigma}^{\rm pl}-I).\label{eq:anchored-K}
+\end{equation}
+\bi{The unfolded kernel is $\int_TC_R^{(3)}K_\sigma C_R^{(3)\dagger}\dd\mu_2(R)$. To see the subtraction in~\eqref{eq:anchored-K}, normal order $A_\sigma H_{3,\sigma}^{\rm pl}$ at the fixed first center. The four-body term vanishes on three particles, and the integrated double contraction is $A_\sigma$, since the planar pair interaction is the projector onto the pair space. The single contraction is what remains. For bosons one can also read the seed directly as}
+{展开后的核为$\int_TC_R^{(3)}K_\sigma C_R^{(3)\dagger}\dd\mu_2(R)$。为理解~\eqref{eq:anchored-K}中的减项，在固定第一个中心处正规序$A_\sigma H_{3,\sigma}^{\rm pl}$。四体项在三粒子空间上为零，积分后的双收缩项是$A_\sigma$，因为平面两体相互作用是pair空间的投影子。余下的就是单收缩。玻色种子还可直接写成}
+\begin{equation}
+ K_B=\int_{\mathbb C}e^{-|\beta|^2/2}|t_{00\beta}\rangle\langle t_{0\beta\beta}|\dd\mu_2(\beta).
+\end{equation}
+\bi{For example, with $E(0,\beta)=|t_{00\beta}\rangle\langle t_{0\beta\beta}|$, the precise covariance is}
+{例如，取$E(0,\beta)=|t_{00\beta}\rangle\langle t_{0\beta\beta}|$，精确协变关系为}
+\begin{align}
+ C_R^{(3)}E(0,\beta)C_R^{(3)\dagger}
+ &=e^{i\operatorname{Im}(R\bar\beta)}E_T(R,R+\beta),\notag\\
+ g^{\rm pl}_{00}(R,R+\beta)
+ &=e^{-|\beta|^2/2+i\operatorname{Im}(R\bar\beta)}.
+\end{align}
+\bi{Translation covariance supplies the same phase in this seed and the contraction kernel. Neither anchored operator is generally self-adjoint, but its integral is; replacing it by its Hermitian part has no effect.}
+{平移协变性使这一种子与收缩核具有相同的相位。Anchored算符一般不自伴，但其积分自伴；取其Hermitian部分不改变结果。}
+
+\bi{The required infinite sums have explicit bounds. In the bosonic total-degree $l>0$ block, $A_B$ has support only on $|0,0,l\rangle$, and}
+{所需无限和具有明确的界。在玻色总次数$l>0$的块中，$A_B$仅支撑于$|0,0,l\rangle$，并且}
+\begin{equation}
+ (H_{3,B}^{\rm pl}-I)|0,0,l\rangle
+ =2\,2^{-l/2}B_l^\dagger|e_0\rangle_{1p},\qquad
+ \|K_{B,l}\|_1\le2\sqrt3\,2^{-l/2}.\label{eq:anchored-B-bound}
+\end{equation}
+\bi{The degree-zero scalar is $6$. The vector on the right is created from the one-particle $e_0$ state, not the vacuum; its norm is bounded by $\sqrt3$ because pair insertion into three bosons is $\sqrt3$ times a symmetric projection. In the fermionic degree $L=l+1$ block, $l\ge2$,}
+{次数零处的标量为$6$。右侧从一粒子$e_0$态而非真空出发；其范数不超过$\sqrt3$，因为向三玻色子空间插入pair是$\sqrt3$乘对称投影。费米次数$L=l+1$、$l\ge2$的块满足}
+\begin{align}
+ K_{F,L}&=|0,1,l\rangle\langle0,1,l|(H_{3,F}^{\rm pl}-I),\notag\\
+ \|K_{F,L}\|_1&\le[\sqrt{2l}+l-1]2^{-l/2}.\label{eq:anchored-F-bound}
+\end{align}
+\bi{Here the $01$ pair contributes exactly the subtracted identity. The other two pair coefficients have magnitudes $\sqrt l\,2^{-(l-1)/2}$ and $(l-1)2^{-l/2}$; wedging a normalized pair with a normalized orbital has norm at most one. Each block has rank at most one, so these operator-norm bounds are also trace-norm bounds.}
+{其中$01$ pair恰给出被减去的恒等项；其余两个pair系数的模分别为$\sqrt l\,2^{-(l-1)/2}$及$(l-1)2^{-l/2}$。规范化pair与规范化轨道的楔积范数不超过一。每块秩至多一，因此这些算符范数界同时也是迹范数界。}
+
+\bi{The legitimate order is: truncate total degree; perform the unitary relative-COM decomposition in each finite block; periodize its seeds and descendants; integrate the parameter ladders; then remove the degree cutoff. Equal descendant levels retain all relative matrix units, including off-diagonal ones. Lemma~\ref{lem:jets} bounds the squared threefold periodization norm by $C(L+1)^6$, which is summable against~\eqref{eq:anchored-B-bound} or~\eqref{eq:anchored-F-bound}. Thus}
+{合法次序是：先截断总次数；在每个有限块中作相对—COM酉分解；周期化种子及后裔；积分参数梯级；最后去掉次数截断。相等后裔级数保留全部相对matrix units，包括非对角项。引理~\ref{lem:jets}把三次周期化的范数平方控制为$C(L+1)^6$，它与~\eqref{eq:anchored-B-bound}或~\eqref{eq:anchored-F-bound}相乘仍可和。因此}
+\begin{equation}
+ \mathsf S_3^\sigma=\Omega_3\!\left(\frac23\Tr_{\CM}K_\sigma\right).\label{eq:connected-partial-trace}
+\end{equation}
+\bi{An integrated planar spectral formula cannot replace $K_\sigma$ pointwise. For example, the fermionic anchored operator has a nonzero matrix element on $|0,1,3\rangle$, whereas the relative highest seed of the corresponding total degree is zero. COM descendants are removed only by the integral, not beforehand.}
+{不能用积分后的平面谱公式逐中心替换$K_\sigma$。例如，费米anchored算符在$|0,1,3\rangle$上有非零矩阵元，而对应总次数的相对最高种子为零。COM后裔只能经积分消去，不能事先删除。}
+
+\subsection{\bi{Relative eigenvalues from compressed exchanges}{由压缩交换得到相对本征值}}
+\bi{Compressed pair exchanges are the recoupling mechanism behind the fermionic three-body spectrum in OpenAI~\cite[Section~3]{OpenAI2026Fock} and its bosonic counterpart in Shen~\cite[Section~1]{Shen2026BosonicCandidate}. Here we derive the planar oscillator coefficients in the normalization needed by the torus transfer. The anchored unfolding and the convergence argument above are additional geometric obligations; a planar spectral formula alone does not establish them.}
+{压缩pair交换是OpenAI费米三体谱~\cite[第3节]{OpenAI2026Fock}及Shen玻色对应结果~\cite[第1节]{Shen2026BosonicCandidate}中的重耦合机制。这里在环面迁移所需的归一化下推导平面振子系数。上文的anchored展开及收敛论证是额外的几何环节，不能仅由平面谱公式代替。}
+\bi{Let $U$ be the planar one-particle LLL and $V_\sigma$ its relative-degree-zero bosonic or relative-degree-one fermionic pair space. Define pair insertion $W_3^B(v\otimes u)=B(v)^\dagger u$ and $W_3^F(v\otimes u)=v\wedge u$. Let $\iota:V_\sigma\otimes U\to U^{\otimes3}$ be the normalized tensor embedding, with symmetry or antisymmetry in the first pair, and $S_{ij}=\iota^\dagger\tau_{ij}\iota$ the compression of the ambient permutation. The bare permutation need not preserve the domain. Then}
+{令$U$为平面一粒子LLL，$V_\sigma$为其中相对次数零的玻色pair空间或相对次数一的费米pair空间。定义pair插入$W_3^B(v\otimes u)=B(v)^\dagger u$及$W_3^F(v\otimes u)=v\wedge u$。令$\iota:V_\sigma\otimes U\to U^{\otimes3}$为前两个因子对称或反对称的规范化张量嵌入，并令$S_{ij}=\iota^\dagger\tau_{ij}\iota$为环境置换的压缩。裸置换无需保持定义域。于是}
+\begin{equation}
+ W_3^{B\dagger}W_3^B=I+S_{13}+S_{23},\qquad
+ W_3^{F\dagger}W_3^F=I-S_{13}-S_{23},\qquad
+ W_3^\sigma W_3^{\sigma\dagger}=H_{3,\sigma}^{\rm pl}.\label{eq:compressed-exchanges}
+\end{equation}
+\bi{The pair COM and spectator oscillator have one relative oscillator after separating their total COM. Normalized relative highest seeds are}
+{把pair的COM振子与spectator振子的总COM分离后，只有一个相对振子。规范化相对最高种子为}
+\begin{align}
+ \xi_z^\sigma&=\sum_{p=0}^zs_{zp}^\sigma v_p^\sigma\otimes e_{z-p},\qquad
+ w_z^\sigma=W_3^\sigma\xi_z^\sigma,\notag\\
+ s_{zp}^B&=(-1)^p\sqrt{\binom zp}\,3^{-p/2}(2/3)^{(z-p)/2},\qquad
+ s_{zp}^F=(-1)^{z-p}\sqrt{\binom zp}\,3^{-p/2}(2/3)^{(z-p)/2}.
+\end{align}
+\bi{Each compressed exchange is scalar on this one-dimensional relative level, since it intertwines COM translations and preserves total degree. For bosons, its $v_0\otimes e_z$ component receives only the $p=z$ contribution. The ratio of seed coefficients is $(-1)^z2^{-z/2}$ and the ordered pair tensor coefficient is $2^{-z/2}$, giving $b_z^B=(-1/2)^z$. For fermions the two contributions are $p=z-1,z$. With antisymmetric continuation of the planar pair coefficients,}
+{每个压缩交换在这一维相对级数上为标量，因为它交织COM平移并保持总次数。玻色情形的$v_0\otimes e_z$分量仅收到$p=z$项；种子系数比为$(-1)^z2^{-z/2}$，有序pair张量系数为$2^{-z/2}$，故$b_z^B=(-1/2)^z$。费米情形有$p=z-1,z$两项。对平面pair系数作反对称延拓后，}
+\begin{equation}
+ b_z^F=\frac{-s_{z,z-1}^Fv_{z-1}^F(0,z)+s_{z,z}^Fv_z^F(1,z)}{2s_{z,0}^F}
+ =(-1)^{z-1}\frac{3z-1}{2^{z+1}}.
+\end{equation}
+\bi{Out-of-range terms vanish; the expression also gives $z=0,1$ directly. Therefore $W_3^{\sigma\dagger}W_3^\sigma$ has eigenvalue $1+q_z^\sigma$, where}
+{区间外项取零；该表达也直接给出$z=0,1$。因此$W_3^{\sigma\dagger}W_3^\sigma$的本征值为$1+q_z^\sigma$，其中}
+\begin{equation}
+ q_z^B=2(-1/2)^z,\qquad q_z^F=(3z-1)(-1/2)^z.\label{eq:q-values}
+\end{equation}
+\bi{Using~\eqref{eq:compressed-exchanges},}
+{由~\eqref{eq:compressed-exchanges}可得}
+\begin{equation}
+ (H_{3,\sigma}^{\rm pl})^2-H_{3,\sigma}^{\rm pl}
+ =I_{\CM}\otimes\sum_{z\ge0}q_z^\sigma|w_z^\sigma\rangle\langle w_z^\sigma|.
+\end{equation}
+\bi{On the other hand, $\int A_\sigma(R)\dd\mu_2(R)=H_{3,\sigma}^{\rm pl}$ and the latter commutes with simultaneous translations. Equation~\eqref{eq:plane-twirl} applied to~\eqref{eq:anchored-K} identifies $(2/3)\Tr_{\CM}K_\sigma$ with this relative coefficient. Combining with~\eqref{eq:connected-partial-trace} proves the following proposition.}
+{另一方面，$\int A_\sigma(R)\dd\mu_2(R)=H_{3,\sigma}^{\rm pl}$，且后者与同时平移对易。把式~\eqref{eq:plane-twirl}用于~\eqref{eq:anchored-K}，便识别出$(2/3)\Tr_{\CM}K_\sigma$恰为该相对系数。结合~\eqref{eq:connected-partial-trace}，即证明下述命题。}
+
+\begin{proposition}[\bi{Exact connected coefficients}{精确连通系数}]\label{prop:connected}
+\bi{Let $D_z^\sigma(R)=A(w_z^{\sigma,T}(R))$. In either statistics, on each finite particle sector,}
+{令$D_z^\sigma(R)=A(w_z^{\sigma,T}(R))$。对两种统计，在每个有限粒子扇区上，}
+\begin{align}
+ S_3^B&=\int_T\sum_{z\ge0}2(-1/2)^zD_z^{B\dagger}D_z^B\dd\mu_3,\label{eq:boson-threebody}\\
+ S_3^F&=\int_T\sum_{z\ge0}(3z-1)(-1/2)^zD_z^{F\dagger}D_z^F\dd\mu_3.\label{eq:fermion-threebody}
+\end{align}
+\bi{The series are defined by the absolutely convergent anchored construction above. For bosons $w_1^B=0$; for fermions $w_0^F=w_1^F=w_3^F=0$. These are algebraic zero vectors because $\|w_z^\sigma\|^2=1+q_z^\sigma=0$, so periodization preserves their vanishing. All other negative odd-degree terms must be controlled, rather than discarded.}
+{级数通过上文绝对收敛的anchored构造定义。玻色有$w_1^B=0$；费米有$w_0^F=w_1^F=w_3^F=0$。它们是代数零向量，因为$\|w_z^\sigma\|^2=1+q_z^\sigma=0$，所以周期化保持其为零。其他负的奇次数项都必须控制，不能直接丢弃。}
+\end{proposition}

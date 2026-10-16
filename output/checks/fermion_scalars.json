@@ -1,0 +1,107 @@
+{
+  "eta": "93527408868499/100000000000000",
+  "C_alpha": "297842353828763087/16800000000000000",
+  "gamma": "4616733319001/100000000000000",
+  "three_body_margins": {
+    "2": {
+      "positive": true,
+      "scaled_floor": 1298313
+    },
+    "4": {
+      "positive": true,
+      "scaled_floor": 211317
+    },
+    "5": {
+      "positive": true,
+      "scaled_floor": 249
+    },
+    "6": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "7": {
+      "positive": true,
+      "scaled_floor": 249
+    },
+    "8": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "9": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "10": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "11": {
+      "positive": true,
+      "scaled_floor": 249
+    },
+    "12": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "13": {
+      "positive": true,
+      "scaled_floor": 250
+    },
+    "14": {
+      "positive": true,
+      "scaled_floor": 6470
+    },
+    "15": {
+      "positive": true,
+      "scaled_floor": 250
+    }
+  },
+  "disk_two_particle_edge": [
+    {
+      "M_cutoff": 1,
+      "energy": "1",
+      "energy_float": 1.0,
+      "asymptotic_ratio": 1.7724538509055159
+    },
+    {
+      "M_cutoff": 2,
+      "energy": "1/4",
+      "energy_float": 0.25,
+      "asymptotic_ratio": 1.2533141373155003
+    },
+    {
+      "M_cutoff": 3,
+      "energy": "1/8",
+      "energy_float": 0.125,
+      "asymptotic_ratio": 1.1512425464397995
+    },
+    {
+      "M_cutoff": 12,
+      "energy": "29393/2097152",
+      "energy_float": 0.014015674591064453,
+      "asymptotic_ratio": 1.0326682180024727
+    },
+    {
+      "M_cutoff": 30,
+      "energy": null,
+      "energy_float": 0.0034772262036803225,
+      "asymptotic_ratio": 1.0127208751325092
+    },
+    {
+      "M_cutoff": 100,
+      "energy": null,
+      "energy_float": 0.0005663163719523259,
+      "asymptotic_ratio": 1.0037696342977405
+    },
+    {
+      "M_cutoff": 1000,
+      "energy": null,
+      "energy_float": 1.7847935113411025e-05,
+      "asymptotic_ratio": 1.0003751954150897
+    }
+  ],
+  "source_sha256": {
+    "paper/data/fermionic/rows.txt": "a058d7dc2ae8407f85cf69dad22c6d0e622b4b03a2f4ef14945905cb46479d08"
+  },
+  "N5_disk_value": "Not independently verified; no inaccessible certificate was reconstructed."
+}

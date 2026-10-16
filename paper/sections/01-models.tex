@@ -1,0 +1,62 @@
+\section{\bi{Models and main statements}{模型与主要结论}}\label{sec:models}
+\bi{We consider the full lowest-Landau-level contact pseudopotential $V_0$ for bosons and $V_1$ for fermions on a flat magnetic torus. No hopping range, momentum sector, or COM sector is truncated. The energy convention is that the corresponding nonzero planar two-particle pseudopotential eigenvalue is one. Finite-torus pair eigenvalues are not reset to one.}
+{本文研究平坦磁环面上玻色子的完整最低Landau能级接触赝势$V_0$及费米子的完整$V_1$。不截断跃迁范围、动量扇区或COM扇区。能量约定是对应平面两粒子赝势的非零本征值为一；不把有限环面两体本征值重新设为一。}
+
+\bi{Let $T=\mathbb C/\Lambda$, $\operatorname{area}(\Lambda)=\pi M$, $M\in\mathbb N$, in the dimensionless coordinate $z=x/(\sqrt2\ell_B)$. Boundary twists are arbitrary and identical for all particles. The one-particle space $\mathcal H_1(T)$ has dimension $M$. The $N$-particle spaces are $\Sym^N\mathcal H_1(T)$ and $\bigwedge^N\mathcal H_1(T)$. The raw periodized orbitals $u_j^T(R)$ and the measure $\dd\mu_k(R)=k\dd^2R/\pi$ are fixed in Section~\ref{sec:geometry}. These orbitals retain their planar scale; they are neither normalized pointwise nor orthogonalized on the torus.}
+{令$T=\mathbb C/\Lambda$，在无量纲坐标$z=x/(\sqrt2\ell_B)$中有$\operatorname{area}(\Lambda)=\pi M$、$M\in\mathbb N$。边界twist任意，且所有粒子相同。一粒子空间$\mathcal H_1(T)$维数为$M$。$N$粒子空间分别为$\Sym^N\mathcal H_1(T)$及$\bigwedge^N\mathcal H_1(T)$。原始周期化轨道$u_j^T(R)$与测度$\dd\mu_k(R)=k\dd^2R/\pi$在第~\ref{sec:geometry}节固定。这些轨道保持平面尺度，不作逐点归一化，也不在环面上正交化。}
+
+\bi{Write $a_j(R)=a(u_j^T(R))$ for bosonic annihilation and $c_j(R)=c(u_j^T(R))$ for fermionic annihilation. The COM-descendant pair annihilators are}
+{以$a_j(R)=a(u_j^T(R))$表示玻色湮灭，以$c_j(R)=c(u_j^T(R))$表示费米湮灭。Pair的COM后裔湮灭算符为}
+\begin{align}
+ B_p^B(R)&=\frac1{\sqrt2}\sum_{i+j=p}\sqrt{\frac{p!}{2^pi!j!}}\,a_i(R)a_j(R),\label{eq:B-pair}\\
+ v_p^{F,T}(R)&=\sum_{\substack{i<j\\i+j=p+1}}(i-j)\sqrt{\frac{p!}{2^pi!j!}}\,u_i^T(R)\wedge u_j^T(R),
+ \qquad B_p^F(R)=A(v_p^{F,T}(R)).\label{eq:F-pair}
+\end{align}
+\bi{In the bosonic case $v_p^{B,T}=B_p^{B\dagger}|\mathrm{vac}\rangle$. In particular, $B_0^B=a_0^2/\sqrt2$ and $v_0^{F,T}=-u_0^T\wedge u_1^T$. On the plane both $v_p$ families are orthonormal bases of the pair subspaces of relative degree zero and one, respectively. For $\sigma=B,F$ define}
+{玻色情形中$v_p^{B,T}=B_p^{B\dagger}|\mathrm{vac}\rangle$。特别地，$B_0^B=a_0^2/\sqrt2$，$v_0^{F,T}=-u_0^T\wedge u_1^T$。在平面上，两族$v_p$分别是相对次数零和一的pair子空间的正交归一基。对$\sigma=B,F$，定义}
+\begin{equation}
+ h_\sigma=\int_T|v_0^{\sigma,T}(R)\rangle\langle v_0^{\sigma,T}(R)|\dd\mu_2(R),\qquad
+ H_\sigma=\mathcal L_2(h_\sigma)=\int_T B_0^\sigma(R)^\dagger B_0^\sigma(R)\dd\mu_2(R).\label{eq:physical-H}
+\end{equation}
+\bi{This is the periodized contact definition of the full interactions in the stated normalization. The positive lift $\mathcal L_2$ is defined below. All operators are bounded on each fixed $M,N$ sector. The bosonic full Fock space is an infinite direct sum, so its statements first hold on the finite-particle algebraic core and then as spectral inequalities for the direct-sum self-adjoint operator. In particular, $H^2\ge\gamma H$ means $\|H\psi\|^2\ge\gamma\langle\psi,H\psi\rangle$ on the form domain of $H^2$.}
+{这是所述归一化下完整相互作用的周期化接触定义。正提升$\mathcal L_2$在下文定义。在固定$M,N$扇区，所有算符均有界。玻色全Fock空间是无限直和，故先在有限粒子代数core上陈述不等式，再通过直和自伴算符的谱演算延拓。特别地，$H^2\ge\gamma H$表示在$H^2$的二次型定义域上有$\|H\psi\|^2\ge\gamma\langle\psi,H\psi\rangle$。}
+
+\begin{theorem}[\bi{Bosonic torus gap}{玻色环面谱隙}]\label{thm:boson}
+\bi{For every lattice with $\ell(\Lambda)\ge20$ and every boundary twist, the Hamiltonian~\eqref{eq:physical-H} on the entire bosonic Fock space satisfies}
+{对所有满足$\ell(\Lambda)\ge20$的格子及任意边界twist，式~\eqref{eq:physical-H}的Hamiltonian在整个玻色Fock空间上满足}
+\begin{equation}
+ H_B^2\ge\frac13H_B.
+\end{equation}
+\bi{More generally, every $0<\gamma<\gamma_B^*$ admits a systole threshold independent of particle number and twist, where}
+{更一般地，对每个$0<\gamma<\gamma_B^*$，都存在与粒子数及twist无关的最短周期阈值，其中}
+\begin{align}
+ \gamma_B^*&=1-\frac{764191703750823432978457}{1500000000000000000000000}
+ -\frac{19531250}{129140163}\notag\\
+ &\hspace{8mm}-10^{-6}\left[12(9/8)^9+272(9/8)^{17}\right]
+ \simeq0.33724904107059384.
+\end{align}
+\bi{The length threshold $20$ is dimensionless, equivalently $20\sqrt2\ell_B$ in physical units. It is a conservative sufficient condition, not an optimized finite-size estimate.}
+{长度阈值$20$是无量纲的，等价于物理长度$20\sqrt2\ell_B$。它是保守的充分条件，不是优化后的有限尺寸估计。}
+\end{theorem}
+
+\begin{theorem}[\bi{Fermionic torus gap}{费米环面谱隙}]\label{thm:fermion}
+\bi{For every $0<\gamma<\gamma_F^*$ there is a finite $L_\gamma$ such that, for every lattice with $\ell(\Lambda)\ge L_\gamma$ and every boundary twist, the full fermionic Fock-space Hamiltonian satisfies}
+{对每个$0<\gamma<\gamma_F^*$，存在有限$L_\gamma$，使对所有满足$\ell(\Lambda)\ge L_\gamma$的格子及任意边界twist，完整费米Fock空间Hamiltonian满足}
+\begin{equation}
+ H_F^2\ge\gamma H_F,\qquad
+ \gamma_F^*=\frac{4616733319001}{10^{14}}=0.04616733319001.
+\end{equation}
+\bi{The threshold is independent of particle number and twist. No explicit numerical value of $L_\gamma$ is asserted here.}
+{阈值与粒子数及twist无关。本文不声称得到$L_\gamma$的显式数值。}
+\end{theorem}
+
+\begin{corollary}[\bi{Laughlin fillings}{Laughlin填充} ]\label{cor:fillings}
+\bi{At $M=2N$ for bosons and $M=3N$ for fermions, the zero-energy spaces have dimensions two and three, respectively. The preceding inequalities bound the spectrum above these whole ground spaces. In any compact family of torus shapes at fixed magnetic length, they give thermodynamic gap bounds $1/3$ and $1/25$, respectively, for sufficiently large $N$. On the bosonic square sequence $M=2N$, the explicit condition is already satisfied for $N\ge64$.}
+{玻色在$M=2N$、费米在$M=3N$时，零能空间维数分别为二和三。上述不等式控制整个基态空间之上的谱。在固定磁长、环面形状属于紧集的任意族中，它们对充分大$N$分别给出$1/3$及$1/25$的热力学谱隙下界。对玻色方形序列$M=2N$，显式条件在$N\ge64$时已满足。}
+\end{corollary}
+\begin{remark}[\bi{Mathematical scope and formal coverage}{数学范围与形式化覆盖}]
+\bi{The full-Fock statements, stronger bosonic family, and filling corollary above are mathematical claims of this candidate manuscript. The selected formal acceptance is narrower: it covers the original fermionic Hamiltonian on every particle-number sector with one uniform systole threshold, and the original bosonic full-Fock Hamiltonian at constant $1/3$. In particular, that acceptance does not certify the zero-mode counts or all thermodynamic specializations. Appendix~\ref{app:reproducibility} records the distinction.}
+{上文的全Fock陈述、更强玻色常数族及填充推论属于本候选稿的数学结论。选定形式化验收的范围较窄：它覆盖原费米Hamiltonian在所有粒子数扇区上的不等式及同一个一致最短周期阈值，并覆盖原玻色全Fock Hamiltonian的$1/3$界。此次验收尤其没有认证零模计数或全部热力学特化。附录~\ref{app:reproducibility}记录两者的区别。}
+\end{remark}
+\bi{The kernel assertion is proved in Section~\ref{sec:groundspaces}. The fermionic estimate is assembled in Section~\ref{sec:F-fermionic} and the bosonic estimate in Section~\ref{sec:B-bosonic}. Neither theorem includes a fixed short circumference or arbitrary degenerating thin-torus shapes. Moreover, on a sector with no zero mode, a full-Fock inequality excludes positive spectrum in $(0,\gamma)$; it does not assert a spacing $\gamma$ between the two lowest positive eigenvalues.}
+{零空间结论在第~\ref{sec:groundspaces}节证明。费米估计在第~\ref{sec:F-fermionic}节汇总，玻色估计在第~\ref{sec:B-bosonic}节汇总。两定理都不覆盖固定短周长或任意退化的薄环面形状。此外，在没有零模的扇区，全Fock不等式排除$(0,\gamma)$中的正谱，并不声称最低两个正本征值之间相隔$\gamma$。}
