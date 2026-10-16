@@ -4,6 +4,10 @@ Candidate proof for independent review, revised 16 October 2026 from the mathema
 
 prepared by Xiang-Jian Hou with advice from Ying-Hai Wu
 
+**AI contribution and recorded models.** AI agents made substantive contributions to mathematical proof development, Lean formalization, finite certificates and verification code, and manuscript drafting and revision. Their contribution was not limited to language editing. OpenAI Codex was the tool and working environment, not a model name.
+
+The reliably recorded exact model roles are **`gpt-6.1-sol`** and **`gpt-6-astra`**, each performing a separate physical-fidelity review of the actual exported AST for the selected fermionic Lean endpoint. These are internal AI reviews, not independent human peer review. The exact model identifiers for other historical proof-development, formalization, verification-code, and writing tasks were not fully recorded; those tasks are not attributed here to the two recorded review models. See [AI_CONTRIBUTIONS.md](AI_CONTRIBUTIONS.md) for the detailed contribution statement.
+
 The manuscript treats the full lowest-Landau-level bosonic V0 interaction at filling 1/2 and fermionic V1 interaction at filling 1/3. The normalization sets the nonzero planar two-particle energy to one. The geometric hypothesis concerns the actual shortest nonzero lattice vector in units of sqrt(2) times the magnetic length. It does not cover arbitrary thin-torus degenerations.
 
 The mathematical claims and the selected machine acceptance have different scopes. Read [VERIFICATION.md](VERIFICATION.md) and [AI_CONTRIBUTIONS.md](AI_CONTRIBUTIONS.md) before interpreting the formal evidence.

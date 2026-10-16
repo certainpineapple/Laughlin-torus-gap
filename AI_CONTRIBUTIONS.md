@@ -6,7 +6,16 @@ This is a candidate proof for independent review. The wording above credits prep
 
 AI agents made substantive contributions to the mathematical development: adapting the Fock-space strategy to the torus; deriving magnetic periodization, COM-frame and connected-kernel arguments; working out the distinct fermionic CAR and bosonic CCR/occupation comparisons; assembling finite certificates and scalar budgets; writing arithmetic verification programs and Lean developments; and drafting and revising the manuscript. The AI contribution was not limited to language editing or routine calculation.
 
-The workflow used OpenAI Codex and GPT-6-family assistants. The provided acceptance record identifies separate gpt-6.1-sol and gpt-6-astra reviews of the fermionic actual exported AST. Exact model identifiers for other historical actions are not inferred. Internal AI checks, including those historically named "independent," do not mean independent human peer review.
+OpenAI Codex was the tool and working environment, not a model name. The retained acceptance record supports the following exact model attributions:
+
+| Model identifier | Reliably recorded role |
+| --- | --- |
+| `gpt-6.1-sol` | A separate physical-fidelity review of the actual exported AST for the selected fermionic Lean endpoint. |
+| `gpt-6-astra` | A separate physical-fidelity review of the actual exported AST for the selected fermionic Lean endpoint. |
+
+These recorded reviewer roles do not establish which model generated every proof, Lean source file, finite certificate, verification program, or manuscript passage. Exact model identifiers for other historical proof-development, formalization, verification-code, and writing tasks were not fully recorded and remain unspecified here. The two recorded review models are not credited with all development tasks on the basis of their review roles.
+
+These are internal AI reviews. Internal checks, including those historically named "independent," do not mean independent human peer review. The selected formal acceptance and its remaining scope limits are stated in [VERIFICATION.md](VERIFICATION.md).
 
 The disclosure approach draws on [Xin Shen's contribution statement](https://github.com/Shencongli/bosonic-laughlin-spectral-gap/blob/main/AI_CONTRIBUTIONS.md). Its description of its own checks is not evidence for this project's checks. [VERIFICATION.md](VERIFICATION.md) states the narrower acceptance record for this manuscript.
 
