@@ -10,8 +10,8 @@ OpenAI Codex was the tool and working environment, not a model name. The retaine
 
 | Model identifier | Reliably recorded role |
 | --- | --- |
-| `gpt-6.1-sol` | A separate physical-fidelity review of the actual exported AST for the selected fermionic Lean endpoint. |
-| `gpt-6-astra` | A separate physical-fidelity review of the actual exported AST for the selected fermionic Lean endpoint. |
+| `gpt-6.1-sol` | A separate physical-fidelity review of the actual exported AST for both selected fermionic and bosonic Lean endpoints. |
+| `gpt-6-astra` | A separate physical-fidelity review of the actual exported AST for both selected fermionic and bosonic Lean endpoints. |
 
 These recorded reviewer roles do not establish which model generated every proof, Lean source file, finite certificate, verification program, or manuscript passage. Exact model identifiers for other historical proof-development, formalization, verification-code, and writing tasks were not fully recorded and remain unspecified here. The two recorded review models are not credited with all development tasks on the basis of their review roles.
 

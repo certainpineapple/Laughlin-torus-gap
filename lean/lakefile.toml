@@ -1,0 +1,102 @@
+# Pinned package layout; Lake resolution and environment checks are validated.
+# Full selected-source rebuild entry point: rebuild_selected.py.
+# Never run in the historical source/object workspace.
+# vendor/ must contain exact pinned source packages from dependencies.lock.json.
+# Lean/ must contain only the 3,177 selected local modules, assembled by logical name.
+name = "laughlinTorusGap"
+version = "0.1.0"
+defaultTargets = ["LaughlinTorusGap"]
+
+[[require]]
+name = "Cli"
+scope = "leanprover"
+path = "vendor/lean4-cli-e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204"
+
+[[require]]
+name = "LeanSearchClient"
+scope = "leanprover-community"
+path = "vendor/LeanSearchClient-ddf04cf3949fa556442341e87d47f9f6e6074707"
+
+[[require]]
+name = "Qq"
+scope = "leanprover-community"
+path = "vendor/quote4-6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259"
+
+[[require]]
+name = "aesop"
+scope = "leanprover-community"
+path = "vendor/aesop-355695d523e41d0554926416cba2a2b3544fbbc9"
+
+[[require]]
+name = "batteries"
+scope = "leanprover-community"
+path = "vendor/batteries-f2effa3d803fda822b1f97b806c47cf2adfbcbc2"
+
+[[require]]
+name = "importGraph"
+scope = "leanprover-community"
+path = "vendor/import-graph-e928b72544873815af278d38681b31c0293588e3"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+path = "vendor/mathlib4-d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+[[require]]
+name = "plausible"
+scope = "leanprover-community"
+path = "vendor/plausible-118aa17ee84656b8bd727fef7c458ee8c833385c"
+
+[[require]]
+name = "proofwidgets"
+scope = "leanprover-community"
+path = "vendor/ProofWidgets4-106ff4fafc74ef4ac99d81dbf3ab399118f497a5"
+options = { errorOnBuild = "Selected-source rebuild: reviewed widget JS inputs are required; do not invoke npm automatically." }
+
+[[lean_lib]]
+name = "LaughlinTorusGap"
+srcDir = "Lean"
+roots = ["torus.shared.FermionPhysicalUniformGap", "torus.shared.BosonPhysicalFockThird"]
+globs = [
+  "torus.+",
+  "OAI.+",
+  "FermionBlocks.+",
+  "AnchoredThreeBody",
+  "CanonicalPlaneJets",
+  "ContactHilbertBridge",
+  "FermionM3Data",
+  "FockFormDomain",
+  "FrozenFermionRows",
+  "GramCongruence",
+  "GramSingularControls",
+  "JastrowLocalDivision",
+  "LaguerreEnvelope",
+  "LatticeLaguerreSum",
+  "LatticePacking",
+  "OccupationInstance",
+  "PairNormalSlice",
+  "PaperPauliCoefficients",
+  "PhysicalContactLiftCandidate",
+  "PlaneGaussianReproducing",
+  "PlaneJetDisplacement",
+  "PlaneMagneticUnitary",
+  "RationalPSDCertificate",
+  "RawCARNorm",
+  "SpectatorControl",
+  "Sym2Evaluation",
+  "ThetaAnalytic",
+  "ThetaAnalyticBoundary",
+  "ThetaAnalyticBridge",
+  "ThetaAnalyticNormal",
+  "ThetaFactorization",
+  "ThetaFourier",
+  "ThetaFourierContour",
+  "ThetaFourierDefinitions",
+  "ThetaFourierExhaustion",
+  "ThetaFourierIdentity",
+  "ThetaFourierSeries",
+  "ThetaSectionSpace",
+  "TwoBodyLift",
+  "UniformTail",
+  "UnitaryTransport"
+]

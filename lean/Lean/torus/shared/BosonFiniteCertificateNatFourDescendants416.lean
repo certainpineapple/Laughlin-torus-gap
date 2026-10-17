@@ -1,0 +1,9 @@
+import torus.shared.BosonFiniteCertificateNatFourDescendants416CompressionTheorem
+import torus.shared.BosonFiniteCertificateNatFourDescendants416SourceForm
+import torus.shared.BosonFiniteCertificateNatFourDescendants416Average
+import torus.shared.BosonFiniteCertificateNatFourDescendants416COMForm
+
+#print axioms TorusLean.BosonFiniteCertificate.f416desc0_compression_check
+#print axioms TorusLean.BosonFiniteCertificate.f416desc0_source_form
+#print axioms TorusLean.BosonFiniteCertificate.f416_COM_average_check
+#print axioms TorusLean.BosonFiniteCertificate.f416_actual_COM_matrix

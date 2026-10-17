@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "basis": "All 3177 local modules compiled before this comment-only revision; both roots and three standard axiom reports passed. No second full build is claimed.",
+  "baseline_v2_archive_sha256": "cd1d12ae50f58c12498d05739716a3c798831552045c3810ea5209416054b6d1",
+  "compared_modules": 3177,
+  "changed_comment_only_modules": 35,
+  "noncomment_comparison": "Exact character-stream equality after replacing each comment with a fixed boundary marker; all non-comment whitespace and string/character/quoted-identifier contents retained. Nested block comments and line comments recognized. This is stricter than ignoring whitespace in a token comparison.",
+  "proof_or_import_token_changes": 0,
+  "changes": [
+    {
+      "path": "Lean/RawCARNorm.lean",
+      "before_sha256": "d22ca8d584a06ad9a027d6cccc9944f00996edab7ae724b68c4e03fcc1786fb3",
+      "after_sha256": "c9bdebf9b1837cc6b0bd32eff02c5bffea3166b99937c2cd90fc14d0621d80ca"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingDegreeOneAlgebra01.lean",
+      "before_sha256": "5ea53f0352efd3b0ad982277652b8e5effd0139c6dd9dba80f36d341795a4ebc",
+      "after_sha256": "416363b527a80544204841df6b2c3f01892e5f379820c459321ce50e3962e8ff"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingDegreeOneLadderBridge01.lean",
+      "before_sha256": "fbb85b11135653e1e3d171978d1022b13359f54a4b863d0cbb344dc84414f8f7",
+      "after_sha256": "9a5b30084f19b7d71708ed15c554731a05a9a8168703f3ecb84e2fd4a3ffbf6c"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingDegreeOneSourceBridge01.lean",
+      "before_sha256": "0577fcdc7ff6949351bb31e8985b9524dd10a815c1663f992097381461d20033",
+      "after_sha256": "e93961286facbbb8898d385ddbc431ba0e8d31ca42aa2511fcf0cdd35176d908"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralHalfSpace.lean",
+      "before_sha256": "e70ee31293a79770bbb501e3998a9b6070fc9d5f843253440d07142de95d3a49",
+      "after_sha256": "fc3dbf7d2599ea208e86b06b8f9f207065cd79f709a05dab5a7db77a91a33b7f"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralSourceChecks.lean",
+      "before_sha256": "f3e7f38e3f20e2fff48be4d931aa6b695c2e2a9f9873aa464468152590ea4072",
+      "after_sha256": "be6cc5dd8c6d0ae73302fa420923ddca0a4ae7229dda19c530b1327d079b5259"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralSourceCoefficientBridge.lean",
+      "before_sha256": "e8cb5ae5fdbae6961c7b27383342cdc932d61244c49d069d427b1469c1798e60",
+      "after_sha256": "a6e49b03cc8ed4815ebe33cd4ea89d9c16a7d92519748c705cbfbd7f84de0903"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralSourceEncoding.lean",
+      "before_sha256": "d2233b5334cf838951025fbcedb0b913a85d3691034689fbacc65a0f799217da",
+      "after_sha256": "ce276746afbd4b3fc3fa2feacc95095ee937d2630654d2359ed30e380f679f8d"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralSourcePolynomial.lean",
+      "before_sha256": "e9c0b6576b9f936838f4a643033c09ac5533f2577ec2198c72bdaf1dd816d76c",
+      "after_sha256": "7abfd9a112929c90d9ad2143d0568fe1ca0dff549428ed91ab965ccfaebc6898"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingGeneralSourceSymmetry.lean",
+      "before_sha256": "92e7d3d939d9f93e3e55f17f69b6dd27af122c2225b50fc497b10e4d52183fca",
+      "after_sha256": "c4368ded1f60041a5d8e3ffba72ede61cff26d690fbf867393187b77406015a7"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks02.lean",
+      "before_sha256": "0e2501d9470fa79d203cc06f5c8b2c440cf876a3dcfcb1a7487c171d08874a77",
+      "after_sha256": "8648f156933b7052d0338ccfcd1ca6c9253277ef36b2f98d01eefcc9e17d4abb"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks03.lean",
+      "before_sha256": "24c2aec022fef00bd09939033b095b3c35e6a475b673c85e18663adb2a79a1eb",
+      "after_sha256": "a5288bd410fffb60675540ca537a946630230db0103aa96fa053e877eca17464"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks04.lean",
+      "before_sha256": "a7070cf637eeca86a1bfcf291d0cdee0b8f9a9c5f7f48c96e2c813a664e6e728",
+      "after_sha256": "1ebf59b1ec67c1d4cda8a2aac6e498b4630cb70b0e3cf8328d4c3f978db705ee"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks05.lean",
+      "before_sha256": "6b1015d3f516a991bcf0c79cfa412868a7a506b57290b51de49535eb684e4adc",
+      "after_sha256": "3bfb29b451e30a8c78a6c39f559a6b7ed8d0bbe20992da5931d4c707c58b0228"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks06.lean",
+      "before_sha256": "b1852802e2622a79cc9506ba7d22eb608ab0fd87faca8d74e4c779bd94ea1345",
+      "after_sha256": "47348a5b23175ab86e865df47094dd94f62ee2a1afaf5d3b32e8db311a2a5267"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks07.lean",
+      "before_sha256": "72c146b910d0451092a8e35c761423c3d9fb2e79290926dfb5e1a9a5354e6e8f",
+      "after_sha256": "78ead6e65b58c457f4e64ea04d77cb8e52c84bc51989b7cd116ac6eb2a5361f4"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks08.lean",
+      "before_sha256": "b6794486418fca76da2444550a89e0bfbdca9caf0d725c44010fb76d86c779b9",
+      "after_sha256": "ac850458d7e3438508df031fe5dd57628ac7d684b2631b28ac716e863fb5bea8"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks09.lean",
+      "before_sha256": "741fb24b948ebcbd572157cc18cdb20b471d9dacfbe2af36082c678ffbdb0cd5",
+      "after_sha256": "d017b4f12f91a766d5030d7abfc33dd31af9c6e4415eb5ab27dd726cd3d48569"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks10.lean",
+      "before_sha256": "66c25a7f15885ec1f12c252cec8eddb6f3b367b93bbd6b028a175f4d72d4cc56",
+      "after_sha256": "4a6c0c436f492fd2e25cbc5d3fdf7dd92324d8c53d6dceb799c49a1fba3cb018"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks11.lean",
+      "before_sha256": "431054029ea7386b7a48e06af74f3567660f808a20bf82a312a456a9c7d6c034",
+      "after_sha256": "14824782a529900f8df7ec828e50c61b276ed0d213ce5f4a77fd471c73c8e0e4"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks12.lean",
+      "before_sha256": "6ced7a4f74229666806a817466c4cf9eed664ebddb7bf3932b24d01ad62f1a6c",
+      "after_sha256": "bb2a79e0390e2c98affbc1e147524e9bf2e8952c7f3c254bdb34c9baf95a82ae"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks13.lean",
+      "before_sha256": "189b65705e62137a069ef1a0dbbeb335a8af5d166d83b19a04b82ed69d68ad06",
+      "after_sha256": "ab6fe0f2d392b7ca9898792b256cde9fa6f956c67971ae0393e9b8c3f4ab8dc6"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks14.lean",
+      "before_sha256": "106373f8644baa697d319f61b417c3a0d7dd9e21ce9a90a8ddc5221844030378",
+      "after_sha256": "f80633197af7f069d06bb4afc1e38d788c728917b31e734f2aa1021f352003db"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks15.lean",
+      "before_sha256": "dbe3988cc889722941fcd6c35c1d4c77993979a783b0be605030916096e7da0e",
+      "after_sha256": "d56cb7128860126a8d104c6be8a66021e43832eccd0b6f2dcd0bac8fa8791fca"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks16.lean",
+      "before_sha256": "709a87d89c16f8ac6432a8f865538ddc0c8f923a139b6a1aa13add6d4eb7180b",
+      "after_sha256": "b4d76d8aa2f6d3337f26f43198bbd8832d5f797da48c6e2c2df741d87d6987c2"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks17.lean",
+      "before_sha256": "28e8aba7132ec55a245acf197d7bf3e4a7fb378d84f50236af48fa1821268220",
+      "after_sha256": "8832ba949a6be2b7406dbe870216072cc9016250b3640f6999e61436c5d14a40"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks18.lean",
+      "before_sha256": "a3e05be1c90f9bba3da14c9fdcb6f7d45de3ee083ae7c499f1073d4b997b3dbf",
+      "after_sha256": "2db92d5fb8bc745cff7c0ae209bb232e969558c4595d849e99c90716fbaedf0e"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks19.lean",
+      "before_sha256": "0947630735662c9428c336aa3dddbbf1756d1e9621895e1ec544c89ab95e9728",
+      "after_sha256": "906902b5a7acffebecb84375133f49438900a69bb662e057a3819d0f23940b6d"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks20.lean",
+      "before_sha256": "b39f306163a7d5e9599d660031b491b3f43a2581b13372174443f47fd06db2e6",
+      "after_sha256": "464c2d418ccb011d878919e6129f0f48a0c2aa47aec407eeefb4845bee63a1a3"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks21.lean",
+      "before_sha256": "52a5fd599cf1aaf407851d9c17258bbaf3a8b2cfc6c3ad57aeecb1881ca22f5a",
+      "after_sha256": "fc26993e081ab82bc8b1d2c018ea18e1268485a0d6b931b52b62ad75c2f21088"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks22.lean",
+      "before_sha256": "60b8b35ab41bc50b42d0ca50019c4b1c9facb87e88a03d1ce650befbd4f1a8a9",
+      "after_sha256": "574fc74cbace4db15c343b86af7bf917c2acc9ae4e1f5720a029df04da1381b0"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceChecks23.lean",
+      "before_sha256": "8484579b65c85a2a6627b4cc5d44053950847935b9dfc1bab52d592761f3f338",
+      "after_sha256": "ab607bae82a6919b2da056336235243f456a9b5a64459ecb708e51b77452613a"
+    },
+    {
+      "path": "Lean/torus/shared/FermionLocalJetFourCouplingIntegerSourceReflection01.lean",
+      "before_sha256": "c211b28287d7b70be80f3f469bd29d4e075b561309e72a1290da73cee2987db6",
+      "after_sha256": "9cdde92c7329f58f1193ea6542ed95205af83e6273edcb77ee9ec74c9ab02ee0"
+    },
+    {
+      "path": "Lean/torus/shared/ThermalCoherentFermionAnchoredJacobiMagneticIBP.lean",
+      "before_sha256": "85ee1c122dd241e66034de092ff9a77dc4f5da9b47f886bae5f5563038a7ef16",
+      "after_sha256": "a93f376d48a02e6a209d112200811cd9891c507379dde651794fbc045b741655"
+    },
+    {
+      "path": "Lean/torus/shared/ThermalCoherentFermionAnchoredJacobiPairGenerating.lean",
+      "before_sha256": "c49499d9ab09d66c2e02ba6d75697b47201df00a74b49331e7db6dbc80b3bfbd",
+      "after_sha256": "d2b311f03a2c14c8f40d471b371fef0a34c1ad5d5ec9fbe5bcfeac1241debca4"
+    }
+  ],
+  "all_module_noncomment_hashes_digest": "bea76364f48ab018c5730b9af2de818a18495d4a70fa10c6668887d1311c2a7c",
+  "checker": "verify_comment_revision.py"
+}

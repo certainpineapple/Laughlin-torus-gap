@@ -1,0 +1,112 @@
+{
+  "schema": "LAUGHLIN_SELECTED_SOURCE_DEPENDENCIES_V1",
+  "toolchain": {
+    "value": "leanprover/lean4:v4.34.1",
+    "lean_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
+    "linux_archive_sha256": "47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4"
+  },
+  "dependencies": [
+    {
+      "name": "Cli",
+      "repository": "leanprover/lean4-cli",
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "archive_url": "https://codeload.github.com/leanprover/lean4-cli/tar.gz/e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "archive_bytes": 23864,
+      "archive_sha256": "1ccb3440fc468e393b064a446368c4b317b7c57ffe78cee3b2b932333834e007",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/lean4-cli-e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204"
+    },
+    {
+      "name": "LeanSearchClient",
+      "repository": "leanprover-community/LeanSearchClient",
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "archive_url": "https://codeload.github.com/leanprover-community/LeanSearchClient/tar.gz/ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "archive_bytes": 13134,
+      "archive_sha256": "55f9b52a8134dd4e14176999cda127af2c1190241048864b546ae7c802ae6e37",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/LeanSearchClient-ddf04cf3949fa556442341e87d47f9f6e6074707"
+    },
+    {
+      "name": "Qq",
+      "repository": "leanprover-community/quote4",
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "archive_url": "https://codeload.github.com/leanprover-community/quote4/tar.gz/6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "archive_bytes": 33006,
+      "archive_sha256": "c61940f3fe63e39db9b25b8ac4ce1bc9a9466801055b9218804556d85e9a6e29",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/quote4-6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259"
+    },
+    {
+      "name": "aesop",
+      "repository": "leanprover-community/aesop",
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "archive_url": "https://codeload.github.com/leanprover-community/aesop/tar.gz/355695d523e41d0554926416cba2a2b3544fbbc9",
+      "archive_bytes": 208005,
+      "archive_sha256": "80792fbdc4f7a12a9783c32ee5eba7387d450bc26ababf5ff6f16c4dc59b633a",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/aesop-355695d523e41d0554926416cba2a2b3544fbbc9"
+    },
+    {
+      "name": "batteries",
+      "repository": "leanprover-community/batteries",
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "archive_url": "https://codeload.github.com/leanprover-community/batteries/tar.gz/f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "archive_bytes": 363638,
+      "archive_sha256": "1987093d3e0af3c75084f48095a8eb0fac0751b11712c51fb05b31e71d64220b",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/batteries-f2effa3d803fda822b1f97b806c47cf2adfbcbc2"
+    },
+    {
+      "name": "importGraph",
+      "repository": "leanprover-community/import-graph",
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "archive_url": "https://codeload.github.com/leanprover-community/import-graph/tar.gz/e928b72544873815af278d38681b31c0293588e3",
+      "archive_bytes": 149550,
+      "archive_sha256": "5daec3b3889d425440a93f4a47de29a41836266359e29472abbc767ed2188eed",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/import-graph-e928b72544873815af278d38681b31c0293588e3"
+    },
+    {
+      "name": "mathlib",
+      "repository": "leanprover-community/mathlib4",
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "archive_url": "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "archive_bytes": 23846080,
+      "archive_sha256": "a8c019444a1edd6091d8416e492e218a311db340dafbea96c61c6dc358c28f05",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/mathlib4-d13f23b723b8a846827a245b89c10fc7d3f11612"
+    },
+    {
+      "name": "openai-math",
+      "repository": "openai/math",
+      "revision": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "archive_url": "https://codeload.github.com/openai/math/tar.gz/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "archive_bytes": 784520521,
+      "archive_sha256": "ec2a3edde30449cedfd0ea847a30fabb062d0be0b0c3ec0f7447d4b7e5f7e30c",
+      "role": "attribution_base_selected_sources_only",
+      "vendor_dir": "vendor/math-fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "name": "plausible",
+      "repository": "leanprover-community/plausible",
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "archive_url": "https://codeload.github.com/leanprover-community/plausible/tar.gz/118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "archive_bytes": 42943,
+      "archive_sha256": "e5ed8b63ae57811987cc68e89b87fdd9932ed8ec4bda187abd4db5d9321a8f48",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/plausible-118aa17ee84656b8bd727fef7c458ee8c833385c"
+    },
+    {
+      "name": "proofwidgets",
+      "repository": "leanprover-community/ProofWidgets4",
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "archive_url": "https://codeload.github.com/leanprover-community/ProofWidgets4/tar.gz/106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "archive_bytes": 3895061,
+      "archive_sha256": "c6cf369f63a997035e36c5f6f76afdba77c2e047988cb6abdec362a1098552de",
+      "role": "ordinary_build_dependency",
+      "vendor_dir": "vendor/ProofWidgets4-106ff4fafc74ef4ac99d81dbf3ab399118f497a5"
+    }
+  ],
+  "build_verified": false,
+  "oai_note": "Do not declare openai/math as a Lake requirement and do not execute its lakefile or 23 patch hooks. The selected 60 OAI modules are locally vendored, partly import-adapted or recovered, and must be identified as such. Pin the upstream revision for attribution and exact reference identity only."
+}

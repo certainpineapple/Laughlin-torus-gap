@@ -1,0 +1,12 @@
+import torus.shared.BosonFiniteCertificateNatFourHS415HCompression
+import torus.shared.BosonFiniteCertificateNatFourHS415S4Compression
+
+#print axioms TorusLean.BosonFiniteCertificate.f415_raw_H_matrix_check
+#print axioms TorusLean.BosonFiniteCertificate.f415_actual_raw_H_matrix
+#print axioms TorusLean.BosonFiniteCertificate.f415_relative_H_compression
+#print axioms TorusLean.BosonFiniteCertificate.f415_actual_relative_H_form
+#print axioms TorusLean.BosonFiniteCertificate.f415_S4_amplitudes_check
+#print axioms TorusLean.BosonFiniteCertificate.f415_S4_amplitude_gram_check
+#print axioms TorusLean.BosonFiniteCertificate.f415_actual_raw_S4_matrix
+#print axioms TorusLean.BosonFiniteCertificate.f415_relative_S4_compression
+#print axioms TorusLean.BosonFiniteCertificate.f415_actual_relative_S4_form

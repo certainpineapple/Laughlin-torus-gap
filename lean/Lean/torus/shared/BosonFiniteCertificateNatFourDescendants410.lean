@@ -1,0 +1,5 @@
+import torus.shared.BosonFiniteCertificateNatFourDescendants410Average
+import torus.shared.BosonFiniteCertificateNatFourDescendants410COMForm
+
+#print axioms TorusLean.BosonFiniteCertificate.f410_COM_average_check
+#print axioms TorusLean.BosonFiniteCertificate.f410_actual_COM_matrix

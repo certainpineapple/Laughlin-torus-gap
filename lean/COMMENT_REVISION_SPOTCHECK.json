@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "checked_utc": "2026-10-17T00:05:43Z",
+  "scope": "Three comment-revised modules compiled again into new outputs, reusing existing historical dependency objects. This supplementary spot check is distinct from the prior fresh rebuild of all 3177 local sources.",
+  "command_template": "lean -j1 -M7168 -DautoImplicit=false -R RELEASE/Lean -o NEW_OUTPUT/module.olean RELEASE/Lean/module.lean",
+  "results": [
+    {
+      "module": "torus.shared.FermionLocalJetFourCouplingDegreeOneLadderBridge01",
+      "source_sha256": "9a5b30084f19b7d71708ed15c554731a05a9a8168703f3ecb84e2fd4a3ffbf6c",
+      "exit_code": 0,
+      "seconds": 3.8220838099950925,
+      "lean_options": [
+        "-j1",
+        "-M7168",
+        "-DautoImplicit=false"
+      ],
+      "dependency_objects": "Existing historical dependency overlay, not a new fresh closure rebuild"
+    },
+    {
+      "module": "torus.shared.FermionLocalJetFourCouplingIntegerSourceReflection01",
+      "source_sha256": "9cdde92c7329f58f1193ea6542ed95205af83e6273edcb77ee9ec74c9ab02ee0",
+      "exit_code": 0,
+      "seconds": 7.00536208297126,
+      "lean_options": [
+        "-j1",
+        "-M7168",
+        "-DautoImplicit=false"
+      ],
+      "dependency_objects": "Existing historical dependency overlay, not a new fresh closure rebuild"
+    },
+    {
+      "module": "RawCARNorm",
+      "source_sha256": "c9bdebf9b1837cc6b0bd32eff02c5bffea3166b99937c2cd90fc14d0621d80ca",
+      "exit_code": 0,
+      "seconds": 2.2727331949863583,
+      "lean_options": [
+        "-j1",
+        "-M7168",
+        "-DautoImplicit=false"
+      ],
+      "dependency_objects": "Existing historical dependency overlay, not a new fresh closure rebuild"
+    }
+  ]
+}

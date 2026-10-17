@@ -1,0 +1,78 @@
+{
+  "schema": "SELECTED_LOCAL_SOURCE_REBUILD_VALIDATION_V1",
+  "completed_utc": "2026-10-16T17:47:28Z",
+  "status": "PASS",
+  "input_source_archive_sha256": "eaa73c7e367404c3897495dc27bec36297eb15b5e5fdfe3a6da14b5ff614f8e7",
+  "local_source_modules": 3177,
+  "local_source_bytes": 20945196,
+  "local_source_modifications": 0,
+  "historical_local_objects_reused": false,
+  "source_manifest_sha256": "541957efa0c3a61a1ed94d3e98dc993d40ee95236e0d1f68faceb519a8dff3f0",
+  "toolchain": {
+    "value": "leanprover/lean4:v4.34.1",
+    "lean_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
+    "linux_archive_sha256": "47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4"
+  },
+  "upstream_compiled_caches_reused": true,
+  "upstream_modules_recompiled": [
+    "Mathlib.Algebra.MvPolynomial.Coeff",
+    "Mathlib.Analysis.Analytic.IteratedFDeriv",
+    "Mathlib.Analysis.Calculus.FDeriv.Symmetric",
+    "Mathlib.Topology.Algebra.Module.LinearPMap",
+    "Mathlib.Analysis.InnerProductSpace.LinearPMap",
+    "Mathlib.RingTheory.MvPolynomial.EulerIdentity"
+  ],
+  "root_outputs": {
+    "torus.shared.FermionPhysicalUniformGap": {
+      "kind": "rebuilt_local_source",
+      "source_sha256": "f32446ad4292ee8fc6df3a1398266ec9186e2be8273d451ab2c6144d62a45704",
+      "artifacts": {
+        ".olean": "405b6aad918fce53d9020bfdadfc19c18ae8fb820f3eeec1760cc99650c0c919"
+      },
+      "seconds": 2.253345203003846
+    },
+    "torus.shared.BosonPhysicalFockThird": {
+      "kind": "rebuilt_local_source",
+      "source_sha256": "18cf45581c9948560d526b8e1007474526ad45d87aaa301319955b848abcaf1b",
+      "artifacts": {
+        ".olean": "a747dce4fefcf803df6dcb951f01f9682008cdddc3cc4a5a4bc68b01845ab844"
+      },
+      "seconds": 2.754242188006174
+    }
+  },
+  "axiom_check_exit_code": 0,
+  "axiom_sets": {
+    "TorusLean.Shared.FermionPhysicalUniformGap.physical_fermion_uniform_operator_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TorusLean.Shared.BosonPhysicalFockThird.physicalFockHamiltonian_third": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TorusLean.Shared.BosonPhysicalFockThird.physicalFockHamiltonian_third_resolvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "portable_entrypoint_fresh_smoke_exit_code": 0,
+  "portable_entrypoint_full_output_verification_exit_code": 0,
+  "lake_update_exit_code": 0,
+  "lake_env_final_axiom_check_exit_code": 0,
+  "lake_full_build_reexecuted": false,
+  "single_heavy_process_memory_limit_MiB": 7168,
+  "scope": "Fresh rebuild of the selected local sources, with fixed toolchain and upstream caches; not a complete upstream bootstrap or acceptance of every paper statement.",
+  "validated_pre_comment_source_manifest_sha256": "2b3eabadd9edb793acc04881f76bb030eee3d984d5e9d6a184d0cafc2a57e358",
+  "validated_pre_comment_local_source_bytes": 20941808,
+  "local_source_modifications_scope": "Mathematical/non-comment source. Post-build comment-only edits are recorded separately.",
+  "post_build_comment_only_revision": {
+    "changed_modules": 35,
+    "all_3177_noncomment_streams_equal": true,
+    "report": "COMMENT_ONLY_VALIDATION.json",
+    "full_rebuild_after_comment_edit": false,
+    "supplementary_recompilation": "COMMENT_REVISION_SPOTCHECK.json"
+  }
+}

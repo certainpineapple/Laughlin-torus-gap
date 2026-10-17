@@ -1,0 +1,14 @@
+{
+  "status": "SELECTED_LOCAL_SOURCE_REBUILD_PASS_COMMENT_ONLY_REVISION_VERIFIED",
+  "local_modules": 3177,
+  "local_source_bytes": 20945196,
+  "all_current_bytes_equal_selected_source_hashes": true,
+  "headers_match_recorded_import_graph": true,
+  "sorry_admit_axiom_lexical_findings": [],
+  "resource_or_executable_source_constructs": [],
+  "absolute_workspace_path_occurrences": [],
+  "scope": "Conservative lexical scan, supplemented by the fresh rebuild of all 3177 selected local modules and three final axiom reports. See REBUILD_VALIDATION.json and COMMENT_ONLY_VALIDATION.json for the post-build comment revision and upstream-cache boundary.",
+  "full_clean_build_verified": false,
+  "full_clean_build_verified_scope": "Entire upstream environment was not rebuilt; all 3177 local modules were freshly rebuilt before the token-identical comment revision.",
+  "selected_local_clean_build_verified": true
+}

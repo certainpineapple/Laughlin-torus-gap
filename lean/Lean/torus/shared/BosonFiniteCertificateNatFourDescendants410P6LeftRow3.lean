@@ -1,0 +1,186 @@
+import torus.shared.BosonFiniteCertificateNatFourDescendants410P6Data
+
+set_option autoImplicit false
+set_option maxRecDepth 32768
+set_option maxHeartbeats 0
+noncomputable section
+namespace TorusLean.BosonFiniteCertificate
+open TorusLean.Boson TorusLean.M2
+open Matrix
+open scoped BigOperators
+
+private theorem f410desc6_left_row3_columns0 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 0=f410desc6IntegerLeftProductShared 3 0) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 1=f410desc6IntegerLeftProductShared 3 1) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 2=f410desc6IntegerLeftProductShared 3 2) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 3=f410desc6IntegerLeftProductShared 3 3) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 4=f410desc6IntegerLeftProductShared 3 4) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 5=f410desc6IntegerLeftProductShared 3 5) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 6=f410desc6IntegerLeftProductShared 3 6) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 7=f410desc6IntegerLeftProductShared 3 7) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns0
+
+private theorem f410desc6_left_row3_columns1 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 8=f410desc6IntegerLeftProductShared 3 8) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 9=f410desc6IntegerLeftProductShared 3 9) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 10=f410desc6IntegerLeftProductShared 3 10) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 11=f410desc6IntegerLeftProductShared 3 11) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 12=f410desc6IntegerLeftProductShared 3 12) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 13=f410desc6IntegerLeftProductShared 3 13) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 14=f410desc6IntegerLeftProductShared 3 14) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 15=f410desc6IntegerLeftProductShared 3 15) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns1
+
+private theorem f410desc6_left_row3_columns2 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 16=f410desc6IntegerLeftProductShared 3 16) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 17=f410desc6IntegerLeftProductShared 3 17) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 18=f410desc6IntegerLeftProductShared 3 18) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 19=f410desc6IntegerLeftProductShared 3 19) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 20=f410desc6IntegerLeftProductShared 3 20) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 21=f410desc6IntegerLeftProductShared 3 21) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 22=f410desc6IntegerLeftProductShared 3 22) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 23=f410desc6IntegerLeftProductShared 3 23) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns2
+
+private theorem f410desc6_left_row3_columns3 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 24=f410desc6IntegerLeftProductShared 3 24) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 25=f410desc6IntegerLeftProductShared 3 25) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 26=f410desc6IntegerLeftProductShared 3 26) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 27=f410desc6IntegerLeftProductShared 3 27) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 28=f410desc6IntegerLeftProductShared 3 28) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 29=f410desc6IntegerLeftProductShared 3 29) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 30=f410desc6IntegerLeftProductShared 3 30) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 31=f410desc6IntegerLeftProductShared 3 31) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns3
+
+private theorem f410desc6_left_row3_columns4 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 32=f410desc6IntegerLeftProductShared 3 32) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 33=f410desc6IntegerLeftProductShared 3 33) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 34=f410desc6IntegerLeftProductShared 3 34) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 35=f410desc6IntegerLeftProductShared 3 35) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 36=f410desc6IntegerLeftProductShared 3 36) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 37=f410desc6IntegerLeftProductShared 3 37) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 38=f410desc6IntegerLeftProductShared 3 38) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 39=f410desc6IntegerLeftProductShared 3 39) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns4
+
+private theorem f410desc6_left_row3_columns5 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 40=f410desc6IntegerLeftProductShared 3 40) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 41=f410desc6IntegerLeftProductShared 3 41) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 42=f410desc6IntegerLeftProductShared 3 42) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 43=f410desc6IntegerLeftProductShared 3 43) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 44=f410desc6IntegerLeftProductShared 3 44) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 45=f410desc6IntegerLeftProductShared 3 45) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 46=f410desc6IntegerLeftProductShared 3 46) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 47=f410desc6IntegerLeftProductShared 3 47) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns5
+
+private theorem f410desc6_left_row3_columns6 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 48=f410desc6IntegerLeftProductShared 3 48) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 49=f410desc6IntegerLeftProductShared 3 49) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 50=f410desc6IntegerLeftProductShared 3 50) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 51=f410desc6IntegerLeftProductShared 3 51) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 52=f410desc6IntegerLeftProductShared 3 52) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 53=f410desc6IntegerLeftProductShared 3 53) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 54=f410desc6IntegerLeftProductShared 3 54) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 55=f410desc6IntegerLeftProductShared 3 55) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns6
+
+private theorem f410desc6_left_row3_columns7 :
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 56=f410desc6IntegerLeftProductShared 3 56) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 57=f410desc6IntegerLeftProductShared 3 57) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 58=f410desc6IntegerLeftProductShared 3 58) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 59=f410desc6IntegerLeftProductShared 3 59) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 60=f410desc6IntegerLeftProductShared 3 60) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 61=f410desc6IntegerLeftProductShared 3 61) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 62=f410desc6IntegerLeftProductShared 3 62) ∧
+    ((f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 63=f410desc6IntegerLeftProductShared 3 63) := by
+  decide +kernel
+
+#print axioms f410desc6_left_row3_columns7
+
+theorem f410desc6_integer_left_row3 (b : Fin 64) :
+    (f410desc6IntegerCoordinatesSharedᵀ*f416rawInteger) 3 b = f410desc6IntegerLeftProductShared 3 b := by
+  fin_cases b
+  · exact f410desc6_left_row3_columns0.1
+  · exact f410desc6_left_row3_columns0.2.1
+  · exact f410desc6_left_row3_columns0.2.2.1
+  · exact f410desc6_left_row3_columns0.2.2.2.1
+  · exact f410desc6_left_row3_columns0.2.2.2.2.1
+  · exact f410desc6_left_row3_columns0.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns0.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns0.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns1.1
+  · exact f410desc6_left_row3_columns1.2.1
+  · exact f410desc6_left_row3_columns1.2.2.1
+  · exact f410desc6_left_row3_columns1.2.2.2.1
+  · exact f410desc6_left_row3_columns1.2.2.2.2.1
+  · exact f410desc6_left_row3_columns1.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns1.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns1.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns2.1
+  · exact f410desc6_left_row3_columns2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns2.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns3.1
+  · exact f410desc6_left_row3_columns3.2.1
+  · exact f410desc6_left_row3_columns3.2.2.1
+  · exact f410desc6_left_row3_columns3.2.2.2.1
+  · exact f410desc6_left_row3_columns3.2.2.2.2.1
+  · exact f410desc6_left_row3_columns3.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns3.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns3.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns4.1
+  · exact f410desc6_left_row3_columns4.2.1
+  · exact f410desc6_left_row3_columns4.2.2.1
+  · exact f410desc6_left_row3_columns4.2.2.2.1
+  · exact f410desc6_left_row3_columns4.2.2.2.2.1
+  · exact f410desc6_left_row3_columns4.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns4.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns4.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns5.1
+  · exact f410desc6_left_row3_columns5.2.1
+  · exact f410desc6_left_row3_columns5.2.2.1
+  · exact f410desc6_left_row3_columns5.2.2.2.1
+  · exact f410desc6_left_row3_columns5.2.2.2.2.1
+  · exact f410desc6_left_row3_columns5.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns5.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns5.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns6.1
+  · exact f410desc6_left_row3_columns6.2.1
+  · exact f410desc6_left_row3_columns6.2.2.1
+  · exact f410desc6_left_row3_columns6.2.2.2.1
+  · exact f410desc6_left_row3_columns6.2.2.2.2.1
+  · exact f410desc6_left_row3_columns6.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns6.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns6.2.2.2.2.2.2.2
+  · exact f410desc6_left_row3_columns7.1
+  · exact f410desc6_left_row3_columns7.2.1
+  · exact f410desc6_left_row3_columns7.2.2.1
+  · exact f410desc6_left_row3_columns7.2.2.2.1
+  · exact f410desc6_left_row3_columns7.2.2.2.2.1
+  · exact f410desc6_left_row3_columns7.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns7.2.2.2.2.2.2.1
+  · exact f410desc6_left_row3_columns7.2.2.2.2.2.2.2
+
+#print axioms f410desc6_integer_left_row3
+
+end TorusLean.BosonFiniteCertificate

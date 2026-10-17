@@ -1,0 +1,27 @@
+import torus.shared.BosonFiniteCertificateNatFourIntegerMatrix
+import torus.shared.BosonFiniteCertificateNatFourRaw404
+
+/-! A common-denominator integer witness for an independently source-verified
+raw M4 matrix. The exact rational-table equality below is checked separately. -/
+set_option autoImplicit false
+set_option maxRecDepth 32768
+set_option maxHeartbeats 0
+namespace TorusLean.BosonFiniteCertificate
+open Matrix
+
+def f404rawInteger : Matrix (Fin 5) (Fin 5) ℤ :=
+  !![(-28627031664014567596751232), (-1493256009358972701830892), 7919790714500687553819984, 2762924749816422775894224, (-2224596160657134105484320);
+    (-1493256009358972701830892), (-987818885781308663079704), (-1038820989505223708721216), 543307168870650400323248, (-2189024601514666874907216);
+    7919790714500687553819984, (-1038820989505223708721216), 3850197530974074535823232, 2679742596118181518543360, 5915943457170012611538432;
+    2762924749816422775894224, 543307168870650400323248, 2679742596118181518543360, 3243292493414338899999808, 4503811074507940799410416;
+    (-2224596160657134105484320), (-2189024601514666874907216), 5915943457170012611538432, 4503811074507940799410416, 6808124380233316243278528]
+
+theorem f404_raw_integer_check :
+    natFourIntegerMatrix 1000000000000000000000000 f404rawInteger=f404rawM4Form := by
+  ext a b
+  exact natFourRationalEntryCheck_sound
+    (natFourIntegerMatrix 1000000000000000000000000 f404rawInteger)
+    f404rawM4Form (by decide +kernel) a b
+
+#print axioms f404_raw_integer_check
+end TorusLean.BosonFiniteCertificate

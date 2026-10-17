@@ -1,0 +1,84 @@
+import torus.shared.BosonFiniteCertificateCanonicalCompression304
+import torus.shared.BosonFiniteCertificateCanonicalCOMRaise
+import torus.shared.BosonFiniteCertificateCanonicalFormsCore
+set_option autoImplicit false
+set_option maxRecDepth 32768
+set_option maxHeartbeats 1000000
+noncomputable section
+namespace TorusLean.BosonFiniteCertificate
+open Matrix
+open scoped BigOperators ComplexOrder
+open TorusLean.M2
+open TorusLean.Boson TorusLean.Boson.SpectatorControl TorusLean.Boson.TwoBodyLift
+open TorusLean.Shared.BosonFiniteCertificateCoordinate
+open TorusLean.Shared.BosonFiniteCertificateRealization
+
+theorem k304_actual_descendant_form4 (x y : Fin 1 → ℂ) :
+    canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[0] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[0] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) =
+      star x ⬝ᵥ (((complexify c304desc4)ᴴ * k304actualM3 *
+        complexify c304desc4) *ᵥ y) := by
+  rw [c304desc4_actual x, c304desc4_actual y, canonicalOriginalM3Form_block,
+    k304_all_original_row_channels, matrixCross_congruence]
+
+#print axioms k304_actual_descendant_form4
+
+theorem k304_actual_descendant_form5 (x y : Fin 1 → ℂ) :
+    canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[1] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[1] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) =
+      star x ⬝ᵥ (((complexify c304desc5)ᴴ * k305actualM3 *
+        complexify c304desc5) *ᵥ y) := by
+  rw [c304desc5_actual x, c304desc5_actual y, canonicalOriginalM3Form_block,
+    k305_all_original_row_channels, matrixCross_congruence]
+
+#print axioms k304_actual_descendant_form5
+
+theorem k304_actual_descendant_form6 (x y : Fin 1 → ℂ) :
+    canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[2] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[2] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) =
+      star x ⬝ᵥ (((complexify c304desc6)ᴴ * k306actualM3 *
+        complexify c304desc6) *ᵥ y) := by
+  rw [c304desc6_actual x, c304desc6_actual y, canonicalOriginalM3Form_block,
+    k306_all_original_row_channels, matrixCross_congruence]
+
+#print axioms k304_actual_descendant_form6
+
+theorem k304_actual_descendant_form7 (x y : Fin 1 → ℂ) :
+    canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[3] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[3] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) =
+      star x ⬝ᵥ (((complexify c304desc7)ᴴ * k307actualM3 *
+        complexify c304desc7) *ᵥ y) := by
+  rw [c304desc7_actual x, c304desc7_actual y, canonicalOriginalM3Form_block,
+    k307_all_original_row_channels, matrixCross_congruence]
+
+#print axioms k304_actual_descendant_form7
+
+theorem k304_actual_descendant_form8 (x y : Fin 1 → ℂ) :
+    canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[4] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[4] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) =
+      star x ⬝ᵥ (((complexify c304desc8)ᴴ * k308actualM3 *
+        complexify c304desc8) *ᵥ y) := by
+  rw [c304desc8_actual x, c304desc8_actual y, canonicalOriginalM3Form_block,
+    k308_all_original_row_channels, matrixCross_congruence]
+
+#print axioms k304_actual_descendant_form8
+
+/-- The displayed finite COM average acts by the genuine canonical raising
+operator, then all 138 original row operators and the exact pair subtraction.
+It is a finite list, not an infinite COM trace or torus thermal limit. -/
+def k304actualFiniteCOMForm (x y : Fin 1 → ℂ) : ℂ :=
+  (((2/3) : ℚ) : ℂ) * canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[0] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[0] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) +
+  (((2/9) : ℚ) : ℂ) * canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[1] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[1] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) +
+  (((1/27) : ℚ) : ℂ) * canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[2] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[2] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) +
+  (((1/243) : ℚ) : ℂ) * canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[3] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[3] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y))) +
+  (((1/2916) : ℚ) : ℂ) * canonicalOriginalM3Form ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[4] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ x))) ((canonicalCOMRaise9 : Core (Fin 9) ℂ → Core (Fin 9) ℂ)^[4] (canonicalBlock (factorialScale 8) k304occ (complexify b304relative *ᵥ y)))
+
+theorem k304_actual_finite_COM_form (x y : Fin 1 → ℂ) :
+    k304actualFiniteCOMForm x y = star x ⬝ᵥ (k304finiteDescendantM3 *ᵥ y) := by
+  unfold k304actualFiniteCOMForm k304finiteDescendantM3
+  rw [k304_actual_descendant_form4, k304_actual_descendant_form5, k304_actual_descendant_form6, k304_actual_descendant_form7, k304_actual_descendant_form8]
+  simp only [Matrix.add_mulVec, dotProduct_add, Matrix.smul_mulVec,
+    dotProduct_smul, smul_eq_mul]
+
+theorem k304_actual_finite_COM_source (x y : Fin 1 → ℂ) :
+    k304actualFiniteCOMForm x y = star x ⬝ᵥ (complexify c304averageRaw *ᵥ y) := by
+  rw [k304_actual_finite_COM_form, k304_finite_descendant_source]
+
+#print axioms k304_actual_finite_COM_form
+#print axioms k304_actual_finite_COM_source
+end TorusLean.BosonFiniteCertificate

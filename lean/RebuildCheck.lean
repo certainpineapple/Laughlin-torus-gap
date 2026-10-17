@@ -1,0 +1,6 @@
+import torus.shared.FermionPhysicalUniformGap
+import torus.shared.BosonPhysicalFockThird
+
+#print axioms TorusLean.Shared.FermionPhysicalUniformGap.physical_fermion_uniform_operator_gap
+#print axioms TorusLean.Shared.BosonPhysicalFockThird.physicalFockHamiltonian_third
+#print axioms TorusLean.Shared.BosonPhysicalFockThird.physicalFockHamiltonian_third_resolvent

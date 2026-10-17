@@ -1,0 +1,21 @@
+import torus.shared.BosonFiniteCertificateNatFourColumnCache413Channel0
+import torus.shared.BosonFiniteCertificateNatFourColumnCache413Channel1
+import torus.shared.BosonFiniteCertificateNatFourColumnCache413Channel2
+import torus.shared.BosonFiniteCertificateNatFourColumnCache413Channel3
+
+/-! Complete four-channel source cache identity, assembled from separately
+kernel-checked whole-channel original-row dot products. -/
+set_option autoImplicit false
+namespace TorusLean.BosonFiniteCertificate
+
+theorem f413_source_gram_cache_check : ∀ t : Fin 4,
+    f413sourceGramCache t.val=natFourOriginalColumnCache t.val (f413activePairs t.val) := by
+  intro t
+  fin_cases t
+  · exact f413_source_gram_cache_channel0
+  · exact f413_source_gram_cache_channel1
+  · exact f413_source_gram_cache_channel2
+  · exact f413_source_gram_cache_channel3
+
+#print axioms f413_source_gram_cache_check
+end TorusLean.BosonFiniteCertificate

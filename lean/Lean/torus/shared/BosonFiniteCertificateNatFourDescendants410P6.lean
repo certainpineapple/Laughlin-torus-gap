@@ -1,0 +1,5 @@
+import torus.shared.BosonFiniteCertificateNatFourDescendants410P6CompressionTheorem
+import torus.shared.BosonFiniteCertificateNatFourDescendants410P6SourceForm
+
+#print axioms TorusLean.BosonFiniteCertificate.f410desc6_compression_check
+#print axioms TorusLean.BosonFiniteCertificate.f410desc6_source_form
